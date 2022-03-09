@@ -112,11 +112,16 @@ color: #fff;
 }
 
 .col-img{
-  background-image: url(/img/hospital.jpg);
+  background-image: url(/img/Slide1.JPG);
   background-position: center;
   background-size: cover;
  min-height: 500px;
-
+}
+.col-imgg{
+  background-image: url(/img/Slide1.JPG);
+  background-position: center;
+  background-size: cover;
+ min-height: 500px;
 }
 img{
   width: 100%;
@@ -174,38 +179,52 @@ ul{
 }
 .footer-col h4{
   font-size: 18px;
-  color: pink;
+  color:var(--primary);
   text-transform: capitalize;
   margin-bottom: 10px;
   font-weight: 500;
 }
-.footer-col ul li a{
+.footer-col ul a{
   font-size: 16px;
   text-transform: capitalize;
   color: white;
   text-decoration: none;
   font-weight: 300;
-  color: #bbbbbb;
   display: block;
   transition: all 1s ease;
 }
-.footer-col ul li a:hover{
-  color: white;
+.footer-col ul a:hover{
+  color: var(--primary);
   padding-left: 8px;
 }
-.footer-col .social-links a{
-  display: inline-block;
-  height: 50px;
-  width: 50px;
-  background-color: rgba(255,255,255,0.2);
-  margin:0 10px 10px 0;
-  text-align: center;
-  line-height: 40px;
-  color: white;
-  border-radius: 50%;
-  transition: all 2s ease;
+
+
+
+.team-member img{
+  height: 125px;
+  width: 125px;
+  border-radius: 100px;
 }
-.footer-col .social-links a:hover{
+.social-icons{
+  display: flex;
+  justify-content: center;
+}
+.social-icons a{
+  height: 34px;
+  width: 34px;
+  background-color: var(--primary);
+  border-radius: 2px solid var(--primary);
   color: white;
-  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+ margin-left: 5px; 
+ transition: all 0.4s ease;
+ border: 2px;
+}
+.social-icons a:hover{
+  color: var(--primary);
+  background-color: transparent;
+  border-color: var(--primary);
 }
