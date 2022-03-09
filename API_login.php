@@ -10,7 +10,7 @@ if(isset($_POST['txt_Username']) && isset($_POST['txt_Password'])){
     $user_Name = $_POST['txt_Username'];
     $user_Password = $_POST['txt_Password'];
 
-    $query_CheckUser = "SELECT * FROM user_tbl WHERE user_Name = '$user_Name' AND user_Password = '$user_Password'";
+    $query_CheckUser = "SELECT * FROM barangay_user_tbl WHERE user_Username = '$user_Name' AND user_Password = '$user_Password'";
     $query_Result = mysqli_query($conn, $query_CheckUser);
 
     if(mysqli_num_rows($query_Result) > 0){
