@@ -117,13 +117,13 @@ color: #fff;
   background-image: url(/img/Slide1.PNG);
   background-position: center;
   background-size: cover;
-  min-height: 300px;
+  min-height: 500px;
 }
 .col-imgg{
   background-image: url(/img/Slide1.PNG);
   background-position: center;
   background-size: cover;
- min-height: 300px;
+ min-height: 500px;
 }
 img{
   width: 100%;
