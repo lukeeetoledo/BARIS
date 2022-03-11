@@ -11,7 +11,7 @@
 body{
   font-family: Sora,"san-serif";
   line-height: 1.7;
-  color: var(--body)
+  color: black;
 }
 h1,h2,h3,h4,h5,h6,
 .display-4{
@@ -49,7 +49,7 @@ height: 100%;
 position: absolute;
 top: 0;
 left:0;
-background-color: rgba(21, 20, 51, 0.5);
+background-color: #557A95;
 z-index: -1;
 }
 
@@ -59,7 +59,7 @@ section{
 }
 .card-effect{
   box-shadow: var(--box-shadow);
-  background-color: lightgray;
+  background-color: #7395AE;
   padding: 25px;
   transition: all 0.35s ease;
 }
@@ -102,7 +102,9 @@ background-color: #fff;
 color: black;
 }
 
-.services:hover h5,
+.service:hover h5{
+  color: white;
+}
 .service:hover p{
 color: #fff;
 }
@@ -118,7 +120,7 @@ color: #fff;
   min-height: 500px;
 }
 .col-imgg{
-  background-image: url(/img/Slide1.JPG);
+  background-image: url(/img/Slide1.PNG);
   background-position: center;
   background-size: cover;
  min-height: 300px;
@@ -158,12 +160,12 @@ opacity: 1;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: lightgray;
+  background-color: #659DBD;
   padding: 70px 0;
 }
 .containerr{
 max-width: 1170px;
-background-color: #FFFFFF;
+background-color: #659DBD;
 margin: auto;
 }
 .footer-col{
