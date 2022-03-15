@@ -5,6 +5,7 @@ session_start();
 // if (isset($_SESSION["user_ID"])) {
 //     header("Location: home.html");
 // }
+
 if(isset($_POST['txt_Fname']) && isset($_POST['txt_Mname'])&& isset($_POST['txt_Lname'])
     && isset($_POST['txt_Suffix'])&& isset($_POST['txt_Gender'])&& isset($_POST['txt_Birthdate'])
     && isset($_POST['txt_Birthplace'])&& isset($_POST['txt_Civilstatus'])&& isset($_POST['txt_Religion'])

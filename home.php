@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["user_ID"])) {
+    header("Location: index.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,5 +17,6 @@
 </head>
 <body>
     <h1>Welcome!</h1>
+    <a href="API_logout.php">Logout</a>
 </body>
 </html>

@@ -49,10 +49,10 @@
             <a class="nav-link" href="#documentation">Documentation</a>
           </li>
         </ul>
-        <a href="login.html">
+        <a href="login.php">
           <button class="btn btn-primary ms-lg-3">Login</button>
         </a>
-        <a href="signup.html">
+        <a href="signup.php">
           <button class="btn btn-primary ms-lg-3">Register</button>
         </a>
       </div>
@@ -318,11 +318,11 @@
          <h4>Documentation</h4>
          
          <ul>           
-           <u><a href="Chapter 1.pdf">Chapter 1</a></u>
+           <u><a href="Documents/Chapter 1.pdf">Chapter 1</a></u>
            <h6>-The Problem and its Settings</h6>
-           <u><a href="Chapter 2.pdf">Chapter 2</a></u>
+           <u><a href="Documents/Chapter 2.pdf">Chapter 2</a></u>
            <h6>-Conceptual Framework</h6>
-           <u><a href="Chapter 3.pdf">Chapter 3</a></u>
+           <u><a href="Documents/Chapter 3.pdf">Chapter 3</a></u>
            <h6>-Methodology</h6>
          </ul>
          

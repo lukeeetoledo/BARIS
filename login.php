@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (isset($_SESSION["user_ID"])) {
+  header("Location: home.php");
+}
+?>
+
 <!DOCTYPE html>
 <!-- Created By CodingLab - www.codinglabweb.com -->
 <html lang="en" dir="ltr">
@@ -10,15 +17,15 @@
   </head>
   <body>
     <div class="container">
-      <form action="#">
-        <a href="index.html">Back</a>
+      <form action="API_login.php" method="POST">
+        <a href="index.php">Back</a>
         <div class="title">Login</div>
         <div class="input-box underline">
-          <input type="text" placeholder="Enter Your Email or Username" required>
+          <input type="text" name="txt_Username" placeholder="Enter Your Email or Username" required>
           <div class="underline"></div>
         </div>
         <div class="input-box">
-          <input type="password" placeholder="Enter Your Password" required>
+          <input type="password" name="txt_Password" placeholder="Enter Your Password" required>
           <div class="underline"></div>
         </div>
         <div class="input-box button">
@@ -26,7 +33,7 @@
         </div>
         <div class="text"><a href="#">Forgot password?</a></div>
             
-              <div class="text sign-up-text">Don't have an account? <a href="signup.html">Signup Now</a></div>
+              <div class="text sign-up-text">Don't have an account? <a href="signup.php">Signup Now</a></div>
       </form>
         
     

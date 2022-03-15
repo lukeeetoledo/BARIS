@@ -19,7 +19,7 @@
         <div class="container">
             <form action="#">
             <div class="form-content">
-                <a href="index.html">Back</a>
+                <a href="index.php">Back</a>
                 <div class="title">Join Us!</div>
                 <div class="user-details">
                     <div class="input-box">
@@ -96,8 +96,7 @@
                         <span class="details">Confirm Password</span>
                         <input type="password" placeholder="Confirm your password" required>
                     </div>
-                </div>
-                <div class="gender-details">
+                    <div class="gender-details">
                     <input type="radio" name="gender" id="dot-1">
                     <input type="radio" name="gender" id="dot-2">
                     <input type="radio" name="gender" id="dot-3">
@@ -117,9 +116,13 @@
                         </label>
                     </div>
                 </div>
+               
+                </div>
                 <div class="button">
                     <input type="submit" value="Register">
                 </div>
+               
+                
                 <div>
                     <p class="text-center">Already have an account? <a href="login.html">Login</a></p>
                 </div>
