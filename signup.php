@@ -24,44 +24,49 @@
                 <div class="user-details">
                     <div class="input-box">
                         <span class="details">First Name</span>
-                        <input type="text" placeholder="Enter your first name" required>
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Middle Name</span>
-                        <input type="text" placeholder="Enter your middle name" required>
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Last Name</span>
-                        <input type="text" placeholder="Enter your last name" required>
-                    </div>
-                    <div class="input-box">
-                        <span class="details">Username</span>
-                        <input type="text" placeholder="Enter your username" required>
-                    </div>
-                    <div class="input-box">
+                        <input type="text" name="" placeholder="Enter your first name" required>
                         <span class="details">Email</span>
-                        <input type="text" placeholder="Enter your email" required>
-                    </div>
-                    <div class="input-box">
-                    <div class="input-box">
-                            <span class="details">Address</span>
-                            <input type="text" placeholder="Region" required>
-                            <input type="text" placeholder="Province" required>
-                            <input type="text" placeholder="City/Municipality" required>
-                            <input type="text" placeholder="Barangay" required>
-                        </div>
-                        <span class="details">Phone Number</span>
-                        <input type="number" placeholder="Enter your phone number" required>
+                        <input type="text" name="" placeholder="Enter your email" required>
+                        <span class="details">Username</span>
+                        <input type="text" name="" placeholder="Enter your username" required>
+                        <span class="details">Last Name</span>
+                        <input type="text" name=""placeholder="Enter your last name" required>
+                        <span class="details">Middle Name</span>
+                        <input type="text" name="" placeholder="Enter your middle name" required>
+                
                         <div class="form-wrapper" required> 
                             <select name="" class="civilstatus">
-                                <option value="civilstatus" disabled selected>Civil Status</option>
+                                <option value="civilstatus" name="" disabled selected>Suffix</option>
+                                <option value="single">Jr.</option>
+                                <option value="married">Sr.</option>
+                                <option value="divorced">II</option>
+                                <option value="widowed">III</option>
+                            </select>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="input-box">
+                            <span class="details">Address</span>
+                            <input type="text" name=" "placeholder="Region" required>
+                            <input type="text" name="" placeholder="Province" required>
+                            <input type="text" name="" placeholder="City/Municipality" required>
+                            <input type="text" name="" placeholder="Barangay" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Phone Number</span>
+                            <input type="text" placeholder="Phone Number" required>
+                            <div class="form-wrapper" required> 
+                            <select name="" class="civilstatus">
+                                <option value="civilstatus" name="" disabled selected>Civil Status</option>
                                 <option value="single">Single</option>
                                 <option value="married">Married</option>
                                 <option value="divorced">Divorced</option>
                                 <option value="widowed">Widowed</option>
                             </select>
                         </div>
-                    </div>
+                        
+                        </div>
                     
                     <body style="background-color: ivory;">
                         <section class="container">
@@ -70,7 +75,7 @@
                                     <label for="date" class="col-sm-1 col-form-label">Birthdate</label>
                                     <div class="col-sm-4">
                                         <div class="input-group date" id="datepicker">
-                                            <input type="text" class="form-control">
+                                            <input type="text" name="" class="form-control">
                                             <span class="input-group-append">
                                                 <span class="input-group-text bg-white d-block">
                                                     <i class="fa fa-calendar"></i>
@@ -87,15 +92,19 @@
                                 $('#datepicker').datepicker();
                             });
                         </script>
+                        
                     
                     <div class="input-box">
                         <span class="details">Password</span>
-                        <input type="password" placeholder="Enter your password" required>
+                        <input type="password" name="" placeholder="Enter your password" required>
+                        <span class="details">Confirm Password</span>
+                        <input type="text" name="" placeholder="Cnfirm Password" required>
                     </div>
                     <div class="input-box">
-                        <span class="details">Confirm Password</span>
-                        <input type="password" placeholder="Confirm your password" required>
+                        <span class="details">Religion</span>
+                        <input type="password" name="" placeholder="Enter your religion" required>
                     </div>
+                    
                     <div class="gender-details">
                     <input type="radio" name="gender" id="dot-1">
                     <input type="radio" name="gender" id="dot-2">
@@ -114,15 +123,15 @@
                             <span class="dot three"></span>
                             <span class="gender">Prefer not to say</span>
                         </label>
+                        
+                    </div>
+                   
+                    <div class="button" >
+                    <input type="submit" value="Register">
                     </div>
                 </div>
                
                 </div>
-                <div class="button">
-                    <input type="submit" value="Register">
-                </div>
-               
-                
                 <div>
                     <p class="text-center">Already have an account? <a href="login.html">Login</a></p>
                 </div>

@@ -8,7 +8,7 @@
 
 body{
     display: flex;
-   min-height: 100vh;
+     min-height: 80vh;
     justify-content: center;
     align-items: center;
     background: linear-gradient(to right, #7395AE 0%, #659DBD 100%); 
@@ -17,6 +17,7 @@ body{
 .container{
     max-width: 850px;
     width: 100%;
+    height: 100%;
     background: #fff;
     padding: 40px, 30px;
     border-radius: 5px;
@@ -36,7 +37,6 @@ body{
     height: 3px;
     width: 30px;
     background: linear-gradient(135deg, #71b7e6, #9b59b6); 
-
 }
 
 .container form .user-details{
@@ -44,18 +44,18 @@ body{
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 20px 0 12px 0;
+    
 }
 
 form .user-details .input-box{
     margin-bottom: 15px;
     width: calc(100% / 2 - 20px);
-
 }
 .user-details .input-box .details{
     display: block;
     font-weight: 500;
     margin-bottom: 5px;
-
+    
 }
 
 .user-details .input-box input{
@@ -67,7 +67,7 @@ form .user-details .input-box{
     padding-left: 15px;
     font-size: 16px;
     border-bottom-width: 2px;
-    transition: all 0.3 ease; 
+    transition: all 0.3 ease;
 }
 
 .form-wrapper .civilstatus {
@@ -76,14 +76,17 @@ form .user-details .input-box{
     justify-content: space-between;
     margin: 20px 0 12px 0;
     transition: all 0.3 ease; 
-
+    border: #ccc;
+    border-style: solid;
+    border-width: 2px;
+    
 }
 
-.form-wrapper{
+.input-box .form-wrapper{
     height: 3px;
     width: 3px;
     align-items: center;
-
+    padding-bottom: 15px;
 }
 
 .user-details .input-box input:focus,
@@ -94,20 +97,18 @@ form .user-details .input-box{
 form .gender-details .gender-title{
     font-size: 20px;
     font-weight: 500;
-
 }
 
 form .gender-details .category{
     display: flex;
     width: 80%;
-    margin: 14px 0;
-    justify-content: space-between;
-
+    margin: 14px;
 }
 
 .gender-details .category label{
     display: flex;
     align-items: center;
+    padding-right: 10px;
 }
 
 .gender-details .category .dot{
@@ -118,7 +119,6 @@ form .gender-details .category{
     margin-right: 10px;
     border: 5px solid transparent; 
     transition: all 0.3s ease;
-
 }
 
 #dot-1:checked ~ .category label .one,
@@ -130,13 +130,17 @@ form .gender-details .category{
 
 form input[type="radio"] {
     display: none;
-
 }
 
 form .button{
     height: 45px;
-    margin: 45px 0;
-
+    align-items: center;
+    display: block;
+  width: 100%;
+  border: none;
+}
+.input-box{
+    padding-top: 10px;
 }
 
 form .button input{
@@ -147,9 +151,10 @@ form .button input{
     border: none;
     font-size: 18px;
     font-weight: 500;
-    border-radius: 5px;
+    text-align: center;
     letter-spacing: 1px;
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    align-items: center;
 
 }
 
@@ -164,10 +169,14 @@ form .button input:hover{
 form .user-details .input-box{
     margin-bottom: 15px;
     width: 100%;
-
 }
 form .gender-details .category{
     width: 100%;
+    
+    
+}
+.gender-details{
+    padding-top: 10px;
 }
 .container form .user-details{
     max-height: 300px;
@@ -176,5 +185,4 @@ form .gender-details .category{
 .user-details::-webkit-scrollbar{
     width: 0;
 
-}
 }
