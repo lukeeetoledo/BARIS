@@ -55,7 +55,6 @@ form .user-details .input-box{
     display: block;
     font-weight: 500;
     margin-bottom: 5px;
-    
 }
 
 .user-details .input-box input{
@@ -81,6 +80,7 @@ form .user-details .input-box{
     border-width: 2px;
     
 }
+
 
 .input-box .form-wrapper{
     height: 3px;
@@ -155,7 +155,10 @@ form .button input{
     letter-spacing: 1px;
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
     align-items: center;
-
+}
+.form-content.button{
+    width: 100%;
+    display: inline-block;
 }
 
 form .button input:hover{
