@@ -1,3 +1,7 @@
+<?php 
+include 'API_region.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,9 +56,28 @@
                     
                     <div class="input-box">
                             <span class="details">Address</span>
-                            <input type="text" name="txt_Region"placeholder="Region" required>
-                            <input type="text" name="txt_Province" placeholder="Province" required>
-                            <input type="text" name="txt_Citymunnicipality" placeholder="City/Municipality" required>
+                           <!-- REGION -->
+                            <?php echo $region_combo_box; ?>
+                            <!-- PROVINCE -->
+                            <div id="province" class="form-wrapper" required> 
+                            <select name="txt_province" class="civilstatus">
+                                <option disabled selected>Province</option>
+                            </select>
+                        </div>
+                        <!-- CITYMUNICIPALITY -->
+                        <div id="citymun" class="form-wrapper" required> 
+                            <select  name="txt_citymun" class="civilstatus">
+                                <option disabled selected>City/Municipality</option>
+                            </select>
+                        </div>
+                        <!-- BARANGAY -->
+                        <div id="barangay" class="form-wrapper" required> 
+                            <select  name="txt_barangay" class="civilstatus">
+                                <option disabled selected>Barangay</option>
+                            </select>
+                        </div>
+                        <div class="form-wrapper" required>
+                            <input type="text" name="txt_Citymunicipality" placeholder="City/Municipality" required>
                             <input type="text" name="txt_Barangay" placeholder="Barangay" required>
                             <span class="details">Birthplace</span>
                             <input type="text" name="txt_Region"placeholder="Birthplace" required>
@@ -84,7 +107,6 @@
                                 </div>
                             </form>
                         </section>
-                    
                         <script type="text/javascript">
                             $(function() {
                                 $('#datepicker').datepicker();
@@ -142,3 +164,52 @@
         </div>
 </body>
 </html>
+
+<script>
+    function Get_Province(region_code){
+        var x = document.getElementById("province");
+        var y = document.getElementById("citymun");
+        var z = document.getElementById("barangay");
+        
+        
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            x.innerHTML = this.responseText;
+            y.innerHTML = '<select  name="txt_citymun" class="civilstatus"><option disabled selected>City/Municipality</option></select>';
+            z.innerHTML = '<select  name="txt_barangay" class="civilstatus"><option disabled selected>Barangay</option></select>';
+            
+
+        }
+        xhttp.open("GET", "API_province.php?region=" + region_code);
+        xhttp.send();
+    }
+    function Get_CityMun(province_code){
+        var x = document.getElementById("citymun");
+        var y = document.getElementById("s_region");
+        var z = document.getElementById("barangay");
+        var region_code = y.value;
+        
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            x.innerHTML = this.responseText;
+            z.innerHTML = '<select  name="txt_barangay" class="civilstatus"><option disabled selected>Barangay</option></select>';
+
+        }
+        xhttp.open("GET", "API_citymun.php?region=" + region_code + "&province=" + province_code);
+        xhttp.send();
+    }
+    function Get_Barangay(citymun_code){
+        var x = document.getElementById("barangay");
+        var y = document.getElementById("s_province");
+        var z = document.getElementById("s_region");
+        var province_code = y.value;
+        
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            x.innerHTML = this.responseText;
+
+        }
+        xhttp.open("GET", "API_barangay.php?province=" + province_code + "&citymun=" + citymun_code);
+        xhttp.send();
+    }
+</script>

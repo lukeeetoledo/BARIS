@@ -2,9 +2,6 @@
 include 'SYSTEM_config.php';
 session_start();
 
-if (!isset($_SESSION["user_ID"])) {
-    header("Location: index.php");
-}
 
 if(isset($_POST['txt_Username']) && isset($_POST['txt_Password'])){
     $user_Name = mysqli_real_escape_string($conn,$_POST['txt_Username']);
@@ -18,7 +15,7 @@ if(isset($_POST['txt_Username']) && isset($_POST['txt_Password'])){
     if(mysqli_num_rows($result_Check_user) > 0){
         $row_Select = mysqli_fetch_assoc($result_Check_user);
         $_SESSION["user_ID"] = $row_Select['user_ID'];
-        header("Location: home.php");
+        header("Location: homepage.php");
     }else{
         echo "ERROR_LOGIN";
     }
@@ -30,7 +27,7 @@ if(isset($_POST['txt_Username']) && isset($_POST['txt_Password'])){
         if (mysqli_num_rows($result_Check_user) > 0) {
             $row_Select = mysqli_fetch_assoc($result_Check_user);
             $_SESSION["user_ID"] = $row_Select['user_ID'];
-            header("Location: home.php");
+            header("Location: homepage.php");
         } else {
             echo "ERROR_LOGIN";
     }

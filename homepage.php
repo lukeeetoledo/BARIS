@@ -43,7 +43,7 @@
               <li><a class="dropdown-item" href="#"> Submenu item 3 </a></li>
             </ul>
           </li>
-          <button class="btn btn-primary ms-lg-3">Logout</button>
+          <a class="btn btn-primary ms-lg-3" href="API_logout.php">Logout</a>
         </ul>
       </div>
     </div>

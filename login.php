@@ -1,9 +1,3 @@
-<?php
-session_start();
-if (isset($_SESSION["user_ID"])) {
-  header("Location: home.php");
-}
-?>
 
 <!DOCTYPE html>
 <!-- Created By CodingLab - www.codinglabweb.com -->
