@@ -8,7 +8,7 @@ if(isset($_GET['region'])&&isset($_GET['province'])){
     $result_Get_citymun = mysqli_query($conn,$query_Get_citymun);
 
     if($result_Get_citymun){
-        $citymun_combo_box =  '<select id="s_citymun" name="txt_citymun" class="civilstatus" onChange="Get_Barangay(this.value);"> <option disabled selected>City/Municipality</option>';
+        $citymun_combo_box =  '<select id="s_citymun" name="txt_Citymunicipality" class="civilstatus" onChange="Get_Barangay(this.value);"> <option disabled selected>City/Municipality</option>';
         while( $citymun_row = mysqli_fetch_assoc($result_Get_citymun)){
             $citymun_combo_box = $citymun_combo_box . '<option value="'.$citymun_row['citymun_code'].'">'.$citymun_row['citymun_name'].'</option>';
         }

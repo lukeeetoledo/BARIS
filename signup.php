@@ -23,7 +23,7 @@ include 'API_region.php';
 
 <body>
     <div class="container">
-        <form action="#">
+        <form action="API_signup.php" method="POST">
             <div class="form-content">
                 <a href="index.php">Back</a>
                 <div class="title"> Account Registration</div>
@@ -34,12 +34,12 @@ include 'API_region.php';
                         <span class="details">Last Name</span>
                         <input type="text" name="txt_Lname" placeholder="Enter your last name" required>
                         <span class="details">Middle Name</span>
-                        <input type="text" name="txt_Mnamae" placeholder="Enter your middle name" required>
+                        <input type="text" name="txt_Mname" placeholder="Enter your middle name" required>
 
 
                         <div class="form-wrapper" required style="display: inline-block;">
                             <select name="txt_Suffix" class="civilstatus">
-                                <option value="civilstatus" disabled selected>Suffix</option>
+                                <option disabled selected>Suffix</option>
                                 <option value="Jr.">Jr.</option>
                                 <option value="Sr.">Sr.</option>
                                 <option value="II">II</option>
@@ -57,7 +57,7 @@ include 'API_region.php';
                         </div>
                         <div class="input-box">
                         <span class="details">Religion</span>
-                        <input type="password" name="txt_Religion" placeholder="Enter your religion" required>
+                        <input type="text" name="txt_Religion" placeholder="Enter your religion" required>
                     </div>
                     </div>
 
@@ -111,16 +111,18 @@ include 'API_region.php';
                     <div class="input-box">
                         <span class="details">Email</span>
                         <input type="text" name="txt_Email" placeholder="Enter your email" required>
+                        <span class="details">Contact Number</span>
+                        <input type="text" name="txt_Contactnumber" placeholder="Enter your phone number" required>
                         <span class="details">Username</span>
                         <input type="text" name="txt_Username" placeholder="Enter your username" required>
                         <span class="details">Password</span>
                         <input type="password" name="txt_Password" placeholder="Enter your password" required>
                         <span class="details">Confirm Password</span>
-                        <input type="text" name="txt_Confirmpassword" placeholder="Cnfirm Password" required>
+                        <input type="password" name="txt_Confirmpassword" placeholder="Confirm Password" required>
                         <div class="gender-details">
-                        <input type="radio" name="gender" id="dot-1">
-                        <input type="radio" name="gender" id="dot-2">
-                        <input type="radio" name="gender" id="dot-3">
+                        <input type="radio" name="txt_Gender" id="dot-1">
+                        <input type="radio" name="txt_Gender" id="dot-2">
+                        <input type="radio" name="txt_Gender" id="dot-3">
                         <span class="gender-title">Gender</span>
                         <div class="category">
                             <label for="dot-1">
@@ -163,8 +165,8 @@ include 'API_region.php';
         const xhttp = new XMLHttpRequest();
         xhttp.onload = function() {
             x.innerHTML = this.responseText;
-            y.innerHTML = '<select  name="txt_citymun" class="civilstatus"><option disabled selected>City/Municipality</option></select>';
-            z.innerHTML = '<select  name="txt_barangay" class="civilstatus"><option disabled selected>Barangay</option></select>';
+            y.innerHTML = '<select  name="txt_Citymunicipality" class="civilstatus"><option disabled selected>City/Municipality</option></select>';
+            z.innerHTML = '<select  name="txt_Barangay" class="civilstatus"><option disabled selected>Barangay</option></select>';
 
 
         }
@@ -181,7 +183,7 @@ include 'API_region.php';
         const xhttp = new XMLHttpRequest();
         xhttp.onload = function() {
             x.innerHTML = this.responseText;
-            z.innerHTML = '<select  name="txt_barangay" class="civilstatus"><option disabled selected>Barangay</option></select>';
+            z.innerHTML = '<select  name="txt_Barangay" class="civilstatus"><option disabled selected>Barangay</option></select>';
 
         }
         xhttp.open("GET", "API_citymun.php?region=" + region_code + "&province=" + province_code);
