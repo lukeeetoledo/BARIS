@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="CSS/index.css">
   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="CSS/master.css">
+  <link rel="stylesheet" href="aaa/index.css">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="img/Logo_192.png">
 
@@ -25,7 +25,7 @@
   <nav class="navbar navbar-expand-lg py-3 sticky-top navbar-light bg-white">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img class="logo" src="img/LOGO.png">
+        <img class="logo" src="img/asdw.png">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

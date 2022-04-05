@@ -4,14 +4,11 @@
 	.navbar .nav-item:hover .dropdown-menu{ display: block; }
 	.navbar .nav-item .dropdown-menu{ margin-top:0; }
 }	
-
 .logo { 
   width: 120px;
 }
 body {
   font-family: Arial;
-  padding: 20px;
-  background: white;
 }
 
 /* Create two unequal columns that floats next to each other */

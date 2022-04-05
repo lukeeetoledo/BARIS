@@ -8,7 +8,7 @@ include 'API_region.php';
 <head>
     <meta charset="UTF-8">
     <title>Signup</title>
-    <link rel="stylesheet" href="CSS/signup.css">
+    <link rel="stylesheet" href="aaa/signup.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -56,57 +56,30 @@ include 'API_region.php';
                             </select>
                         </div>
                         <div class="input-box">
-                        <span class="details">Religion</span>
-                        <input type="text" name="txt_Religion" placeholder="Enter your religion" required>
-                    </div>
-                    </div>
-
-                    <div class="input-box">
-                        <span class="details">Address</span>
-                        <!-- REGION -->
-                        <?php echo $region_combo_box; ?>
-                        <!-- PROVINCE -->
-                        <div id="province" class="form-wrapper" required>
-                            <select name="txt_Province" class="civilstatus">
-                                <option disabled selected>Province</option>
-                            </select>
+                            <span class="details">Religion</span>
+                            <input type="text" name="txt_Religion" placeholder="Enter your religion" required>
                         </div>
-                        <!-- CITYMUNICIPALITY -->
-                        <div id="citymun" class="form-wrapper" required>
-                            <select name="txt_Citymunicipality" class="civilstatus">
-                                <option disabled selected>City/Municipality</option>
-                            </select>
-                        </div>
-                        <!-- BARANGAY -->
-                        <div id="barangay" class="form-wrapper" required>
-                            <select name="txt_Barangay" class="civilstatus">
-                                <option disabled selected>Barangay</option>
-                            </select>
-                        </div>
-                      
                     </div>
-                    <body>
-                        <section class="container">
-                            <div class="row form-group">
-                                <label for="date" class="col-sm-1 col-form-label">Birthdate</label>
-                                <div class="col-sm-4">
-                                    <div class="input-group date" id="datepicker">
-                                        <input type="text" name="txt_Birthdate" class="form-control">
-                                        <span class="input-group-append">
-                                            <span class="input-group-text bg-white d-block">
-                                                <i class="fa fa-calendar"></i>
-                                            </span>
+                    <section class="container">
+                        <div class="row form-group">
+                            <label for="date" class="col-sm-1 col-form-label">Birthdate</label>
+                            <div class="col-sm-4">
+                                <div class="input-group date" id="datepicker">
+                                    <input type="text" name="txt_Birthdate" class="form-control">
+                                    <span class="input-group-append">
+                                        <span class="input-group-text bg-white d-block">
+                                            <i class="fa fa-calendar"></i>
                                         </span>
-                                    </div>
+                                    </span>
                                 </div>
                             </div>
-                        </section>
-                        <script type="text/javascript">
-                            $(function() {
-                                $('#datepicker').datepicker();
-                            });
-                        </script>
-                        </body>
+                        </div>
+                    </section>
+                    <script type="text/javascript">
+                        $(function() {
+                            $('#datepicker').datepicker();
+                        });
+                    </script>
 
                     <div class="input-box">
                         <span class="details">Email</span>
@@ -120,35 +93,60 @@ include 'API_region.php';
                         <span class="details">Confirm Password</span>
                         <input type="password" name="txt_Confirmpassword" placeholder="Confirm Password" required>
                         <div class="gender-details">
-                        <input type="radio" name="txt_Gender" id="dot-1">
-                        <input type="radio" name="txt_Gender" id="dot-2">
-                        <input type="radio" name="txt_Gender" id="dot-3">
-                        <span class="gender-title">Gender</span>
-                        <div class="category">
-                            <label for="dot-1">
-                                <span class="dot one"></span>
-                                <span class="gender">Male</span>
-                            </label>
-                            <label for="dot-2">
-                                <span class="dot two"></span>
-                                <span class="gender">Female</span>
-                            </label>
-                            <label for="dot-3">
-                                <span class="dot three"></span>
-                                <span class="gender">Prefer not to say</span>
-                            </label>
-                        </div>
-                    </div>
-                    </div>
+                            <input type="radio" name="txt_Gender" id="dot-1">
+                            <input type="radio" name="txt_Gender" id="dot-2">
+                            <input type="radio" name="txt_Gender" id="dot-3">
+                            <span class="gender-title">Sex</span>
 
-                        <div class="button">
-                            <input type="submit" value="Register"/>
+                            <div class="category">
+                                <label for="dot-1">
+                                    <span class="dot one"></span>
+                                    <span class="gender">Male</span>
+                                </label>
+                                <label for="dot-2">
+                                    <span class="dot two"></span>
+                                    <span class="gender">Female</span>
+                                </label>
+                                <label for="dot-3">
+                                    <span class="dot three"></span>
+                                    <span class="gender">Prefer not to say</span>
+                                </label>
+                            </div>
+                            <div class="input-box">
+                                <span class="details">Address</span>
+                                <!-- REGION -->
+                                <?php echo $region_combo_box; ?>
+                                <!-- PROVINCE -->
+                                <div id="province" class="form-wrapper" required>
+                                    <select name="txt_Province" class="civilstatus">
+                                        <option disabled selected>Province</option>
+                                    </select>
+                                </div>
+                                <!-- CITYMUNICIPALITY -->
+                                <div id="citymun" class="form-wrapper" required>
+                                    <select name="txt_Citymunicipality" class="civilstatus">
+                                        <option disabled selected>City/Municipality</option>
+                                    </select>
+                                </div>
+                                <!-- BARANGAY -->
+                                <div id="barangay" class="form-wrapper" required>
+                                    <select name="txt_Barangay" class="civilstatus">
+                                        <option disabled selected>Barangay</option>
+                                    </select>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
+                    <div class="button">
+                        <input type="submit" value="Register" />
+                    </div>
+                </div>
                 <div>
                     <p class="text-center">Already have an account? <a href="login.php">Login</a></p>
                 </div>
             </div>
+
         </form>
     </div>
 </body>
