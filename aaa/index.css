@@ -34,7 +34,6 @@ a{
 }
 
 .hero{
-  background-image: url(/img/bg15.png);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -113,13 +112,13 @@ color: #fff;
 }
 
 .col-img{
-  background-image: url(/img/Slide1.PNG);
+  background-image: url(../img/Slide1.PNG);
   background-position: center;
   background-size: cover;
   min-height: 500px;
 }
 .col-imgg{
-  background-image: url(/img/Slide1.PNG);
+  background-image: url(../img/Slide1.PNG);
   background-position: center;
   background-size: cover;
  min-height: 500px;
