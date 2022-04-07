@@ -134,6 +134,11 @@ include 'API_region.php';
                                         <option disabled selected>Barangay</option>
                                     </select>
                                 </div>
+                                <br>
+                                <div>
+                                <span class="details">Block/Lot/Unit #</span>
+                                <input type="text" name="txt_block" placeholder="Enter your Block/Lot/Unit #" required>
+                                </div>
 
                             </div>
                         </div>
