@@ -13,10 +13,10 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg py-3 sticky-top navbar-light bg-white">
+  <nav class="navbar navbar-expand-md py-3 sticky-top navbar-light bg-white">
     <div class="container-fluid ">
       <a class="navbar-brand bg-white" href="#">
-        <img class="logo" src="img/LOGO.png">
+        <img class="logo" src="img/asdw.png">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
