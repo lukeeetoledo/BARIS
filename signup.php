@@ -82,17 +82,7 @@ include 'API_region.php';
                     </script>
 
                     <div class="input-box">
-                        <span class="details">Email</span>
-                        <input type="text" name="txt_Email" placeholder="Enter your email" required>
-                        <span class="details">Contact Number</span>
-                        <input type="text" name="txt_Contactnumber" placeholder="Enter your phone number" required>
-                        <span class="details">Username</span>
-                        <input type="text" name="txt_Username" placeholder="Enter your username" required>
-                        <span class="details">Password</span>
-                        <input type="password" name="txt_Password" placeholder="Enter your password" required>
-                        <span class="details">Confirm Password</span>
-                        <input type="password" name="txt_Confirmpassword" placeholder="Confirm Password" required>
-                        <div class="gender-details">
+                    <div class="gender-details">
                             <input type="radio" name="txt_Gender" id="dot-1">
                             <input type="radio" name="txt_Gender" id="dot-2">
                             <input type="radio" name="txt_Gender" id="dot-3">
@@ -136,6 +126,17 @@ include 'API_region.php';
                                 </div>
 
                             </div>
+                        <span class="details">Email</span>
+                        <input type="text" name="txt_Email" placeholder="Enter your email" required>
+                        <span class="details">Contact Number</span>
+                        <input type="text" name="txt_Contactnumber" placeholder="Enter your phone number" required>
+                        <span class="details">Username</span>
+                        <input type="text" name="txt_Username" placeholder="Enter your username" required>
+                        <span class="details">Password</span>
+                        <input type="password" name="txt_Password" placeholder="Enter your password" required>
+                        <span class="details">Confirm Password</span>
+                        <input type="password" name="txt_Confirmpassword" placeholder="Confirm Password" required>
+                        
                         </div>
                     </div>
                     <div class="button">
