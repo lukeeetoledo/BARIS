@@ -4,8 +4,8 @@
 	.navbar .nav-item:hover .dropdown-menu{ display: block; }
 	.navbar .nav-item .dropdown-menu{ margin-top:0; }
 }	
-.logo { 
-  width: 120px;
+.navbar .logo { 
+  width: 80px;
 }
 body {
   font-family: Arial;

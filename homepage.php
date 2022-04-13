@@ -24,7 +24,7 @@
       <div class="collapse navbar-collapse" id="main_nav">
         <ul class="navbar-nav">
           <li class="nav-item active"> <a class="nav-link" href="#"><strong>Home</strong> </a> </li>
-          <li class="nav-item"><a class="nav-link" href="#"> <strong>Profile</strong> </a></li>
+          <li class="nav-item"><a class="nav-link" href="userprofile.php"> <strong>Profile</strong> </a></li>
           <li class="nav-item dropdown">
             <a class="nav-link" href="#" data-bs-toggle="dropdown"> <strong>Documents</strong> </a>
             <ul class="dropdown-menu">
