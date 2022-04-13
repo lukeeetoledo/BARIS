@@ -51,7 +51,7 @@
         
                 <div class="profile-header-content">
                     <div class="profile-header-img">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" />
+                        <img class="profilepic"src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" />
                     </div>
         
                     <div class="profile-header-info">

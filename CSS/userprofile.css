@@ -305,3 +305,6 @@ body .fc-widget-header a {
     color: #666;
     margin: 0;
 }
+.container .profilepic{
+    width: 80px;
+}
