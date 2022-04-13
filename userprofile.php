@@ -1,3 +1,8 @@
+<?php 
+include 'API_user_profile.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +60,7 @@
                     </div>
         
                     <div class="profile-header-info">
-                        <h4 class="m-t-sm">Dudong B. Balisong</h4>
+                        <h4 class="m-t-sm"><?php echo $full_Name ?></h4>
                         <a href="#" class="btn btn-xs btn-primary mb-3">Request for Changes</a>
                         <a href="#" class="btn btn-xs btn-primary mb-3">Request for Verification</a>
                     </div>
@@ -84,7 +89,7 @@
                                             <td class="field">First Name</td>
                                             <td class="value">
                                                 <div class="m-b-5">
-                                                    <b>Dudong</b> <br />
+                                                    <b><?php echo $f_Name ?></b> <br />
                                                     
                                                 </div>
                                                 
@@ -94,21 +99,21 @@
                                             <td class="field">Middle Name</td>
                                             <td class="value">
                                                 <div class="m-b-5">
-                                                    <b>B</b> 
+                                                    <b><?php echo $m_Name ?></b> 
                                                 </div>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="field">Last Name</td>
                                             <td class="value">
-                                                <b>Balisong</b>
+                                                <b><?php echo $l_Name ?></b>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="field">Suffix</td>
                                             <td class="value">
                                                 <div class="m-b-5">
-                                                    <b>Jr</b> <br />
+                                                    <b><?php echo $suffix ?></b> <br />
                                                     
                                                 </div>
                                                 
@@ -126,13 +131,13 @@
                                         <tr>
                                             <td class="field">Mobile Phones</td>
                                             <td class="value">
-                                                <b>+44 7700 900860</b>
+                                                <b><?php echo $c_number ?></b>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="field">Email</td>
                                             <td class="value">
-                                                <b>dudong.balisong@yahoo.com</b>
+                                                <b><?php echo $email ?></b>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -147,25 +152,25 @@
                                         <tr>
                                             <td class="field">Region</td>
                                             <td class="value">
-                                                <b>IV-A</b>
+                                                <b><?php echo $region ?></b>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="field">Province</td>
                                             <td class="value">
-                                                <b>Laguna</b>
+                                                <b><?php echo $province ?></b>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="field">City/Municipality</td>
                                             <td class="value">
-                                                <b>Calamba</b>
+                                                <b><?php echo $city_Mun ?></b>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="field">Barangay</td>
                                             <td class="value">
-                                                <b>Canlubang</b>
+                                                <b><?php echo $barangay ?></b>
                                             </td>
                                         </tr>
                                         <tr>
@@ -186,21 +191,21 @@
                                         <tr>
                                             <td class="field">Birth of Date</td>
                                             <td class="value">
-                                                <b>November 4, 1989</b>
+                                                <b><?php echo $birthdate ?></b>
                                                 
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="field">Sex</td>
                                             <td class="value">
-                                                <b>Male</b>
+                                                <b><?php echo $sex ?></b>
                                                 
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="field">Username</td>
                                             <td class="value">
-                                                <b>Bengklong98273</b>
+                                                <b><?php echo $user_Name ?></b>
                                                 
                                             </td>
                                         </tr>

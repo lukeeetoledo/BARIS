@@ -97,6 +97,7 @@ include 'API_region.php';
                                     <span class="gender">Female</span>
                                 </label>
                             </div>
+                    </div>
                             <div class="input-box">
                                 <span class="details">Address</span>
                                 <!-- REGION -->
