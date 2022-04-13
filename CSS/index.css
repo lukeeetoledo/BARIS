@@ -18,9 +18,8 @@ h1,h2,h3,h4,h5,h6,
   color: black;
   font-weight: 700;
 }
-.navbar .logo{
-  width: 500px;
-}
+
+
 a{
   color: var(--dark);
   text-decoration: none;
@@ -28,9 +27,7 @@ a{
 .navbar{
   box-shadow: black;
 }
-.logo{
-  width: 100px;
-}
+
 .navbar .nav-link{
   font-size: 15px;
   font-weight: 700;
