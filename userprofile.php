@@ -5,10 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
-    <link rel="stylesheet" href="CSS/userprofile.css">
+    <link rel="stylesheet" href="CSS/homepage.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
+<nav class="navbar navbar-expand-md py-3 sticky-top navbar-light bg-white">
+    <div class="container ">
+      <a class="navbar-brand bg-white" href="#">
+        <img class="logo" src="img/asdw.png">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="main_nav">
+        <ul class="navbar-nav">
+          <li class="nav-item active"> <a class="nav-link" href="homepage.php"><strong>Home</strong> </a> </li>
+          <li class="nav-item"><a class="nav-link" href="userprofile.php"> <strong>Profile</strong> </a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#" data-bs-toggle="dropdown"> <strong>Documents</strong> </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#"> Barangay Clearance</a></li>
+              <li><a class="dropdown-item" href="#"> Certificate of Indigency </a></li>
+              <li><a class="dropdown-item" href="#"> Business Permit </a></li>
+              <li><a class="dropdown-item" href="#"> Cedula </a></li>
+
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link " href="#" data-bs-toggle="dropdown"> <strong>Services</strong> </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#"> Submenu item 1</a></li>
+              <li><a class="dropdown-item" href="#"> Submenu item 2 </a></li>
+              <li><a class="dropdown-item" href="#"> Submenu item 3 </a></li>
+            </ul>
+          </li>
+          <a class="btn btn-primary ms-lg-3" href="API_logout.php">Logout</a>
+        </ul>
+      </div>
+    </div>
+  </nav>
     <div class="container">
         <div id="content" class="content p-0">
             <div class="profile-header">

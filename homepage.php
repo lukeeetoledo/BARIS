@@ -8,13 +8,13 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="aaa/homepage.css ">
+  <link rel="stylesheet" href="CSS/homepage.css ">
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-md py-3 sticky-top navbar-light bg-white">
-    <div class="container-fluid ">
+    <div class="container ">
       <a class="navbar-brand bg-white" href="#">
         <img class="logo" src="img/asdw.png">
       </a>
