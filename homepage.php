@@ -1,7 +1,4 @@
-<?php 
-include 'API_homepage.php';
 
-?>
 <!doctype html>
 <html lang="en">
 
@@ -59,7 +56,7 @@ include 'API_homepage.php';
   <div class="row bg-white">
     <div class="center">
       <!--for post with pciture-->
-  <?php echo $posts_Data; ?>
+  
     </div>
   </div>
 
