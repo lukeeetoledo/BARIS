@@ -18,6 +18,10 @@ h1,h2,h3,h4,h5,h6,
   color: black;
   font-weight: 700;
 }
+.navbar .logo{
+  width: 80px;
+}
+
 a{
   color: var(--dark);
   text-decoration: none;
@@ -25,16 +29,13 @@ a{
 .navbar{
   box-shadow: black;
 }
-.logo{
-  width: 120px;
-}
+
 .navbar .nav-link{
   font-size: 15px;
   font-weight: 700;
 }
 
 .hero{
-  background-image: url(/img/bg15.png);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -113,13 +114,13 @@ color: #fff;
 }
 
 .col-img{
-  background-image: url(/img/Slide1.PNG);
+  background-image: url(../img/Slide1.PNG);
   background-position: center;
   background-size: cover;
   min-height: 500px;
 }
 .col-imgg{
-  background-image: url(/img/Slide1.PNG);
+  background-image: url(../img/Slide1.PNG);
   background-position: center;
   background-size: cover;
  min-height: 500px;
@@ -198,8 +199,6 @@ ul{
   color: var(--primary);
   padding-left: 8px;
 }
-
-
 
 .team-member img{
   height: 125px;

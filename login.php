@@ -1,9 +1,3 @@
-<?php
-session_start();
-if (isset($_SESSION["user_ID"])) {
-  header("Location: home.php");
-}
-?>
 
 <!DOCTYPE html>
 <!-- Created By CodingLab - www.codinglabweb.com -->
@@ -31,7 +25,7 @@ if (isset($_SESSION["user_ID"])) {
         <div class="input-box button">
           <input type="submit" name="" value="Login">
         </div>
-        <div class="text"><a href="#">Forgot password?</a></div>
+        <div class="text"><a href="forgotpass.php">Forgot password?</a></div>
             
               <div class="text sign-up-text">Don't have an account? <a href="signup.php">Signup Now</a></div>
       </form>
