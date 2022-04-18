@@ -41,7 +41,7 @@ if(isset($_POST['txt_Fname']) && isset($_POST['txt_Mname'])&& isset($_POST['txt_
   
     
     if(mysqli_num_rows($result_Check_username) > 0){
-        echo "ERROR_USERNAME_EXISTS";
+        echo "ERROR_EMAIL/USERNAME_EXISTS";
     }else{
         $result_Insert_user = mysqli_query($conn, $query_Insert_user);
         if ($result_Insert_user) {
@@ -62,7 +62,8 @@ if(isset($_POST['txt_Fname']) && isset($_POST['txt_Mname'])&& isset($_POST['txt_
             $_POST["txt_Province"] = "";
             $_POST["txt_Citymunicipality"] = "";
             $_POST["txt_Barangay"] = "";
-            echo "SUCCESS_USER_REGISTRATION";
+            echo "<script>alert(Account created!)</script>";
+            header("location:index.php");
         }else{
             echo "ERROR_USER_REGISTRATION"; 
           }
