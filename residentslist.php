@@ -15,13 +15,12 @@
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-white" id="sidebar-wrapper">
-            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><img src="img/FINAL.png" alt="" width="60" height="60">BARIS</div>
+            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><img src="img/FINAL.png" alt="" width="60" height="60"></i>BARIS</div>
             <div class="list-group list-group-flush my-3">
-                <a href="barangayside.php" class="list-group-item list-group-item-action bg-transparent second-text active"><i
-                        class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-project-diagram me-2"></i>Pending Request</a>
-                        <a href="residentslist.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-project-diagram me-2"></i>Resident's List</a>
+                <a href="barangayside.php" class="list-group-item list-group-item-action bg-transparent second-text active"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
+                <a href="Permitrequest.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-project-diagram me-2"></i>Pending Request</a>
+                <a href="" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-project-diagram me-2"></i>Resident's List</a>
+
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -34,17 +33,14 @@
                     <h2 class="fs-2 m-0">Dashboard</h2>
                 </div>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fas fa-user me-2"></i>Administrator
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -62,8 +58,8 @@
                     <div class="col-md-3">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">120</h3>
-                                <p class="fs-5">Total Request</p>
+                                <h3 class="fs-2">720</h3>
+                                <p class="fs-5">Total Residents</p>
                             </div>
                             <i class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                         </div>
@@ -72,6 +68,10 @@
 
                 <div class="row my-5">
                     <h3 class="fs-4 mb-3">Barangay Canlubang List</h3>
+                    <form class="example" action="action_page.php">
+                        <input type="text" placeholder="Last Name" name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
                     <div class="col">
                         <table class="table bg-white rounded shadow-sm  table-hover">
                             <thead>
@@ -80,9 +80,9 @@
                                     <th scope="col">Last Name</th>
                                     <th scope="col">First Name</th>
                                     <th scope="col">Middle Name</th>
-                                    <th scope="col">Request</th>
-                                    <th scope="col">Date Apply</th>
-                                    <th scope="col">Action</th>
+                                    <th scope="col">Birthday</th>
+                                    <th scope="col">Contact Number</th>
+                                    <th scope="col">Address</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -91,11 +91,11 @@
                                     <td>Manzon</td>
                                     <td>John Eduard</td>
                                     <td>Gubatan</td>
-                                    <td>Business Permit</td>
-                                    <td>04/03/2022</td>
-                                    <td><button type="button">Validate</button></td>
+                                    <td>11/30/1999</td>
+                                    <td>09190918865</td>
+                                    <td>Block 51 Lot 13 Asia 1</td>
                                 </tr>
-                            
+
                             </tbody>
                         </table>
                     </div>
@@ -112,7 +112,7 @@
         var el = document.getElementById("wrapper");
         var toggleButton = document.getElementById("menu-toggle");
 
-        toggleButton.onclick = function () {
+        toggleButton.onclick = function() {
             el.classList.toggle("toggled");
         };
     </script>

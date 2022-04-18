@@ -19,6 +19,8 @@
             <div class="list-group list-group-flush my-3">
                 <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
                 <a href="Permitrequest.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-project-diagram me-2"></i>Pending Request</a>
+                <a href="residentslist.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-project-diagram me-2"></i>Resident's List</a>
+
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -44,7 +46,7 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
                                 <li><a class="dropdown-item" href="#">Settings</a></li>
-                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                                <li><a class="dropdown-item" href="index.php">Logout</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -54,49 +56,15 @@
             <div class="container-fluid px-4">
                 <div class="row g-3 my-2">
                     <div class="col-md-3">
-                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
-                            <div>
-                                <h3 class="fs-2">720</h3>
-                                <p class="fs-5">Total Residents</p>
-                            </div>
-                            <i class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                            
                         </div>
                     </div>
                 </div>
 
                 <div class="row my-5">
-                    <h3 class="fs-4 mb-3">Barangay Canlubang List</h3>
-                    <form class="example" action="action_page.php">
-                        <input type="text" placeholder="Last Name" name="search">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                    </form>
-                    <div class="col">
-                        <table class="table bg-white rounded shadow-sm  table-hover">
-                            <thead>
-                                <tr>
-                                    <th scope="col" width="50">#</th>
-                                    <th scope="col">Last Name</th>
-                                    <th scope="col">First Name</th>
-                                    <th scope="col">Middle Name</th>
-                                    <th scope="col">Birthday</th>
-                                    <th scope="col">Contact Number</th>
-                                    <th scope="col">Address</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Manzon</td>
-                                    <td>John Eduard</td>
-                                    <td>Gubatan</td>
-                                    <td>11/30/1999</td>
-                                    <td>09190918865</td>
-                                    <td>Block 51 Lot 13 Asia 1</td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
+                    
+                    
+                    
                 </div>
 
             </div>
