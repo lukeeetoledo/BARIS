@@ -1,3 +1,7 @@
+<?php 
+include 'API_homepage.php';
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -13,7 +17,7 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-md py-3 sticky-top navbar-light bg-white">
+  <nav class="navbar navbar-expand-md sticky-top navbar-light bg-white" id = "navbar">
     <div class="container ">
       <a class="navbar-brand bg-white" href="#">
         <img class="logo" src="img/asdw.png">
@@ -21,7 +25,7 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="main_nav">
+      <div class="collapse navbar-collapse" id="main_nav" >
         <ul class="navbar-nav">
           <li class="nav-item active"> <a class="nav-link" href="#"><strong>Home</strong> </a> </li>
           <li class="nav-item"><a class="nav-link" href="userprofile.php"> <strong>Profile</strong> </a></li>
@@ -54,38 +58,7 @@
   <div class="row bg-white">
     <div class="center">
       <!--for post with pciture-->
-
-      <div class="card">
-        <h2>Post Title</h2>
-        <h5>Post ID:</h5>
-        <h5>Title description:</h5>
-        <h5>Date:</h5>
-        <div class="fakeimg"><img src="IMG/bg15.png" class="clsImg"></div>
-        <p>Some text..</p>
-      </div>
-
-      <!--for post with text only-->
-      <div class="card">
-        <h2>Post Title</h2>
-        <h5>Post ID:</h5>
-        <h5>Title description:</h5>
-        <h5>Date:</h5>
-        <p>Some text..</p>
-      </div>
-
-      <!--for post with video-->
-      <div class="card">
-        <h2>Post Title</h2>
-        <h5>Post ID:</h5>
-        <h5>Title description:</h5>
-        <h5>Date:</h5>
-        <video class="vid" controls autoplay>
-          <source src="IMG/vid.mp4" >
-          <source src="movie.ogg" type="video/ogg">
-          Your browser does not support the video tag.
-        </video>
-        <p>Some text..</p>
-      </div>
+  <?php echo $posts_Data; ?>
     </div>
   </div>
 
