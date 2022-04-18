@@ -38,7 +38,6 @@ if(isset($_POST['txt_Username']) && isset($_POST['txt_Password'])){
             $row_Select_barangay = mysqli_fetch_assoc($result_Get_barangay);
             $_SESSION['barangay_ID'] = $row_Select_barangay['user_Barangay'];
             header("Location: homepage.php");
-            header("Location: homepage.php");
         } else {
             echo "ERROR_LOGIN";
     }
