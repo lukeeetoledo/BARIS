@@ -54,7 +54,7 @@ include 'API_homepage.php';
   </nav>
 
 
-
+<!-- -->
   <div class="row bg-white">
     <div class="center">
       <!--for post with pciture-->
