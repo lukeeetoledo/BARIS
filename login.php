@@ -22,6 +22,7 @@
           <input type="password" name="txt_Password" placeholder="Enter Your Password" required>
           <div class="underline"></div>
         </div>
+        <div id = "Error"></div>
         <div class="input-box button">
           <input type="submit" name="" value="Login">
         </div>
@@ -35,3 +36,6 @@
   </body>
 </html>
 
+<script>
+
+</script>

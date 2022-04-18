@@ -1,4 +1,9 @@
 <?php 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require 'PHPMailer-master/src/Exception.php';
+require 'PHPMailer-master/src/PHPMailer.php';
+require 'PHPMailer-master/src/SMTP.php';
 include 'SYSTEM_config.php';
 
 if (isset($_POST['txt_email_cnumber'])) {
@@ -23,45 +28,41 @@ if (isset($_POST['txt_email_cnumber'])) {
             $result_Check_userID = mysqli_query($conn, $query_Check_userID);
             if (mysqli_num_rows($result_Check_userID) > 0) {
                 $row_CuID = mysqli_fetch_assoc($result_Check_userID);
+                 // EMAIL
+                $mail = new PHPMailer();
+                $mail->IsSMTP();
+                $mail->Mailer = "smtp";
+                $mail->SMTPDebug  = 1;
+                $mail->SMTPAuth   = TRUE;
+                $mail->SMTPSecure = "tls";
+                $mail->Port       = 587;
+                $mail->Host       = "smtp.gmail.com";
+                $mail->Username   = "baris.tupm@gmail.com";
+                $mail->Password   = "6X1lf3MH6SwW4h3i";
 
-                // EMAIL
-                $to = $email_cnumber;
-                $subject = "Reset Password - AcadeMx";
-
-                $message = "
-                <html>
-                <head>
-                <title>{$subject}</title>
-                </head>
-                <body>
-                <p><strong>Dear Mr./Ms. {$row_CuID['user_Lname']},</strong></p>
-                <p>Forgot Password? Not a problem. Click below link to reset your password.</p>
-                <p><a href='{$base_url}reset-password.php?token={$token}'>Reset Password</a></p>
-                <p>If not on the primary inbox search the mail at the *Spam Collection*. </p>
-                <p>Kindly report as not a spam. </p>
-                <p>The link will expire at the end of the day. </p>
-                </body>
-                </html>
-                ";
-
-                // Always set content-type when sending HTML email
-                $headers = "MIME-Version: 1.0" . "\r\n";
-                $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-                $headers .= "X-Priority: 3\r\n";
-                $headers .= "X-Mailer: PHP" . phpversion() . "\r\n";
-
-                // More headers
-                $headers .= "From: " . $my_email;
-
-                if (mail($to, $subject, $message, $headers)) {
+                $mail->IsHTML(true);
+                $mail->AddAddress($email_cnumber, "recipient-name");
+                $mail->SetFrom($my_email, "BaRIS");
+                $mail->AddReplyTo($my_email, "reply-to-name");
+                $mail->AddCC($email_cnumber, "cc-recipient-name");
+                $mail->Subject = "Reset Password - BaRIS";
+                $content = "<p><strong>Dear Mr./Ms. {$row_CuID['user_Lname']},</strong></p>
+                 <p>Forgot Password? Not a problem. Click below link to reset your password.</p>
+                 <p><a href='{$base_url}reset-password.php?token={$token}'>Reset Password</a></p>
+                 <p>If not on the primary inbox search the mail at the *Spam Collection*. </p>
+                 <p>Kindly report as not a spam. </p>
+                 <p>The link will expire at the end of the day. </p>";
+                $mail->MsgHTML($content);
+                if (!$mail->Send()) {
+                    echo "Error while sending Email.";
+                    var_dump($mail);
+                } else {
                     echo "<script>
                       window.setTimeout(function() {
-                        window.location = 'index.php';
+                         window.location = 'index.php';
                       }, 5000);
                       alert('We have sent a reset password link to your email - {$email_cnumber}. Check inbox or spam.');
                       </script>";
-                } else {
-                    echo "<script>alert('Mail not sent. Please try again.');</script>";
                 }
             }
         } else {
@@ -76,19 +77,29 @@ if (isset($_POST['txt_email_cnumber'])) {
             $result_Set_token_validity = mysqli_query($conn, $query_Set_token_validity);
             $receiver = $email_cnumber;
             $message = "BARIS_LINK: {$base_url}reset-password.php?token={$token}" . "\r\n" . "\r\n";
-            $smsAPICode = "TR-BARAN421180_1KFK3";
-            $smsAPIPassword = "6@1t2!k%1[";
+            $smsAPICode = "TR-BARIS046211_MC7ZA";
+            $smsAPIPassword = "vl8ly{i2bx";
     
             $send = new ItextMo();
             $send->itexmo($receiver, $message, $smsAPICode, $smsAPIPassword);
             if ($send == false) {
-                echo "Error";
+                echo "<script>alert('Mail not sent. Please try again.');</script>";
             } else {
-                echo "Success";
+                echo "<script>
+                      window.setTimeout(function() {
+                        window.location = 'index.php';
+                      }, 3000);
+                      alert('We have sent a reset password link to your email - {$email_cnumber}. Check inbox or spam.');
+                      </script>";
             }
         }
     } else {
-        echo "<script>alert('Email/Contact number not found.');</script>";
+        echo "<script>
+        window.setTimeout(function() {
+          window.location = 'forgotpass.php';
+        }, 3000);
+        alert('Email/Contact number not found.');
+        </script>";
     }
 }
 ?>

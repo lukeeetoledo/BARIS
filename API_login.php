@@ -22,7 +22,10 @@ if(isset($_POST['txt_Username']) && isset($_POST['txt_Password'])){
         $_SESSION['barangay_ID'] = $row_Select_barangay['user_Barangay'];
         header("Location: homepage.php");
     }else{
-        echo "ERROR_LOGIN";
+            echo "<script>
+                      window.location = 'login.php';
+                      alert('Email/Username/Password are incorrect.');
+                  </script>";
     }
     }
     else {
@@ -39,7 +42,10 @@ if(isset($_POST['txt_Username']) && isset($_POST['txt_Password'])){
             $_SESSION['barangay_ID'] = $row_Select_barangay['user_Barangay'];
             header("Location: homepage.php");
         } else {
-            echo "ERROR_LOGIN";
+            echo "<script>
+                      window.location = 'login.php';
+                      alert('Email/Username/Password are incorrect.');
+                  </script>";
     }
     }
 
