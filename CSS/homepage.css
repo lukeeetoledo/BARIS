@@ -9,6 +9,9 @@
 }
 body {
   font-family: Arial;
+
+	overflow: hidden;
+}
 }
 
 /* Create two unequal columns that floats next to each other */

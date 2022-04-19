@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -13,8 +12,7 @@
 </head>
 
 <body>
-
-  <nav class="navbar navbar-expand-md sticky-top navbar-light bg-white" id = "navbar">
+  <nav class="navbar navbar-expand-md sticky-top navbar-light bg-white" id="navbar">
     <div class="container ">
       <a class="navbar-brand bg-white" href="#">
         <img class="logo" src="img/asdw.png">
@@ -22,7 +20,7 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="main_nav" >
+      <div class="collapse navbar-collapse" id="main_nav">
         <ul class="navbar-nav">
           <li class="nav-item active"> <a class="nav-link" href="#"><strong>Home</strong> </a> </li>
           <li class="nav-item"><a class="nav-link" href="userprofile.php"> <strong>Profile</strong> </a></li>
@@ -52,11 +50,10 @@
   </nav>
 
 
-<!-- -->
+  <!-- -->
   <div class="row bg-white">
     <div class="center">
-      <!--for post with pciture-->
-  
+   
     </div>
   </div>
 
@@ -68,3 +65,6 @@
 </body>
 
 </html>
+<script>
+  
+</script>
