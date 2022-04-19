@@ -13,7 +13,7 @@
 
 <body>
   <nav class="navbar navbar-expand-md sticky-top navbar-light bg-white" id="navbar">
-    <div class="container ">
+    <div class="container-fluid">
       <a class="navbar-brand bg-white" href="#">
         <img class="logo" src="img/asdw.png">
       </a>
@@ -31,7 +31,6 @@
               <li><a class="dropdown-item" href="#"> Certificate of Indigency </a></li>
               <li><a class="dropdown-item" href="#"> Business Permit </a></li>
               <li><a class="dropdown-item" href="#"> Cedula </a></li>
-
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -49,13 +48,45 @@
     </div>
   </nav>
 
+  
 
   <!-- -->
-  <div class="row bg-white">
-    <div class="center">
-   
-    </div>
-  </div>
+
+  <section class="carousel" aria-label="Gallery">
+    <ol class="carousel__viewport">
+      <li id="carousel__slide1" tabindex="0" class="carousel__slide">
+        <div class="carousel__snapper">
+          <a href="#carousel__slide4" class="carousel__prev">Go to last slide</a>
+          <a href="#carousel__slide2" class="carousel__next">Go to next slide</a>
+          <img style="height:100%; width:100%;" src="images/3.jpg">
+        </div>
+      </li>
+      <li id="carousel__slide2" tabindex="1" class="carousel__slide">
+        <div class="carousel__snapper">
+          <a href="#carousel__slide1" class="carousel__prev">Go to previous slide</a>
+          <a href="#carousel__slide3" class="carousel__next">Go to next slide</a>
+          <img style="height:100%; width:100%;" src="images/1.jpg">
+
+        </div>
+      </li>
+      <li id="carousel__slide3" tabindex="2" class="carousel__slide">
+        <div class="carousel__snapper">
+          <a href="#carousel__slide2" class="carousel__prev">Go to previous slide</a>
+          <a href="#carousel__slide4" class="carousel__next">Go to next slide</a>
+          <img style="height:100%; width:100%;" src="images/2.jpg">
+        </div>
+      </li>
+      <li id="carousel__slide4" tabindex="3" class="carousel__slide">
+        <div class="carousel__snapper">
+          <a href="#carousel__slide3" class="carousel__prev">Go to previous slide</a>
+          <a href="#carousel__slide1" class="carousel__next">Go to first slide</a>
+          <img style="height:100%; width:100%;" src="images/4.jpg">
+
+        </div>
+      </li>
+    </ol>
+    
+  </section>
 
 
 
