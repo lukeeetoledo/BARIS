@@ -52,7 +52,7 @@
                     </ul>
                 </div>
             </nav>
-            <div class="container">
+            <div class="container" style="border:solid">
                 <div class="row">
 
                     <div class="col-md-8 col-md-offset-2">
@@ -81,10 +81,10 @@
                                 <p><span class="require">*</span> - required fields</p>
                             </div>
                             <form action="upload.php" method="post" enctype="multipart/form-data">
-    Select image to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload" multiple>
-    <input type="submit" value="Upload Image" name="submit">
-  </form>
+                                Select image to upload:
+                                <input type="file" name="fileToUpload" id="fileToUpload" multiple>
+                                <input type="submit" value="Upload Image" name="submit">
+                            </form>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">
                                     Create
@@ -92,7 +92,7 @@
                                 <button class="btn btn-default">
                                     Cancel
                                 </button>
-                                
+
                             </div>
                         </form>
                     </div>
