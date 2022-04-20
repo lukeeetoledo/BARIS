@@ -51,7 +51,13 @@
   
 
   <!-- -->
-
+  
+<div style="border-style: groove;">
+  <h4 style="text-align: center;padding-top:10px"> John Eduard Manzon</h4>
+  <p style="font-size:medium;">Subject:asdasd</p>
+  <p class="para">akscmkl</p1>
+  <h6 style="text-align: right; font-size: x-small;">Date:1/2/3</h6>
+</div>
   <section class="carousel" aria-label="Gallery">
     <ol class="carousel__viewport">
       <li id="carousel__slide1" tabindex="0" class="carousel__slide">
@@ -85,7 +91,6 @@
         </div>
       </li>
     </ol>
-    
   </section>
 
 
