@@ -69,8 +69,7 @@ if(isset($_POST['txt_Fname']) && isset($_POST['txt_Lname'])
             $_POST["txt_Barangay"] = "";
             $_POST["txt_Block"] = "";
             echo "<script>alert(Account created!)</script>";
-            sleep(10);
-            header("location:index.php");
+            header("location:../index.php");
         }else{
             echo $conn->error; 
           }

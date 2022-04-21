@@ -59,7 +59,7 @@ if (isset($_POST['txt_email_cnumber'])) {
                 } else {
                     echo "<script>
                       window.setTimeout(function() {
-                         window.location = 'index.php';
+                         window.location = '../index.php';
                       }, 5000);
                       alert('We have sent a reset password link to your email - {$email_cnumber}. Check inbox or spam.');
                       </script>";
@@ -87,7 +87,7 @@ if (isset($_POST['txt_email_cnumber'])) {
             } else {
                 echo "<script>
                       window.setTimeout(function() {
-                        window.location = 'index.php';
+                        window.location = '../index.php';
                       }, 3000);
                       alert('We have sent a reset password link to your email - {$email_cnumber}. Check inbox or spam.');
                       </script>";
@@ -96,7 +96,7 @@ if (isset($_POST['txt_email_cnumber'])) {
     } else {
         echo "<script>
         window.setTimeout(function() {
-          window.location = 'forgotpass.php';
+          window.location = '../forgotpass.php';
         }, 3000);
         alert('Email/Contact number not found.');
         </script>";

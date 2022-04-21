@@ -13,7 +13,7 @@
 
 
         }
-        xhttp.open("GET", "API_province.php?region=" + region_code);
+        xhttp.open("GET", "API/API_province.php?region=" + region_code);
         xhttp.send();
     }
 
@@ -29,7 +29,7 @@
             z.innerHTML = '<select  name="txt_Barangay" class="civilstatus"><option disabled selected>Barangay</option></select>';
 
         }
-        xhttp.open("GET", "API_citymun.php?region=" + region_code + "&province=" + province_code);
+        xhttp.open("GET", "API/API_citymun.php?region=" + region_code + "&province=" + province_code);
         xhttp.send();
     }
 
@@ -44,6 +44,6 @@
             x.innerHTML = this.responseText;
 
         }
-        xhttp.open("GET", "API_barangay.php?province=" + province_code + "&citymun=" + citymun_code);
+        xhttp.open("GET", "API/API_barangay.php?province=" + province_code + "&citymun=" + citymun_code);
         xhttp.send();
     }

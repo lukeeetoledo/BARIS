@@ -1,5 +1,5 @@
 <?php
-include 'API_region.php';
+include 'API/API_region.php';
 ?>
 
 <!DOCTYPE html>
@@ -23,8 +23,8 @@ include 'API_region.php';
 
 <body>
     <div class="container">
-        <form action="API_signup.php" method="POST">
-            <div class="form-content">
+        <form action="API/API_signup.php" method="POST">
+            <div class="form-content" style = "padding: 125px">
                 <a href="index.php">Back</a>
                 <div class="title"> Account Registration</div>
                 <div class="user-details">

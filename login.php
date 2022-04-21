@@ -11,7 +11,7 @@
   </head>
   <body>
     <div class="container">
-      <form action="API_login.php" method="POST">
+      <form action="API/API_login.php" method="POST">
         <a href="index.php">Back</a>
         <div class="title">Login</div>
         <div class="input-box underline">

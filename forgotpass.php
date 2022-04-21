@@ -16,7 +16,7 @@
 		<h1>Forgot Password</h1>
 		<h6 class="information-text">Enter your registered email to reset your password.</h6>
 		<div class="form-group">
-			<form action="API_request_forgot_password.php" method="POST">
+			<form action="API/API_request_forgot_password.php" method="POST">
 			<input type="text" name="txt_email_cnumber" id="user_email"/>
 			<p><label for="user_email">Email/Contact Number</label></p>
 			<input type="submit" value="Send Reset Request"/>

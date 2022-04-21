@@ -1,5 +1,5 @@
 <?php 
-include 'API_user_profile.php';
+include 'API/API_user_profile.php';
 
 ?>
 
