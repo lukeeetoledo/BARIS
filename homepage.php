@@ -74,7 +74,7 @@
          <p>Web Developer</p>
       </div>
     </div>
-    <div class="carousel-item" style="background-image:url('img/slide-2.jpg')">
+    <div class="carousel-item" style="background-image:url('img/luke.jpg')">
       <div class="container">
          <h2>I'm Jasmine</h2>
          <p>Web Developer</p>
@@ -97,7 +97,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-  <script src="bootstrap.bundle.min.js"</script>
+  <script src="bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

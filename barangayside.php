@@ -42,7 +42,7 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-user me-2"></i>Administrator
+                                <i class="fas fa-user me-2"></i>Barangay Official
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -104,46 +104,8 @@
     </div>
     </div>
     </div>
-    <div style="border-style: groove;">
-  <h4 style="text-align: center;padding-top:10px"> John Eduard Manzon</h4>
-  <p style="font-size:medium;">Subject:asdasd</p>
-  <p class="para">akscmkl</p1>
-  <h6 style="text-align: right; font-size: x-small;">Date:1/2/3</h6>
-</div>
-  <section class="carousel" aria-label="Gallery">
-    <ol class="carousel__viewport">
-      <li id="carousel__slide1" tabindex="0" class="carousel__slide">
-        <div class="carousel__snapper">
-          <a href="#carousel__slide4" class="carousel__prev">Go to last slide</a>
-          <a href="#carousel__slide2" class="carousel__next">Go to next slide</a>
-          <img style="height:100%; width:100%;" src="images/3.jpg">
-        </div>
-      </li>
-      <li id="carousel__slide2" tabindex="1" class="carousel__slide">
-        <div class="carousel__snapper">
-          <a href="#carousel__slide1" class="carousel__prev">Go to previous slide</a>
-          <a href="#carousel__slide3" class="carousel__next">Go to next slide</a>
-          <img style="height:100%; width:100%;" src="images/1.jpg">
-
-        </div>
-      </li>
-      <li id="carousel__slide3" tabindex="2" class="carousel__slide">
-        <div class="carousel__snapper">
-          <a href="#carousel__slide2" class="carousel__prev">Go to previous slide</a>
-          <a href="#carousel__slide4" class="carousel__next">Go to next slide</a>
-          <img style="height:100%; width:100%;" src="images/2.jpg">
-        </div>
-      </li>
-      <li id="carousel__slide4" tabindex="3" class="carousel__slide">
-        <div class="carousel__snapper">
-          <a href="#carousel__slide3" class="carousel__prev">Go to previous slide</a>
-          <a href="#carousel__slide1" class="carousel__next">Go to first slide</a>
-          <img style="height:100%; width:100%;" src="images/4.jpg">
-
-        </div>
-      </li>
-    </ol>
-  </section>
+    
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         var el = document.getElementById("wrapper");

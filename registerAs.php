@@ -11,10 +11,10 @@
 </head>
 
 <body>
-    <h1 style="text-align:center;">Who is logging In</h1>
+    <h1 style="text-align:center;">Register As?</h1>
         <div class="vertical-center">
-        <button class="btn btn-block"><i class="fa fa-users"> </i>Resident</button>
-        <button class="btn btn-block"><i class="fa-solid fa-briefcase"></i>Barangay Official</button>
+        <button class="btn btn-block"><i class="fa fa-users"> </i><a href="signup.php" style="text-decoration:none; font:black;">Resident</a></button>
+        <button class="btn btn-block"><i class="fa-solid fa-briefcase"></i><a href="signup.php" style="text-decoration:none; ">Barangay</a></button>
         </div>
 </body>
 
