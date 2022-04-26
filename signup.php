@@ -1,6 +1,4 @@
-<?php
-include 'API/API_region.php';
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -88,7 +86,6 @@ include 'API/API_region.php';
                         });
                     </script>
                     <div class="input-box">
-                    
                         <span class="details">Address<span style="color:red">*</span></span>
                         <!-- REGION -->
                         <?php echo $region_combo_box; ?>

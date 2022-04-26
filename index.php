@@ -50,7 +50,7 @@
         <a href="loginAs.php">
           <button class="btn btn-primary ms-lg-3">Login</button>
         </a>
-        <a href="registerAs.php">
+        <a href="signup.php">
           <button class="btn btn-primary ms-lg-3">Register</button>
         </a>
       </div>
