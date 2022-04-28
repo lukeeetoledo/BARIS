@@ -47,7 +47,7 @@
             <a class="nav-link" href="#documentation">Documentation</a>
           </li>
         </ul>
-        <a href="loginAs.php">
+        <a href="login.php">
           <button class="btn btn-primary ms-lg-3">Login</button>
         </a>
         <a href="signup.php">
