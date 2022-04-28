@@ -25,7 +25,7 @@ include 'API/API_region.php';
     <div class="container">
         <form action="API/API_signup.php" method="POST">
             <div class="form-content" style="padding: 125px">
-                <a href="index.php">Back</a>
+                <a href="userprofile.php">Back</a>
                 <div class="title"> Account Registration</div>
                 <div class="user-details">
                     <div class="input-box">
@@ -35,31 +35,25 @@ include 'API/API_region.php';
                         <form action="upload.php" method="post" enctype="multipart/form-data">
                             Select 1st Valid ID image to upload:<span style="color:red">*</span>
                             <input type="file" name="fileToUpload" id="fileToUpload">
-                            <input type="submit" value="Upload Image" name="submit">
                         </form>
                         <form action="upload.php" method="post" enctype="multipart/form-data">
                             Select 2nd Valid ID image to upload:<span style="color:red">*</span>
                             <input type="file" name="fileToUpload" id="fileToUpload">
-                            <input type="submit" value="Upload Image" name="submit">
                         </form>
                         <form action="upload.php" method="post" enctype="multipart/form-data">
                             Select Proof of Billing image to upload:<span style="color:red">*</span>
                             <input type="file" name="fileToUpload" id="fileToUpload">
-                            <input type="submit" value="Upload Image" name="submit">
                         </form>
                         <form action="upload.php" method="post" enctype="multipart/form-data">
                             Select selfie image to upaload:<span style="color:red">*</span>
                             <input type="file" name="fileToUpload" id="fileToUpload">
-                            <input type="submit" value="Upload Image" name="submit">
                         </form>
 
                         <div class="button">
                             <input type="submit" value="Register" />
                         </div>
                     </div>
-                    <div>
-                        <p class="text-center">Already have an account? <a href="login.php">Login</a></p>
-                    </div>
+                    
                 </div>
 
         </form>
