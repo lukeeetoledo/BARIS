@@ -8,12 +8,15 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- CSS only -->
   <link rel="stylesheet" href="CSS/homepage.css ">
+  <link rel="stylesheet" href="CSS/bootstrap.min.css">
+  <link rel="stylesheet"href="CSS/style.css">
 </head>
 
 <body>
   <nav class="navbar navbar-expand-md sticky-top navbar-light bg-white" id="navbar">
-    <div class="container-fluid">
+    <div class="container">
       <a class="navbar-brand bg-white" href="#">
         <img class="logo" src="img/asdw.png">
       </a>
@@ -49,58 +52,17 @@
   </nav>
 
   
-
   <!-- -->
   
-<div style="border-style: groove;">
-  <h4 style="text-align: center;padding-top:10px"> John Eduard Manzon</h4>
-  <p style="font-size:medium;">Subject:asdasd</p>
-  <p class="para">akscmkl</p1>
-  <h6 style="text-align: right; font-size: x-small;">Date:1/2/3</h6>
-</div>
-  <section class="carousel" aria-label="Gallery">
-    <ol class="carousel__viewport">
-      <li id="carousel__slide1" tabindex="0" class="carousel__slide">
-        <div class="carousel__snapper">
-          <a href="#carousel__slide4" class="carousel__prev">Go to last slide</a>
-          <a href="#carousel__slide2" class="carousel__next">Go to next slide</a>
-          <img style="height:100%; width:100%;" src="images/3.jpg">
-        </div>
-      </li>
-      <li id="carousel__slide2" tabindex="1" class="carousel__slide">
-        <div class="carousel__snapper">
-          <a href="#carousel__slide1" class="carousel__prev">Go to previous slide</a>
-          <a href="#carousel__slide3" class="carousel__next">Go to next slide</a>
-          <img style="height:100%; width:100%;" src="images/1.jpg">
-
-        </div>
-      </li>
-      <li id="carousel__slide3" tabindex="2" class="carousel__slide">
-        <div class="carousel__snapper">
-          <a href="#carousel__slide2" class="carousel__prev">Go to previous slide</a>
-          <a href="#carousel__slide4" class="carousel__next">Go to next slide</a>
-          <img style="height:100%; width:100%;" src="images/2.jpg">
-        </div>
-      </li>
-      <li id="carousel__slide4" tabindex="3" class="carousel__slide">
-        <div class="carousel__snapper">
-          <a href="#carousel__slide3" class="carousel__prev">Go to previous slide</a>
-          <a href="#carousel__slide1" class="carousel__next">Go to first slide</a>
-          <img style="height:100%; width:100%;" src="images/4.jpg">
-
-        </div>
-      </li>
-    </ol>
-  </section>
 
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <script src="bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
 <script>
-  
+
 </script>

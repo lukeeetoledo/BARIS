@@ -15,12 +15,10 @@
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
         <div class="bg-white" id="sidebar-wrapper">
-            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><img src="img/FINAL.png" alt="" width="60" height="60"></i>BARIS</div>
+            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><img src="img/FINAL.png" alt="" width="60" height="60">BARIS</div>
             <div class="list-group list-group-flush my-3">
-                <a href="barangayside.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
-                <a href="Permitrequest.php" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fas fa-project-diagram me-2"></i>Pending Request</a>
-                <a href="" class="list-group-item list-group-item-action bg-transparent second-text active"><i class="fas fa-project-diagram me-2"></i>Resident's List</a>
-                
+
+                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active"><i class="fas fa-project-diagram me-2"></i>Barangay Application</a>
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -58,8 +56,8 @@
                     <div class="col-md-3">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2">720</h3>
-                                <p class="fs-5">Total Residents</p>
+                                <h3 class="fs-2">1</h3>
+                                <p class="fs-5">Pending Application</p>
                             </div>
                             <i class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                         </div>
@@ -67,33 +65,38 @@
                 </div>
 
                 <div class="row my-5">
-                    <h3 class="fs-4 mb-3">Barangay Canlubang List</h3>
-                    <form class="example" action="action_page.php">
-                        <input type="text" placeholder="Last Name" name="search">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                    </form>
+                    <h3 class="fs-4 mb-3">For Approval</h3>
                     <div class="col">
                         <table class="table bg-white rounded shadow-sm  table-hover">
                             <thead>
                                 <tr>
                                     <th scope="col" width="50">#</th>
-                                    <th scope="col">Last Name</th>
-                                    <th scope="col">First Name</th>
-                                    <th scope="col">Middle Name</th>
-                                    <th scope="col">Birthday</th>
-                                    <th scope="col">Contact Number</th>
-                                    <th scope="col">Address</th>
+                                    <th scope="col">Valid ID</th>
+                                    <th scope="col">Valid ID</th>
+                                    <th scope="col">Proof of Billing</th>
+                                    <th scope="col">Selfie</th>
+                                    <th scope="col"> Decision</th>
+
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td>Manzon</td>
-                                    <td>John Eduard</td>
-                                    <td>Gubatan</td>
-                                    <td>11/30/1999</td>
-                                    <td>09190918865</td>
-                                    <td>Block 51 Lot 13 Asia 1</td>
+                                    <td><a href="img/crisjahn.jpg">
+                                            <img style="max-width: 100%;" src="" alt="1st Valid ID">
+                                        </a></td>
+                                    <td><a href="img/crisjahn.jpg">
+                                            <img style="max-width: 100%;" src="" alt="2nd Valid ID">
+                                        </a></td>
+                                    <td><a href="img/crisjahn.jpg">
+                                            <img style="max-width: 100%;" src="" alt="Proof of Billing">
+                                        </a></td>
+                                    <td><a href="img/crisjahn.jpg">
+                                            <img style="max-width: 100%;" src="" alt="Selfie">
+                                        </a></td>
+                                    <td><button type="button">Accept</button></td>
+                                    <td><button type="button">Reject</button></td>
+
                                 </tr>
 
                             </tbody>
