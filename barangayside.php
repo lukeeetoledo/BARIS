@@ -63,13 +63,13 @@
                         <form action="" method="POST">
 
                             <div class="form-group has-error">
-                                <label for="slug">Slug <span class="require">*</span> <small>(This field use in url path.)</small></label>
+                                <label for="slug">Title <span class="require">*</span> <small>(This field use in url path.)</small></label>
                                 <input type="text" class="form-control" name="slug" />
-                                <span class="help-block">Field not entered!</span>
+            
                             </div>
 
                             <div class="form-group">
-                                <label for="title">Title <span class="require">*</span></label>
+                                <label for="title">Subject <span class="require">*</span></label>
                                 <input type="text" class="form-control" name="title" />
                             </div>
 
