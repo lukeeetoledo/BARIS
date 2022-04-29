@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="CSS/barangayside.css" />
-    <link rel="stylesheet" href="CSS/homepag.css" />
+    <link rel="stylesheet" href="CSS/homepage.css" />
     <title></title>
 </head>
 
@@ -53,59 +53,72 @@
                     </ul>
                 </div>
             </nav>
-            <div class="container" style="border:solid">
+            <div class="container" style="border:solid; padding: 5px;" >
                 <div class="row">
 
                     <div class="col-md-8 col-md-offset-2">
 
                         <h1>Create post</h1>
-
-                        <form action="" method="POST">
-
+                        <form action="API/API_create_post.php" method="POST" enctype='multipart/form-data'>
+                        <div class="form-group">
+                                <label for="Type">Type</label>
+                                <select name="txt_Type" id="type">
+                                    <option value="Annoucement">Announcement</option>
+                                </select>
+                        </div>
                             <div class="form-group has-error">
                                 <label for="slug">Title <span class="require">*</span> <small>(This field use in url path.)</small></label>
-                                <input type="text" class="form-control" name="slug" />
-            
+                                <input type="text" class="form-control" name="txt_Title" id ="title" minlength="4" maxlength="36"/>
+                                <div id="text_area1_remain">36 Characters Remaining</div>
                             </div>
-
-                            <div class="form-group">
-                                <label for="title">Subject <span class="require">*</span></label>
-                                <input type="text" class="form-control" name="title" />
-                            </div>
-
+                            
                             <div class="form-group">
                                 <label for="description">Description</label>
-                                <textarea rows="5" class="form-control" name="description"></textarea>
+                                <textarea rows="5" class="form-control" name="txt_Text_Content" id= "description" minlength="4" maxlength="325"></textarea>
                             </div>
+                            <div id="text_area2_remain">325 Characters Remaining</div>
+                        
+                        <script>
+                            const myTitle = document.getElementById('title');
+                            const remainingChars1 = document.getElementById('text_area1_remain');
+                            const MAX_CHARS1 = 36;
 
-                            <div class="form-group">
-                                <p><span class="require">*</span> - required fields</p>
-                            </div>
-                            <form action="upload.php" method="post" enctype="multipart/form-data">
+                            const myTextArea = document.getElementById('description');
+                            const remainingChars2 = document.getElementById('text_area2_remain');
+                            const MAX_CHARS2 = 325;
+
+                            myTitle.addEventListener('input', () => {
+                                const remaining = MAX_CHARS1 - myTitle.value.length;
+                                const color = remaining < MAX_CHARS1 * 0.1 ? 'red' : null;
+                                remainingChars1.textContent = `${remaining} Characters Remaining`;
+                                remainingChars1.style.color = color;
+                            });
+                            myTextArea.addEventListener('input', () => {
+                                const remaining = MAX_CHARS2 - myTextArea.value.length;
+                                const color = remaining < MAX_CHARS2 * 0.1 ? 'red' : null;
+                                remainingChars2.textContent = `${remaining} Characters Remaining`;
+                                remainingChars2.style.color = color;
+                            });
+                        </script>
+                        
                                 Select image to upload:
-                                <input type="file" name="fileToUpload" id="fileToUpload" multiple>
-                                <input type="submit" value="Upload Image" name="submit">
-                            </form>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary">
-                                    Create
-                                </button>
+                               <input type="file" name="txt_Image[]" id="txt_Image" enctype='multipart/form-data' multiple >
+                                <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Create</button>
                                 <button class="btn btn-default">
                                     Cancel
                                 </button>
-
                             </div>
                         </form>
                     </div>
 
                 </div>
             </div>
+
         </div>
     </div>
     </div>
     </div>
-    
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         var el = document.getElementById("wrapper");

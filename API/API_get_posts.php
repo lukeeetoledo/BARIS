@@ -2,7 +2,7 @@
 // include 'SYSTEM_sessions.php';
 include 'SYSTEM_config.php';
 
-$barangay_ID = '54';
+$barangay_ID = '15';
 $limit = 2; 
 $data = "";
 $query_Get_posts1 = "SELECT * FROM barangay_post_tbl WHERE barangay_ID = '$barangay_ID' ";
@@ -81,7 +81,7 @@ if(mysqli_num_rows($result_Get_posts1) > 0){
                 <div id="title">'.$row['post_Title'].'</div>
                 <hr>
                 <div style="border:solid 1px white; padding: 8px; border-radius:5px">
-                <p>'.$row['post_Text_content'].'</p>
+                <p>'.$row['post_Text_Content'].'</p>
                 </div><br>
                 <div id="'.$post_ID.'" class="carousel" data-interval="false">
                     <!-- Indicators -->
@@ -109,6 +109,6 @@ if(mysqli_num_rows($result_Get_posts1) > 0){
         echo $data;
     }
 }else{
-    echo "div class='btn btn-success info' style='width:100%'>No post yet in this barangay.</div>";
+    echo "<div class='btn btn-success info' style='width:100%'>No post yet in this barangay.</div>";
 }
 ?>
