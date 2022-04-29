@@ -48,20 +48,17 @@ if (isset($_POST['txt_email_cnumber'])) {
                 $mail->Subject = "Reset Password - BaRIS";
                 $content = "<p><strong>Dear Mr./Ms. {$row_CuID['user_Lname']},</strong></p>
                  <p>Forgot Password? Not a problem. Click below link to reset your password.</p>
-                 <p><a href='{$base_url}reset-password.php?token={$token}'>Reset Password</a></p>
+                 <p><a href='{$base_url}confirmpass.php?token={$token}&uid={$user_ID}'>Reset Password</a></p>
                  <p>If not on the primary inbox search the mail at the *Spam Collection*. </p>
                  <p>Kindly report as not a spam. </p>
                  <p>The link will expire at the end of the day. </p>";
-                $mail->MsgHTML($content);
                 if (!$mail->Send()) {
                     echo "Error while sending Email.";
                     var_dump($mail);
                 } else {
                     echo "<script>
-                      window.setTimeout(function() {
-                         window.location = '../index.php';
-                      }, 5000);
                       alert('We have sent a reset password link to your email - {$email_cnumber}. Check inbox or spam.');
+                      window.location.href='../index.php';
                       </script>";
                 }
             }
@@ -76,7 +73,7 @@ if (isset($_POST['txt_email_cnumber'])) {
             $query_Set_token_validity = "UPDATE system_accounts_tbl SET account_Token = '$token', token_Validity = '$token_Validty' WHERE user_ID = '$user_ID'";
             $result_Set_token_validity = mysqli_query($conn, $query_Set_token_validity);
             $receiver = $email_cnumber;
-            $message = "BARIS_LINK: {$base_url}reset-password.php?token={$token}" . "\r\n" . "\r\n";
+            $message = "BARIS_LINK: {$base_url}confirmpass.php?token={$token}&uid={$user_ID}" . "\r\n" . "\r\n";
             $smsAPICode = "TR-BARIS046211_MC7ZA";
             $smsAPIPassword = "vl8ly{i2bx";
     
@@ -86,10 +83,8 @@ if (isset($_POST['txt_email_cnumber'])) {
                 echo "<script>alert('Mail not sent. Please try again.');</script>";
             } else {
                 echo "<script>
-                      window.setTimeout(function() {
-                        window.location = '../index.php';
-                      }, 3000);
-                      alert('We have sent a reset password link to your email - {$email_cnumber}. Check inbox or spam.');
+                      alert('We have sent a reset password link to your your mobile number - {$email_cnumber}.');
+                      window.location.href='../index.php';
                       </script>";
             }
         }

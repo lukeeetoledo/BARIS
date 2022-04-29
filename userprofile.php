@@ -61,7 +61,7 @@ includeHTML();
                         <h4 class="m-t-sm"><?php echo $full_Name ?></h4>
                         <a href="#" class="btn btn-xs btn-primary mb-3">Request for Changes</a>
                         <a href="#" class="btn btn-xs btn-primary mb-3">Request for Verification</a>
-                        <a href="barangaysingup.php" class="btn btn-xs btn-primary mb-3">Register as Official</a>
+                        <a href="barangay_registration.php" class="btn btn-xs btn-primary mb-3">Register my Barangay</a>
                     </div>
                 </div>
         

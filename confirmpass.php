@@ -1,3 +1,5 @@
+<?php include 'API/API_check_token_validity.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,12 +16,13 @@
 		<h1>Forgot Password</h1>
 		<h6 class="information-text">Enter your new password.</h6>
 		<div class="form-group">
-			<input style="background-color:white;"type="password" name="user_email" id="user_password">
-			<input style="float:left;" type="checkbox" onclick="myFunction()">Show Password
+			<form action="API/API_reset_password.php?token=<?php echo $_GET['uid']?>" method="POST" enctype='multipart/form-data'>
+			<input style="background-color:white;"type="password" name='txt_first_pass' id="user_password" required>
 			<p><label for="username">New Password</label></p>
-			<input style="background-color:white;"type="password" name="user_email" id="user_password">
+			<input style="background-color:white;"type="password" name='txt_second_pass' id="user_password" required>
 			<p><label for="username">Confirm Password</label></p>
-			<button onclick="showSpinner()">Reset Password</button>
+			<input type="submit" value="Change Pass"/>
+			</form>
 		</div>
 		<div class="footer">
 			<h5>New here? <a href="signup.php">Sign Up.</a></h5>
