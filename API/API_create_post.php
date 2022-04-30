@@ -3,7 +3,7 @@ include 'SYSTEM_config.php';
 session_start();
 
 $barangayID = "15";
-$user_ID = "BaRIS_626155ea96f12";
+$user_ID = "BaRIS_626cfc429cb9b";
 // if (isset($_SESSION["barangay_ID"])&& isset($_SESSION["user_ID"])){
 //     header("Location: ./index.php"); 
 // }
@@ -22,6 +22,7 @@ if(isset($_POST['txt_Title']) && isset($_POST['txt_Text_Content'])
     $barangay_ID =  $barangayID;
     $post_Title = mysqli_real_escape_string($conn,$_POST['txt_Title']);
     $post_Text_Content = mysqli_real_escape_string($conn,$_POST['txt_Text_Content']);
+    $creator_ID = $user_ID;
     $post_Date = mysqli_real_escape_string($conn, date("Y-m-d  [h:i A]"));
     $post_Type = mysqli_real_escape_string($conn,$_POST['txt_Type']);
     //$txt_Files = $_FILES['txt_Image']['name'][0];
@@ -45,8 +46,8 @@ if(isset($_POST['txt_Title']) && isset($_POST['txt_Text_Content'])
     }
    
            
-        $query_Insert_post = "INSERT INTO barangay_post_tbl (post_ID, barangay_ID,  post_Title, post_Text_Content, post_Creator, post_Date, post_Type, post_Media_Status) 
-        VALUES ('$post_ID','$barangay_ID', '$post_Title', '$post_Text_Content', '$post_Creator', '$post_Date', '$post_Type', '$post_Media_Stats')";
+        $query_Insert_post = "INSERT INTO barangay_post_tbl (post_ID, barangay_ID,  post_Title, post_Text_Content, creator_ID, post_Creator, post_Date, post_Type, post_Media_Status) 
+        VALUES ('$post_ID','$barangay_ID', '$post_Title', '$post_Text_Content', '$creator_ID', '$post_Creator', '$post_Date', '$post_Type', '$post_Media_Stats')";
 
          if($conn->query($query_Insert_post) == TRUE){
            echo '<script>alert("POST UPLOADED"); window.location.href="../barangayside.php";</script>';

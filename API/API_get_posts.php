@@ -2,7 +2,7 @@
 // include 'SYSTEM_sessions.php';
 include 'SYSTEM_config.php';
 
-$barangay_ID = '54';
+$barangay_ID = '15';
 $limit = 2; 
 $data = "";
 $query_Get_posts1 = "SELECT * FROM barangay_post_tbl WHERE barangay_ID = '$barangay_ID' ";

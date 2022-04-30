@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 .btn{
     border-radius: 40px;
     border: 0;
@@ -30,5 +31,5 @@ h1{
 border-style: groove;
 }
 .body{
-    background-color: ;
+    font-family: 'Poppins',sans-serif;
 }
