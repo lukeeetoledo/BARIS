@@ -1,4 +1,4 @@
-
+<?php include 'API/API_region.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">

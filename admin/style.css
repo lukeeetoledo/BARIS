@@ -27,7 +27,7 @@
   
   #wrapper {
     overflow-x: hidden;
-    background: linear-gradient(to right, #7395AE 0%, #659DBD 100%);
+    background: linear-gradient(to right , #7395AE 0%, #659DBD 100%);
   }
   
   #sidebar-wrapper {
@@ -93,4 +93,20 @@ label small {
     color: #999;
     font-weight: normal;
 }
+a{
+  color:white;
+}
+td{
+  color: white;
+  font-size: 18px;
+}
 
+#dashboard{
+  border-radius: 20px;
+  background-color: #659DBD;
+  border:3px outset #659DBD;
+  margin: 10px;
+}
+#dashboard:hover{
+  background-color: #4C84A4;
+}

@@ -16,7 +16,7 @@ if(isset($_SESSION['admin'])){
 </head>
 <body style="background-color: #659DBD;">
     <center>
-        <div style="margin-top:120px; background-color:#bd8565; width:50%;padding:25px;border-radius:20px">
+        <div style="margin-top:120px; background-color:#bd8565; width:50%;padding:25px;border-radius:20px;border:5px outset #bd8565;">
     <form action="validate.php" method="POST">
         <input type="text" name="txt_admin" id="admin" required/><br>
         <label for="admin">Username</label><br>

@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/barangay_registration.css">
+    <link rel="stylesheet" href="CSS/account_verification.css">
     <title>Account Verification</title>
 </head>
 
 <body>
     <div>
         <h1>Account Verification</h1>
-        <form action="/action_page.php">
+        <form action="API/API_verify_account.php" method="POST" enctype='multipart/form-data'>
         <label id="Condition">Required[<span>*</span>]</label><br>
 
             <label for="Res_stats">Residential Status<span>*</span></label>
@@ -33,7 +33,7 @@
             <label for="Self_Portrait">Self Portrait<span>*</span></label>
             <input type="file" id="Self_Portrait" name="txt_Self_Portrait" required />
 
-            <input type="submit" value="Submit">
+            <input type="submit" name="submit" value="Submit">
         </form>
     </div>
     <p>© 2022 Barangay and Residents' Information System</p>

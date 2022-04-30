@@ -82,14 +82,10 @@
     text-align: center;
    }
     li#logout{
-       background-color: #659DBD;
+       background-color: #3a3b3c;
        border-radius: 2px;
        font-size: 16px;
    }
-   li#logout:hover{
-    background-color: #3a3b3c;
-    color: #659DBD;
-}
    .dropdown li:hover {
     background-color: #659DBD;
    }
