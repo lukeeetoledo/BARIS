@@ -9,11 +9,11 @@
 	<meta name="description" content="Simple Forgot Password Page Using HTML and CSS">
 	<meta name="keywords" content="forgot password page, basic html and css">
     <link rel="stylesheet" href="CSS/forgotpass.css">
-	<title>Forgot Password Page</title>
+	<title>Change Password</title>
 </head>
 <body>
 <div class="row">
-		<h1>Forgot Password</h1>
+		<h1>Change Password</h1>
 		<h6 class="information-text">Enter your new password.</h6>
 		<div class="form-group">
 			<form action="API/API_reset_password.php?token=<?php echo $_GET['uid']?>" method="POST" enctype='multipart/form-data'>

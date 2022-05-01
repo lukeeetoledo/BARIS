@@ -52,9 +52,9 @@ if (isset($_POST['txt_email_cnumber'])) {
                  <p>If not on the primary inbox search the mail at the *Spam Collection*. </p>
                  <p>Kindly report as not a spam. </p>
                  <p>The link will expire at the end of the day. </p>";
+                 $mail->Body = $content;
                 if (!$mail->Send()) {
-                    echo "Error while sending Email.";
-                    var_dump($mail);
+                    echo $mail->ErrorInfo;
                 } else {
                     echo "<script>
                       alert('We have sent a reset password link to your email - {$email_cnumber}. Check inbox or spam.');

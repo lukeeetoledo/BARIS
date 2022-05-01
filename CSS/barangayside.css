@@ -27,8 +27,9 @@
 }
 
 #wrapper {
+  display: none;
   overflow-x: hidden;
-  background: linear-gradient(to right , #7395AE 0%, #659DBD 100%);
+  background: linear-gradient(to right , #7395AE 30%, #659DBD 70%);
 }
 
 #sidebar-wrapper {

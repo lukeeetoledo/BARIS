@@ -1,7 +1,9 @@
 <?php
-   
-   // Include the database configuration file
    require_once('SYSTEM_config.php');
+   session_start();
+   if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SESSION['barangay_ID'])){
+      header("location:../index.php");
+  }
    $limit = 5;
    $num_rows = 0;
    if (isset($_POST['page_no'])) {

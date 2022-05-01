@@ -14,13 +14,19 @@ if(isset($_POST['txt_Username']) && isset($_POST['txt_Password'])){
 
     if(mysqli_num_rows($result_Check_user) > 0){
         $row_Select_userID = mysqli_fetch_assoc($result_Check_user);
+        $user_Type = $row_Select_userID['account_Type'];
+        $_SESSION["user_Type"] = $user_Type;
         $_SESSION["user_ID"] = $row_Select_userID['user_ID'];
         $user_ID = $_SESSION['user_ID'];
         $query_Get_barangay = "SELECT * FROM barangay_users_tbl WHERE user_ID = '$user_ID'";
         $result_Get_barangay = mysqli_query($conn,$query_Get_barangay);
         $row_Select_barangay = mysqli_fetch_assoc($result_Get_barangay);
         $_SESSION['barangay_ID'] = $row_Select_barangay['user_Barangay'];
-        header("Location: ../homepage.php");
+        if($user_Type == "3"){
+            header("Location: ../select_type.php");
+        }else{
+            header("Location: ../homepage.php");
+        }
     }else{
             echo "<script>
                       window.location = '../login.php';
@@ -34,13 +40,19 @@ if(isset($_POST['txt_Username']) && isset($_POST['txt_Password'])){
 
         if (mysqli_num_rows($result_Check_user) > 0) {
             $row_Select_userID = mysqli_fetch_assoc($result_Check_user);
+            $user_Type = $row_Select_userID['account_Type'];
             $_SESSION["user_ID"] = $row_Select_userID['user_ID'];
             $user_ID = $_SESSION['user_ID'];
             $query_Get_barangay = "SELECT * FROM barangay_users_tbl WHERE user_ID = '$user_ID'";
             $result_Get_barangay = mysqli_query($conn,$query_Get_barangay);
             $row_Select_barangay = mysqli_fetch_assoc($result_Get_barangay);
             $_SESSION['barangay_ID'] = $row_Select_barangay['user_Barangay'];
-            header("Location: ../homepage.php");
+            if($user_Type == "3"){
+                header("Location: ../select_type.php");
+            }
+            else{
+                header("Location: ../homepage.php");
+            }
         } else {
             echo "<script>
                       window.location = '../login.php';

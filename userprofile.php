@@ -1,6 +1,5 @@
 <?php 
 include 'API/API_user_profile.php';
-
 ?>
 
 <!DOCTYPE html>

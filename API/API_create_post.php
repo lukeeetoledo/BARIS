@@ -2,11 +2,12 @@
 include 'SYSTEM_config.php';
 session_start();
 
-$barangayID = "15";
-$user_ID = "BaRIS_626cfc429cb9b";
-// if (isset($_SESSION["barangay_ID"])&& isset($_SESSION["user_ID"])){
-//     header("Location: ./index.php"); 
-// }
+if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SESSION['barangay_ID'])){
+    header("location:../index.php");
+  }
+
+$barangayID = $_SESSION['barangay_ID'];
+$user_ID = $_SESSION['user_ID'];
 
 date_default_timezone_set("Asia/Manila");
 
@@ -50,7 +51,7 @@ if(isset($_POST['txt_Title']) && isset($_POST['txt_Text_Content'])
         VALUES ('$post_ID','$barangay_ID', '$post_Title', '$post_Text_Content', '$creator_ID', '$post_Creator', '$post_Date', '$post_Type', '$post_Media_Stats')";
 
          if($conn->query($query_Insert_post) == TRUE){
-           echo '<script>alert("POST UPLOADED"); window.location.href="../barangayside.php";</script>';
+           echo '<script>alert("POST UPLOADED"); window.location.href="../barangay_dashboard.php";</script>';
         }else{
             echo "error";
             echo $conn->error;

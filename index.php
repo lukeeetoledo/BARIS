@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -47,12 +47,14 @@
             <a class="nav-link" href="#documentation" style="color: white;">Documentation</a>
           </li>
         </ul>
+        <center>
         <a href="login.php">
           <button class="btn btn-primary ms-lg-3">Login</button>
         </a>
         <a href="signup.php">
           <button class="btn btn-primary ms-lg-3">Register</button>
         </a>
+        </center>
       </div>
     </div>
   </nav>

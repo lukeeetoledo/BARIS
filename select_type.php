@@ -11,11 +11,14 @@
 </head>
 
 <body>
-    <h1 style="text-align:center;">Who is logging In</h1>
-        <div class="vertical-center">
-        <button class="btn btn-block"><i class="fa fa-users"> </i>Resident</button>
-        <button class="btn btn-block"><i class="fa-solid fa-briefcase"></i>Barangay Official</button>
+    <center>
+        <div><img src="img/asdw.png" alt="BaRIS_Logo"></div>
+        <label style="color: white;">LOG IN AS:</label>
+        <div style="margin:auto">
+            <button class="btn-1" onclick="window.location.href='homepage_loader.php';">Resident</button>
+            <button class="btn-1" onclick="window.location.href='barangay_loader.php';">Barangay Official</button>
         </div>
+    </center>
 </body>
 
 </html>

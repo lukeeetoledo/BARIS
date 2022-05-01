@@ -1,8 +1,11 @@
 <?php 
-// include 'SYSTEM_sessions.php';
 include 'SYSTEM_config.php';
+session_start();
+if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SESSION['barangay_ID'])){
+    header("location:../index.php");
+}
 
-$barangay_ID = '54';
+$barangay_ID = $_SESSION['barangay_ID'];
 $limit = 2; 
 $data = "";
 $query_Get_posts1 = "SELECT * FROM barangay_post_tbl WHERE barangay_ID = '$barangay_ID' ";
@@ -46,7 +49,7 @@ if(mysqli_num_rows($result_Get_posts1) > 0){
                              </video>
                          </center>';
                         }
-                        $indicator .= '<li data-target="#myCarousel" data-slide-to="' . $i . '" class="active"></li>';
+                        $indicator .= '<li data-target="#'.$post_ID.'" data-slide-to="' . $i . '" class="active"></li>';
                         $items .=   '<div class="item active">
                                     '.$media.'
                                     </div>';

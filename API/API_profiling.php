@@ -2,16 +2,16 @@
 include 'SYSTEM_config.php';
 session_start();
 
+if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SESSION['barangay_ID'])){
+    header("location:../index.php");
+}
 
-$User_ID = "BaRIS_626155ea96f12";
+$User_ID = $_SESSION['user_ID'];
 $complete_name = "Luke Toledo";
 $birthdate ="11/26/99";
 $address = "704 Tabon 3 Kawit Cavite";
 $sex = "Male";
 
-// if (isset($_SESSION["barangay_ID"])&& isset($_SESSION["user_ID"])){
-//     header("Location: ./index.php");
-// }
 date_default_timezone_set("Asia/Manila");
 
 if(isset($_POST['txt_Father_Name']) && isset($_POST['txt_Father_Occupation'])

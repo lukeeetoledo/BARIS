@@ -1,9 +1,11 @@
 <?php 
 include 'SYSTEM_config.php';
 session_start();
-if(!isset($_SESSION['barangay_ID']) && !isset($_SESSION['user_ID'])){
-    header("location:./index.php");
+
+if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SESSION['barangay_ID'])){
+  header("location:index.php");
 }
+
 $user_ID = $_SESSION['user_ID'];
 
 // USER_INFO

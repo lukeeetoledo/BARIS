@@ -32,7 +32,8 @@
  </li>
  <li><a href="/">Pricing</a></li>
  <li><a href="/">Contact</a></li>
-<li id="logout"><a href="API/API_logout.php">LogOut</a></li>
+ <li><button class="btn btn-success" onclick="window.location.href='barangay_loader.php';">Switch to Barangay</button></li>
+ <li><button class="btn btn-info" onclick="window.location.href='API/API_logout.php';">Logout</button></li>
  
  </div>
  </ul>

@@ -1,7 +1,3 @@
-<?php
-session_start();
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,14 +18,15 @@ session_start();
 <body>
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
-        <div id="sidebar-wrapper" style="background-color: #bd8565;border:5px outset #bd8565;">
+        <div id="sidebar-wrapper" style="background-color: #bd8565;">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold border-bottom" style="color: #659DBD;"><img src="img/FINAL.png" alt="" width="60" height="60"><span style="text-shadow: 1px 1px 2px rgba(0, 0,0, 1)">BaRIS</span> </div>
             <div class="list-group list-group-flush my-3" >
-                <div id="dashboard"> <a href="barangayside.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center" >Dashboard</a></div>
-                <div id="dashboard"> <a href="viewpost.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center" ></i>Viewpost</a></div>
-                <div id="dashboard"> <a href="permitrequest.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center" >Document Requests</a></div>
-                <div id="dashboard"> <a href="residentslist.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center" >Resident List</a></div>
-                <button class="btn btn-dark" onclick="window.location.href='logout.php';" style="margin-top:40vh; margin-left: 10px; margin-right: 10px;">Log Out</button>
+            <button class="btn btn-success" onclick="window.location.href='homepage_loader.php';" style="margin-left: 10px; margin-right: 10px;">Switch to Resident</button><hr>
+                <div id="dashboard"> <a href="barangay_Dashboard.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Dashboard</a></div>
+                <div id="dashboard"> <a href="barangay_Viewpost.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center"></i>Viewpost</a></div>
+                <div id="dashboard"> <a href="barangay_Permit_request.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Document Requests</a></div>
+                <div id="dashboard"> <a href="barangay_List.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Resident List</a></div><hr>
+                <button class="btn btn-dark" onclick="window.location.href='API/API_logout.php';" style="margin-left: 10px; margin-right: 10px;">Log Out</button>
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
