@@ -4,12 +4,14 @@ session_start();
 
 $target_dir = "saved_files/documents/";
 $uploadOk = 1;
+if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SESSION['barangay_ID'])){
+    header("location:../index.php");
+}
+$barangayID = $_SESSION['barangay_ID'];
+$user_ID = $_SESSION['user_ID'];
 
 if(isset($_POST['submit'])){
-    // $user_ID = $_SESSION['user_ID'];
-    // $barangay_ID = $_SESSION['barangay_ID'];
-    $user_ID = 'BaRIS_625d52fe5c308';
-    $barangay_ID = '54';
+    
     $query_Get_info = "SELECT * FROM barangay_users_tbl WHERE user_ID = '$user_ID'";
     $result_Get_info = mysqli_query($conn, $query_Get_info);
 

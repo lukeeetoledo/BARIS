@@ -59,30 +59,31 @@
                 </ul>
             </div>
             </nav>
-            <div class="container" style="border:solid; padding: 5px;">
+            <div class="container" style="border:solid;">
                 <div class="row">
 
-                    <div class="col-md-8 col-md-offset-2">
+                    <div>
 
-                        <h1>Create post</h1>
+                    <div style="margin-top: 10px; margin-bottom: 10px; padding: 15px;background-color:#bd8565;font-weight: bold;">Create Post
+                    </div>    
+                    <!-- <div name = "createpost"><h1>Create post</h1></div> -->
                         <form action="API/API_create_post.php" method="POST" enctype='multipart/form-data'>
                             <div class="form-group">
                                 <label for="Type">Type</label>
                                 <select name="txt_Type" id="type">
-                                    <option value="Annoucement">Announcement</option>
+                                    <option value="Annoucement" required>Announcement</option>
                                 </select>
                             </div>
                             <div class="form-group has-error">
-                                <label for="slug">Title <span class="require">*</span> <small>(This field use in url path.)</small></label>
-                                <input type="text" class="form-control" name="txt_Title" id="title" minlength="4" maxlength="36" />
+                                <textarea name="txt_Title" type="text" class="form-control" id="title" minlength="4" maxlength="36" required placeholder="Title"></textarea>
                                 <div id="text_area1_remain">36 Characters Remaining</div>
                             </div>
 
                             <div class="form-group">
-                                <label for="description">Description</label>
-                                <textarea rows="5" class="form-control" name="txt_Text_Content" id="description" minlength="4" maxlength="325"></textarea>
+                                <textarea  rows="5" class="form-control" name="txt_Text_Content" id="description" minlength="4" maxlength="325" required placeholder="Description"></textarea>
+                                <div id="text_area2_remain">325 Characters Remaining</div>
                             </div>
-                            <div id="text_area2_remain">325 Characters Remaining</div>
+                           
 
                             <script>
                                 const myTitle = document.getElementById('title');
@@ -108,12 +109,9 @@
                             </script>
 
                             Select image to upload:
-                            <input type="file" name="txt_Image[]" id="txt_Image" enctype='multipart/form-data' multiple>
+                            <input type="file" name="txt_Image[]" id="txt_Image" enctype='multipart/form-data' multiple/>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Create</button>
-                                <button class="btn btn-default">
-                                    Cancel
-                                </button>
+                                <button style = "width: 100%; margin-top:10px" type="submit" class="btn btn-primary">Create</button>
                             </div>
                         </form>
                     </div>
