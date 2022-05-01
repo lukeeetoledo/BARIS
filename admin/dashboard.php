@@ -27,10 +27,10 @@ if (!isset($_SESSION['admin'])) {
         <!-- Sidebar -->
         <div id="sidebar-wrapper" style="background-color: #bd8565;border:5px outset #bd8565;">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold border-bottom" style="color: #659DBD;"><img src="../img/FINAL.png" alt="" width="60" height="60"><span style="text-shadow: 1px 1px 2px rgba(0, 0,0, 1)">BaRIS</span> </div>
-            <div class="list-group list-group-flush my-3" >
-                <div id="dashboard"> <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center" >Application List</a></div>
-                <div id="dashboard"> <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center" ></i>Barangay List</a></div>
-               
+            <div class="list-group list-group-flush my-3">
+                <div id="dashboard"> <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Application List</a></div>
+                <div id="dashboard"> <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center"></i>Barangay List</a></div>
+
                 <button class="btn btn-dark" onclick="window.location.href='logout.php';" style="margin-top:40vh; margin-left: 10px; margin-right: 10px;">Log Out</button>
             </div>
         </div>
@@ -50,8 +50,9 @@ if (!isset($_SESSION['admin'])) {
                     <div class="col-md-3">
                         <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                             <div>
-                                <h3 class="fs-2" id="count"></h3>
+                                <h3 class="fs-2" id="count">0</h3>
                                 <p class="fs-5">Pending Application</p>
+
                             </div>
                             <i class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i>
                         </div>
@@ -59,7 +60,14 @@ if (!isset($_SESSION['admin'])) {
                 </div>
 
                 <div class="row my-5">
-                    <h3 class="fs-4 mb-3">For Approval</h3>
+                    <div style="display: flex; justify-content:space-between;margin-bottom:5px">
+                        <h3 class="fs-4 mb-3" style="display: inline-block;">For Approval</h3>
+                        <select id="filter" name="txt_Filtered" onchange="List_filter(this.value);" style="display: inline-block;">
+                            <option value="0">Pending</option>
+                            <option value="1">Approved</option>
+                            <option value="2">Rejected</option>
+                        </select>
+                    </div>
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 col-sm-12" style="overflow-x:auto;">
@@ -103,31 +111,62 @@ if (!isset($_SESSION['admin'])) {
 </html>
 
 <script type="text/javascript">
-  $(document).ready(function(){
-      loadMoreData();
-      function loadMoreData(page){
-        $.ajax({
-          url : "load_data.php",
-          type: "POST",
-          cache:false,
-          data:{page_no:page},
-          success:function(data){
-            if (data) {
-              $("#pagination").remove();
-              document.getElementById("count").innerHTML = data.slice(-1); 
-              $("#loadData").append(data);
-            }else{
-              $(".loadbtn").prop("disabled", true);
-              $(".loadbtn").html('That is All');
-            }
-          }
+    $(document).ready(function() {
+        loadMoreData();
+
+        function loadMoreData(page) {
+            var selected = document.getElementById("filter").value;
+            $.ajax({
+                url: "load_data.php",
+                type: "POST",
+                cache: false,
+                data: {
+                    page_no: page,
+                    filter: selected
+                },
+                success: function(data) {
+                    if (data) {
+                        $("#pagination").remove();
+                        document.getElementById("count").innerHTML = data.slice(-1);
+                        $("#loadData").append(data);
+                    } else {
+                        $(".loadbtn").prop("disabled", true);
+                        $(".loadbtn").html('That is All');
+                    }
+                }
+            });
+        }
+
+        $(document).on('click', '.loadbtn', function() {
+            $(".loadbtn").remove();
+            var pId = $(this).data("id");
+            loadMoreData(pId);
         });
-      }
-      
-      $(document).on('click', '.loadbtn', function(){
-        $(".loadbtn").html('Loading...');
-        var pId = $(this).data("id");
-        loadMoreData(pId);
-      });
-  });
+    });
+</script>
+
+<script>
+    function List_filter(selected){
+        $(document).ready(function() {
+        loadMoreData();
+
+        function loadMoreData(page) {
+            $.ajax({
+                url: "load_data.php",
+                type: "POST",
+                cache: false,
+                data: {
+                    page_no: page,
+                    filter: selected
+                },
+                success: function(data) {
+                    if (data) {
+                        $("#loadData").find("tr:gt(0)").remove();
+                        $("#loadData").append(data);
+                    }
+                }
+            });
+        }
+    });
+    }
 </script>

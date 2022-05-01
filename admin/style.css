@@ -110,3 +110,7 @@ td{
 #dashboard:hover{
   background-color: #4C84A4;
 }
+
+#action{
+  margin: 2px;
+}

@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <title>Document</title>
+    <title><?php echo $user_ID; ?></title>
 </head>
 <body>
-<center style="background-color:#e4e6eb">
+<center style="background-color:black">
     <div class="container" style=" padding-top: 108px !important; ">
         <div id="content" class="content p-0">
             <div class="profile-header">
@@ -18,11 +18,11 @@
         
                 <div class="profile-header-content">
                     <div class="profile-header-img">
-                        <img class="profilepic"src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" />
+                        <img class="profilepic"src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Profile_image" style="background-color: white;"/>
                     </div>
         
                     <div class="profile-header-info">
-                        <h4 class="m-t-sm"><?php echo $full_Name ?></h4>
+                        <h4 class="m-t-sm" style="color: white;"><?php echo $full_Name ?></h4>
                     </div>
                 </div>
         
