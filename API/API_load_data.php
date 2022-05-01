@@ -4,6 +4,8 @@
    if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SESSION['barangay_ID'])){
       header("location:../index.php");
   }
+
+   $barangay_ID = $_SESSION['barangay_ID'];
    $limit = 5;
    $num_rows = 0;
    if (isset($_POST['page_no'])) {
@@ -11,7 +13,7 @@
    }else{
       $page = 0;
    }
-   $sql = "SELECT * FROM barangay_post_tbl LIMIT $page, $limit";
+   $sql = "SELECT * FROM barangay_post_tbl WHERE barangay_ID = '$barangay_ID' LIMIT $page, $limit";
    
    $query = $conn->query($sql);
    if ($query->num_rows > 0) {
@@ -29,7 +31,7 @@
                <td>{$row["creator_ID"]}</td>
                <td>{$row["post_Creator"]}</td>
                <td>{$row["post_Date"]}</td>
-               <td><a href='view_post.php?token={$row["post_ID"]}' target='blank'>View</a><button class='btn btn-danger' type='button' style='margin:5px'>Delete</button></td>
+               <td><a class='btn btn-info' href='view_post.php?token={$row["post_ID"]}' target='blank'>View</a><button class='btn btn-danger' type='button' style='margin:5px'>Delete</button></td>
              </tr>";
    }
    $output .= "<tbody>";

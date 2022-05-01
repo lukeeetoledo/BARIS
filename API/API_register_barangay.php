@@ -67,11 +67,14 @@ if(isset($_POST['submit'])){
         if($uploadOk == 0){
             echo '<script>alert("Error Uploading File/s."); window.location.href="../barangay_registration.php";</script>';
         }
+        $query_Update_status = "UPDATE system_accounts_tbl SET account_Type = '1' WHERE user_ID = '$requestor_ID'";
+        $result_Update_status = mysqli_query($conn,$query_Update_status);
+        $_SESSION['user_Type'] = "1";
         $query_Insert_registration = "INSERT INTO system_brgy_registration_tbl SET process_ID = '$process_ID', requestor_ID = '$requestor_ID', requestor_Position = '$requestor_Position',
         requestor_Res_Stat = '$requestor_Res_status', valid_ID_1 = '$valid_ID1', valid_ID_2 = '$valid_ID2', address_Proof = '$address_Proof', requestor_Image = '$requestor_Image', request_Status = '$request_Status'";
         $result_Insert_registration = mysqli_query($conn, $query_Insert_registration);
 
-        if(!$result_Insert_registration){
+        if(!$result_Insert_registration || !$result_Update_status){
             echo '<script>alert("Barangay Registration Failed."); window.location.href="../barangay_registration.php";</script>';
         }else{
             if( move_uploaded_file($_FILES["txt_Valid_ID1"]["tmp_name"], "../".$valid_ID1) && 

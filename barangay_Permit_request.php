@@ -1,3 +1,9 @@
+<?php 
+      session_start();
+      if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SESSION['barangay_ID'])){
+      header("location:index.php");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +24,7 @@
 <body>
     <div class="d-flex" id="wrapper">
         <!-- Sidebar -->
+        <center>
         <div id="sidebar-wrapper" style="background-color: #bd8565;">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold border-bottom" style="color: #659DBD;"><img src="img/FINAL.png" alt="" width="60" height="60"><span style="text-shadow: 1px 1px 2px rgba(0, 0,0, 1)">BaRIS</span> </div>
             <div class="list-group list-group-flush my-3" >
@@ -29,6 +36,7 @@
                 <button class="btn btn-dark" onclick="window.location.href='API/API_logout.php';" style="margin-left: 10px; margin-right: 10px;">Log Out</button>
             </div>
         </div>
+        </center>
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->

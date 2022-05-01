@@ -1,5 +1,23 @@
 <?php 
 include 'API/API_user_profile.php';
+
+$verified = "";
+$pending = "";
+$style_2_3 = "";
+$style_4 = "";
+$style_0 = "";
+if($user_Type == "3" || $user_Type == "2"){
+    $verified = '<a class = "btn btn-primary" href="#" style="font-size: 16px; pointer-events: none;"> &#10003 Verified</a>';
+    $style_2_3 = "display:none;";
+}else if($user_Type == "4"){
+    $style_4 = "display:none;";
+}else if($user_Type == "1"){
+    $pending = '<a class = "btn btn-warning" href="#" style="font-size: 16px; pointer-events: none;">⏱ Pending</a>';
+    $style_2_3 = "display:none;";
+    $style_4 = "display:none;";
+}else{
+    $style_0 = "display:none;";
+}
 ?>
 
 <!DOCTYPE html>
@@ -39,13 +57,16 @@ function includeHTML() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
+
 </head>
 <body>
 <div w3-include-html="navbar.php"></div>
 <script>
 includeHTML();
 </script>
-<center style="background-color:#e4e6eb">
+<center style="background-color:#e4e6eb" >
     <div class="container" style=" padding-top: 108px !important; ">
         <div id="content" class="content p-0">
             <div class="profile-header">
@@ -57,10 +78,11 @@ includeHTML();
                     </div>
         
                     <div class="profile-header-info">
-                        <h4 class="m-t-sm"><?php echo $full_Name ?></h4>
-                        <a href="#" class="btn btn-xs btn-primary mb-3">Request for Changes</a>
-                        <a href="#" class="btn btn-xs btn-primary mb-3">Request for Verification</a>
-                        <a href="barangay_registration.php" class="btn btn-xs btn-primary mb-3">Register my Barangay</a>
+                        <h4 class="m-t-sm"><?php echo $full_Name?></h4>
+                        <a class = 'btn btn-success' href="#" style="font-size: 16px; <?php echo $style_4; echo $style_0; ?> ">Request for Edit</a>
+                        <a class = 'btn btn-success' href="#" style ='font-size: 16px; <?php echo $style_2_3; echo $style_4; ?>'>Verify My Account</a>
+                        <a class = 'btn btn-success' href="barangay_registration.php" style ='font-size: 16px; <?php echo $style_2_3; echo $style_0; ?>'>Register my Barangay</a>
+                        <?php echo $verified; echo $pending;?>
                     </div>
                 </div>
         

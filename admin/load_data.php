@@ -39,7 +39,7 @@
                <td><a class = 'btn btn-outline-light' href='../{$row["valid_ID_2"]}' target = 'blank'>ID#2</a></td>
                <td><a class = 'btn btn-outline-light' href='../{$row["address_Proof"]}' target = 'blank'>Bill</a></td>
                <td><a class = 'btn btn-outline-light'  href='../{$row["requestor_Image"]}' target = 'blank'>Requestor</a></td>
-               <td><a class = 'btn btn-success' href='registration_accept.php?token={$row["requestor_ID"]}&prcs={$row["process_ID"]}' id = 'action' {$display}>Accept</a><a class = 'btn btn-danger' href='registration_reject.php?token={$row["requestor_ID"]}&prcs={$row["process_ID"]}' target = 'blank' id = 'action' {$display}>Reject</a></td>
+               <td><a class = 'btn btn-success' href='registration_accept.php?token={$row["requestor_ID"]}&prcs={$row["process_ID"]}' id = 'action' {$display}>Accept</a><a class = 'btn btn-danger' href='registration_reject.php?token={$row["requestor_ID"]}&prcs={$row["process_ID"]}' id = 'action' {$display}>Reject</a></td>
              </tr>";
    }
    $output .= "<tbody>";

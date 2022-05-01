@@ -7,6 +7,8 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
 }
 
 $user_ID = $_SESSION['user_ID'];
+$barangay_ID = $_SESSION['barangay_ID'];
+$user_Type = $_SESSION['user_Type'];
 
 // USER_INFO
 $full_Name = "";

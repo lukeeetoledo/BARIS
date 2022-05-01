@@ -1,3 +1,13 @@
+<?php 
+      session_start();
+      $style = "";
+      if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SESSION['barangay_ID'])){
+      header("location:index.php");
+  }
+  if($_SESSION['user_Type']!="3"){
+    $style = "style = 'display:none'";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
  <head>
@@ -30,9 +40,9 @@
  <li><a href="/">Cedula </a></li>
  </ul>
  </li>
- <li><a href="/">Pricing</a></li>
+ <li><a href="/">Report</a></li>
  <li><a href="/">Contact</a></li>
- <li><button class="btn btn-success" onclick="window.location.href='barangay_loader.php';">Switch to Barangay</button></li>
+ <li <?php echo $style; ?>><button class="btn btn-success" onclick="window.location.href='barangay_loader.php';">Switch to Barangay</button></li>
  <li><button class="btn btn-info" onclick="window.location.href='API/API_logout.php';">Logout</button></li>
  
  </div>

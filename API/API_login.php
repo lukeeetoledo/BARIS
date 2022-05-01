@@ -41,6 +41,7 @@ if(isset($_POST['txt_Username']) && isset($_POST['txt_Password'])){
         if (mysqli_num_rows($result_Check_user) > 0) {
             $row_Select_userID = mysqli_fetch_assoc($result_Check_user);
             $user_Type = $row_Select_userID['account_Type'];
+            $_SESSION["user_Type"] = $user_Type;
             $_SESSION["user_ID"] = $row_Select_userID['user_ID'];
             $user_ID = $_SESSION['user_ID'];
             $query_Get_barangay = "SELECT * FROM barangay_users_tbl WHERE user_ID = '$user_ID'";

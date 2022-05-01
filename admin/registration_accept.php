@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include 'SYSTEM_config.php';
 date_default_timezone_set('Asia/Manila');
 
@@ -20,6 +21,7 @@ if(isset($_GET['token']) && isset($_GET['prcs'])){
         if($result_Insert_registration){
             $query_Update_status_A = "UPDATE system_brgy_registration_tbl SET request_Status = '1' WHERE process_ID = '$registration_ID' ;";
             $result_Update_status_A = mysqli_query($conn, $query_Update_status_A);
+            $_SESSION['user_Type'] = "3";
             $query_Update_status_B = "UPDATE system_accounts_tbl SET account_Type = '3' WHERE user_ID = '$creator_ID'";
             $result_Update_status_B = mysqli_query($conn, $query_Update_status_B);
             if($result_Update_status_A){

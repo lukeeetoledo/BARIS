@@ -36,11 +36,21 @@ if(isset($_POST['txt_Fname']) && isset($_POST['txt_Lname'])
     $account_Contactnumber= mysqli_real_escape_string($conn,$_POST['txt_Contactnumber']);
     $account_Email= mysqli_real_escape_string($conn,$_POST['txt_Email']);
 
+        $user_Type = ""; 
+        $query_Look_brgy = "SELECT * FROM system_registered_bgy_tbl WHERE barangay_ID = '$user_Barangay'";
+        $result_Look_brgy = mysqli_query($conn,$query_Look_brgy);
+        
+        if(mysqli_num_rows($result_Look_brgy) > 0 ){
+            $user_Type = "0";
+        }else{
+            $user_Type = "4";
+        }
+
         $query_Insert_user = "INSERT INTO barangay_users_tbl (user_ID, user_Fname, user_Mname, user_Lname, user_Suffix, user_Gender, user_Birthdate, user_Civilstatus, user_Religion,  
         user_Region, user_Province, user_Citymunicipality, user_Barangay, user_Block) VALUES ('$user_ID', '$user_Fname', '$user_Mname', '$user_Lname', '$user_Suffix', '$user_Gender', '$user_Birthdate','$user_Civilstatus','$user_Religion',
         '$user_Region','$user_Province','$user_Citymunicipality','$user_Barangay', '$user_Block')";
         $query_Check_user_email = "SELECT * FROM system_accounts_tbl WHERE account_Username = '$account_Username' OR account_Email = '$account_Email'";
-        $query_Create_account = "INSERT INTO system_accounts_tbl SET user_ID = '$user_ID', account_Username = '$account_Username', account_Email = '$account_Email',  account_Contactnumber = '$account_Contactnumber', account_Password = '$account_Password', account_Type = '0'";
+        $query_Create_account = "INSERT INTO system_accounts_tbl SET user_ID = '$user_ID', account_Username = '$account_Username', account_Email = '$account_Email',  account_Contactnumber = '$account_Contactnumber', account_Password = '$account_Password', account_Type = '$user_Type'";
 
     $result_Check_username = mysqli_query($conn, $query_Check_user_email);
   
