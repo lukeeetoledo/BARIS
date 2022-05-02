@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
   <!-- Required meta tags -->
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="img/Logo_192.png">
+  <title>BaRIS</title>
 </head>
 
 <body style="background-color:#e4e6eb">
@@ -160,89 +161,6 @@
 <div class="col-lg-6 col-imgg"></div>
 </section>
 
-<!--How to-->
-
-<!--<section id="Projects">
-  <div class="container-fluid">
-    <div class="row mb-5">
-      <div class="col-md-8 mx-auto text-center">
-        <h2 class="text-primary">Projects</h2>
-        <p class="text-black">The Barangay Development Projects are socioeconomic development projects geared towards the provision of farm-to-market roads, health centers, electrification, water and sanitation facilities, schools, and livelihood projects</p>
-</div>
-      </div>
-      <div class="row g-3">
-        <div class="col-lg-4 col-sm-6">
-          <div class="project">
-            <img src="img/proj1.jpeg" alt="">
-            <div class="overlay">
-              <div>
-                <h4 class="text-white">Labor Jobs</h4>
-              <h6 class="text-white">Sept 3,2021</h6>
-              </div>
-            </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <div class="project">
-          <img src="img/proj2.jpeg" alt="">
-          <div class="overlay">
-            <div>
-              <h4 class="text-white">Free Dental Check-Up</h4>
-            <h6 class="text-white">March 3,2021</h6>
-            </div>
-          </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-sm-6">
-      <div class="project">
-        <img src="img/proj3.jpeg" alt="">
-        <div class="overlay">
-          <div>
-            <h4 class="text-white">Infant Vaccinnation</h4>
-          <h6 class="text-white">October 22,2021</h6>
-          </div>
-        </div>
-    </div>
-  </div>
-  <div class="col-lg-4 col-sm-6">
-    <div class="project">
-      <img src="img/proj4.jpeg" alt="">
-      <div class="overlay">
-        <div>
-          <h4 class="text-white">Water Pump</h4>
-        <h6 class="text-white">April 28,2021</h6>
-        </div>
-      </div>
-  </div>
-</div>
-<div class="col-lg-4 col-sm-6">
-  <div class="project">
-    <img src="img/proj5.jpeg" alt="">
-    <div class="overlay">
-      <div>
-        <h4 class="text-white">Court Rehabilitation</h4>
-      <h6 class="text-white">December 20,2021</h6>
-      </div>
-    </div>
-</div>
-</div>
-<div class="col-lg-4 col-sm-6">
-  <div class="project">
-    <img src="img/proj6.jpeg" alt="">
-    <div class="overlay">
-      <div>
-        <h4 class="text-white">Monitoring Facility for COVID</h4>
-      <h6 class="text-white">May 10,2020</h6>
-      </div>
-    </div>
-</div>
-</div>
-    </div>
-  </div>
-</section>  -->
-
-
-<!-- TEAM -->
 <section id="team">
   <div class="container">
       <div class="row mb-5">

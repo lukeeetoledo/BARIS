@@ -8,7 +8,7 @@
 	<meta name="description" content="Simple Forgot Password Page Using HTML and CSS">
 	<meta name="keywords" content="forgot password page, basic html and css">
 	<link rel="stylesheet" href="CSS/forgotpass.css">
-	<title>Forgot Password Page - HTML + CSS</title>
+	<title>Send Request</title>
 </head>
 
 <body>
