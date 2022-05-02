@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@700&display=swap');
+body{
+  background-color: #e4e6eb;
+  font-family: 'Poppins',sans-serif;
+}
+.collection{
+    padding-top: 110px;
+    display: flex;
+    justify-content: center;
+}
+.card{
+    margin: auto;
+    width: 100%;
+    max-width: 720px;
+    height: auto;
+    background-color: #659DBD;
+    border: 1px solid red;
+    padding: 20px;
+}
+#tab{
+    font-size: 24px;
+    border-bottom: solid 5px black;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+span{
+    color: red;
+}
+input{
+    width: 90%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+label{
+    margin-top: 5px;
+}
+
+#submit{
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.dropdown-menu{
+    overflow: scroll;
+    height: 250px;
+    width: 100%;
+}
+.btn-group{
+    width: 100%;
+}
+.btn-default{
+    width: 100%;
+}
+#reason{
+    padding: 5px;
+    margin-bottom: 10px;
+    overflow: scroll;
+    width: 100%;
+}

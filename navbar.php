@@ -30,7 +30,7 @@
  <div class="menu">
  <li><a href="homepage.php">Home</a></li>
  <li><a href="userprofile.php">Profile</a></li>
- <li class="services">
+ <li class="head_dropdown">
  <a href="#">Documents</a>
  <!-- DROPDOWN MENU -->
  <ul class="dropdown">
@@ -40,7 +40,13 @@
  <li><a href="/">Cedula </a></li>
  </ul>
  </li>
- <li><a href="/">Report</a></li>
+ <li class="head_dropdown">
+  <a href="#">Services</a>
+  <ul class="dropdown">
+ <li><a href="services_complain.php">Report a complain</a></li>
+ <li><a href="services_support.php">Request for support</a></li>
+ </ul>
+</li>
  <li><a href="/">Contact</a></li>
  <li <?php echo $style; ?>><button class="btn btn-success" onclick="window.location.href='barangay_loader.php';">Switch to Barangay</button></li>
  <li><button class="btn btn-info" onclick="window.location.href='API/API_logout.php';">Logout</button></li>

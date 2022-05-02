@@ -111,7 +111,7 @@
                                                 <div style="margin-top: 10px;">
                                                     <label for="prof_Addressstatus">Address Status </label>
                                                     <select name="prof_Addressstatus" id="prof_Addressstatus">
-                                                        <option name="prof_Onwed" value="Onwed">Onwed</option>
+                                                        <option name="prof_Onwed" value="Onwed">Owned</option>
                                                         <option name="prof_Rent" value="Rent">Rent</option>
                                                     </select>
                                                 </div>

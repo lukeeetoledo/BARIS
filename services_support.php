@@ -40,22 +40,13 @@ function includeHTML() {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="CSS/homepage.css">
 
-  <title>Homepage</title>
+  <title>Services</title>
 </head>
 
 <body>
 
 <div w3-include-html="navbar.php"></div>
-
-  <div class="collection">
-    <!-- START -->
-    <div id="loadData"></div>
-    <!-- END -->
-  </div>
   
   <script>
 includeHTML();
@@ -63,32 +54,3 @@ includeHTML();
 
 </body>
 </html>
-
-<script type="text/javascript">
-  $(document).ready(function(){
-      loadMoreData();
-      function loadMoreData(page){
-        $.ajax({
-          url : "API/API_get_posts.php",
-          type: "POST",
-          cache:false,
-          data:{page_no:page},
-          success:function(data){
-            if (data) {
-              $("#pagination").remove();
-              $("#loadData").append(data);
-            }else{
-              $(".loadbtn").prop("disabled", true);
-              $(".loadbtn").html('That is All');
-            }
-          }
-        });
-      }
-      
-      $(document).on('click', '.loadbtn', function(){
-        $(".loadbtn").html('Loading...');
-        var pId = $(this).data("id");
-        loadMoreData(pId);
-      });
-  });
-</script>

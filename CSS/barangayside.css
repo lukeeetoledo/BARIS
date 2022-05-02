@@ -35,7 +35,7 @@ body{
 }
 
 #sidebar-wrapper {
-  min-height: 100vh;
+  min-height: 100%;
   margin-left: -15rem;
   -webkit-transition: margin 0.25s ease-out;
   -moz-transition: margin 0.25s ease-out;
@@ -54,6 +54,7 @@ body{
 
 #page-content-wrapper {
   min-width: 100vw;
+  min-height: 100vh;
 }
 
 #wrapper.toggled #sidebar-wrapper {

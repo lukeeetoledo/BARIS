@@ -62,7 +62,7 @@
     padding: 5px 14px;
    }
    /* DROPDOWN MENU */
-   .services {
+   .head_dropdown {
     position: relative; 
    }
    .dropdown {
@@ -91,7 +91,7 @@
    .dropdown li:hover {
     background-color: #659DBD;
    }
-   .services:hover .dropdown {
+   .head_dropdown:hover .dropdown {
     display: block;
    }
    a:hover{
