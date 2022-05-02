@@ -69,12 +69,8 @@
             </nav>
             <div class="container" style="border:solid;">
                 <div class="row">
-
-                    <div>
-
-                    <div style="margin-top: 10px; margin-bottom: 10px; padding: 15px;background-color:#bd8565;font-weight: bold;">Create Post
+                <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1>Create Post</h1>
                     </div>    
-                    <!-- <div name = "createpost"><h1>Create post</h1></div> -->
                         <form action="API/API_create_post.php" method="POST" enctype='multipart/form-data'>
                             <div class="form-group">
                                 <label for="Type">Type</label>
@@ -82,11 +78,11 @@
                                     <option value="Annoucement" required>Announcement</option>
                                 </select>
                             </div>
-                            <div class="form-group has-error">
-                                <textarea name="txt_Title" type="text" class="form-control" id="title" minlength="4" maxlength="36" required placeholder="Title"></textarea>
-                                <div id="text_area1_remain">36 Characters Remaining</div>
+                            <div class="form-group">
+                            <textarea rows = 1; name="txt_Title" type="text" class="form-control" id="title" minlength="4" maxlength="36" required placeholder="Title"></textarea>
+                            <div id="text_area1_remain">36 Characters Remaining</div>    
                             </div>
-
+                            
                             <div class="form-group">
                                 <textarea  rows="5" class="form-control" name="txt_Text_Content" id="description" minlength="4" maxlength="325" required placeholder="Description"></textarea>
                                 <div id="text_area2_remain">325 Characters Remaining</div>
