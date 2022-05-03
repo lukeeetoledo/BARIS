@@ -51,7 +51,7 @@ if(isset($_POST['txt_Title']) && isset($_POST['txt_Text_Content'])
         VALUES ('$post_ID','$barangay_ID', '$post_Title', '$post_Text_Content', '$creator_ID', '$post_Creator', '$post_Date', '$post_Type', '$post_Media_Stats')";
 
          if($conn->query($query_Insert_post) == TRUE){
-           echo '<script>alert("POST UPLOADED"); window.location.href="../barangay_dashboard.php";</script>';
+           echo '<script>alert("Post Uploaded"); window.location.href="../barangay_dashboard.php";</script>';
         }else{
             echo "error";
             echo $conn->error;

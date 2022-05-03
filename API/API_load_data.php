@@ -22,7 +22,7 @@
    $output .= "<tbody>";
    while ($row = $query->fetch_assoc()) {
          
-   $last_id = $row['post_Count'];
+   $last_id = $row['post_Count'] - 1;
    $output.="<tr>
                <td>{$row["post_ID"]}</td>
                <td>{$row["barangay_ID"]}</td>
@@ -31,7 +31,8 @@
                <td>{$row["creator_ID"]}</td>
                <td>{$row["post_Creator"]}</td>
                <td>{$row["post_Date"]}</td>
-               <td><a class='btn btn-info' href='view_post.php?token={$row["post_ID"]}' target='blank'>View</a><button class='btn btn-danger' type='button' style='margin:5px'>Delete</button></td>
+               <td><a class='btn btn-info' href='view_post.php?token={$row["post_ID"]}' target='blank'>View</a>
+               <a class='btn btn-danger' href='API/API_deletepost.php?token={$row["post_ID"]}' target='blank'>Delete</td>
              </tr>";
    }
    $output .= "<tbody>";

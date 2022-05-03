@@ -1,8 +1,38 @@
 <?php 
+
       session_start();
       if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SESSION['barangay_ID'])){
       header("location:index.php");
   }
+  $Fname = 'placeholder="First Name"';
+  $Lname = 'placeholder="Last Name"';
+  $Mname = 'placeholder="Middle Name"';
+  $Birthdate = 'placeholder="Birth Date"';
+  $Address = 'placeholder="Address"';
+  $Fathername = 'placeholder="Father Name"';
+  $Fatheroccu = 'placeholder="Father Occupation"';
+  $Mothername = 'placeholder="Mother Name"';
+  $Motheroccu = 'placeholder="Mother Occupation"';
+  $token = "";
+  if (isset($_GET['token'])){
+
+    include 'API/API_getresident.php';
+  $token = '?token='.$_GET["token"].'';
+  $Fname =  'value='.$row["prof_Fname"].'';
+  $Lname = 'value='.$row["prof_Lname"].'';
+  $Mname = 'value='.$row["prof_Mname"].'';
+  $Birthdate = 'value='.$row["prof_Birthdate"].'';
+  $sex = 'value='.$row["prof_Sex"].'';
+  $Address = 'value='.$row["prof_Address"].'';
+  $Addressstats = 'value='.$row["prof_Addressstatus"].'';
+  $Fathername = 'value='.$row["prof_Fathername"].'';
+  $Fatheroccu = 'value='.$row["prof_Fatheroccu"].'';
+  $Mothername = 'value='.$row["prof_Mothername"].'';
+  $Motheroccu = 'value='.$row["prof_Motheroccu"].'';
+  }
+    
+  
+ 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +78,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-center">
                     <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-0">Dashboard</h2>
+                    <h2 class="fs-2 m-0">Resident List</h2>
                 </div>
             </nav>
            
@@ -86,14 +116,14 @@
                         <div class="container" style="border:solid; margin-top:20px">
                                 <div class="row">
                                         <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1>Resident Profiling</h1></div>    
-                                        <form action="API/API_profiling.php" method="POST" enctype='multipart/form-data'>
+                                        <form action="API/API_profiling.php<?php echo $token?>" method="POST" enctype='multipart/form-data'>
                                             <h3>Resident information</h3>
-                                            <div class = "column" style="">
-                                                <input style = "margin-top:10px;  margin-bottom: 10px"  name="prof_Fname" class="form-control" id="prof_Fname" minlength="4" required placeholder="First Name">             
-                                                <input  style = "margin-bottom: 10px" name="prof_Lname" class="form-control" id="prof_Lname" minlength="4" required placeholder="Last Name">            
-                                                <input  style = " margin-bottom: 10px" name="prof_Mname" class="form-control" id="prof_Mname" minlength="4" required placeholder="Middle Name"> 
+                                            <div class = "column" >
+                                                <input  style = "margin-top:10px;  margin-bottom: 10px"  name="prof_Fname" class="form-control" id="prof_Fname" minlength="4" required <?php echo $Fname?>>             
+                                                <input  style = "margin-bottom: 10px" name="prof_Lname" class="form-control" id="prof_Lname" minlength="4" required <?php echo $Lname?>>            
+                                                <input  style = " margin-bottom: 10px" name="prof_Mname" class="form-control" id="prof_Mname" minlength="4" required <?php echo $Mname?>> 
                                                     <div class="input-group date" id="datepicker">
-                                                        <input type="text" name="prof_Birthdate" class="form-control" required placeholder="Birth Date">
+                                                        <input type="text" name="prof_Birthdate" class="form-control" required <?php echo $Birthdate?>>
                                                         <span class="input-group-append">
                                                             <span class="input-group-text bg-white d-block">
                                                                 <i class="fa fa-calendar"></i>
@@ -107,30 +137,29 @@
                                                         <option name="prof_Male" value="Female">Female</option>
                                                     </select>
                                                 </div>
-                                                <input style = " margin-bottom: 10px"  name="prof_Address" class="form-control" id="prof_Address" minlength="4" required placeholder="Address">          
+                                                <input style = " margin-bottom: 10px"  name="prof_Address" class="form-control" id="prof_Address" minlength="4" required <?php echo $Address?> >          
                                                 <div style="margin-top: 10px;">
                                                     <label for="prof_Addressstatus">Address Status </label>
-                                                    <select name="prof_Addressstatus" id="prof_Addressstatus">
+                                                    <select name="prof_Addressstatus" id="prof_Addressstatus" >
                                                         <option name="prof_Onwed" value="Onwed">Owned</option>
                                                         <option name="prof_Rent" value="Rent">Rent</option>
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class = "column" style=""  >
+                                            <div class = "column" >
                                             <h3 >Family Composition</h3>
-                                                <input  style = "  margin-bottom: 10px" name="prof_Fathername" class="form-control" id="prof_Fathername" minlength="4" required placeholder="Father's Name">          
-                                                <input style = "  margin-bottom: 10px"  name="prof_Fatheroccu" class="form-control" id="desprof_Fatheroccucription" minlength="4" required placeholder="Father' Occupation">         
-                                                <input  style = "  margin-bottom: 10px" name="prof_Mothername" class="form-control" id="prof_Mothername" minlength="4" required placeholder="Mothers's Name">         
-                                                <input style = "  margin-bottom: 10px"  name="prof_Motheroccu" class="form-control" id="prof_Motheroccu" minlength="4" required placeholder="Mothers's Occupation">            
+                                                <input  style = "  margin-bottom: 10px" name="prof_Fathername" class="form-control" id="prof_Fathername" minlength="4" required <?php echo $Fathername?>>          
+                                                <input style = "  margin-bottom: 10px"  name="prof_Fatheroccu" class="form-control" id="desprof_Fatheroccucription" minlength="4" <?php echo $Fatheroccu?> >         
+                                                <input  style = "  margin-bottom: 10px" name="prof_Mothername" class="form-control" id="prof_Mothername" minlength="4" required <?php echo $Mothername?>>         
+                                                <input style = "  margin-bottom: 10px"  name="prof_Motheroccu" class="form-control" id="prof_Motheroccu" minlength="4" required <?php echo $Mothername?>>            
                                             </div> 
-                                            <div class="form-group">
-                                            <button style = "width: 35%; margin-top:10px" type="submit" class="btn btn-primary">Add</button>
+                                            <div class="form-group" >
+                                            <button style = "width: 50%; margin-top:10px" type="submit" name ="add_btn"class="btn btn-primary">Add</button>
+                                            <button style = "width: 50%; margin-top:10px" type="submit" name ="update_btn" class="btn btn-primary">Save</button>
+                                            <button style = "width: 50%; margin-top:10px" type = "button" onclick = "window.location.href='barangay_List.php'" class="btn btn-primary">Clear</button>
                                         </div>
-                                        </form>
                                 </div>    
                         </div>
-           
-
                 <div class="row my-5">
                     <h3 class="fs-4 mb-3">List of Residents.</h3>
                     <div class="container">
