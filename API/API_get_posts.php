@@ -109,6 +109,7 @@ if(mysqli_num_rows($result_Get_posts1) > 0){
             </div>';
             
         }
+        
         if(isset($last_Post)){
             $data .= "<div id='pagination'><button class='btn btn-success loadbtn' data-id='{$last_Post}' style='width:100%; background-color: #bd8565 !important; border:solid 1px #659DBD !important'>View More</button></div>";
         }   

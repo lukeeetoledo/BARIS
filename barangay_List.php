@@ -62,12 +62,13 @@
         <div id="sidebar-wrapper" style="background-color: #bd8565;">
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold border-bottom" style="color: #659DBD;"><img src="img/FINAL.png" alt="" width="60" height="60"><span style="text-shadow: 1px 1px 2px rgba(0, 0,0, 1)">BaRIS</span> </div>
             <div class="list-group list-group-flush my-3" >
-            <button class="btn btn-success" onclick="window.location.href='homepage_loader.php';" style="margin-left: 10px; margin-right: 10px;">Switch to Resident</button><hr>
+            <button class="btn btn-success" onclick="window.location.href='homepage_loader.php';" style="margin-left: 10px; margin-right: 10px;">Switch to Resident</button><br>
+            <button class="btn btn-dark" onclick="window.location.href='API/API_logout.php';" style="margin-left: 10px; margin-right: 10px;">Log Out</button><hr>
                 <div id="dashboard"> <a href="barangay_Dashboard.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Dashboard</a></div>
                 <div id="dashboard"> <a href="barangay_Viewpost.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center"></i>Viewpost</a></div>
                 <div id="dashboard"> <a href="barangay_Permit_request.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Document Requests</a></div>
-                <div id="dashboard"> <a href="barangay_List.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Resident List</a></div><hr>
-                <button class="btn btn-dark" onclick="window.location.href='API/API_logout.php';" style="margin-left: 10px; margin-right: 10px;">Log Out</button>
+                <div id="dashboard"> <a href="barangay_List.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Resident List</a></div>
+                <div id="dashboard"> <a href="barangay_Services.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Services</a></div><hr>
             </div>
         </div>
         </center>
@@ -114,11 +115,12 @@
                     </div>
                 </div>
                         <div class="container" style="border:solid; margin-top:20px">
-                                <div class="row">
-                                        <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1>Resident Profiling</h1></div>    
+                              
+                                        <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1 style="display: inline-block;">Resident Profiling</h1><label for="myCheck" style="float:right;border:solid 3px"><img id="arrow_down" src="img/arrow-down.png" alt=""><img id="arrow_up" src="img/arrow-up.png" alt="" style="display: none;"></label><input type="checkbox" id="myCheck" onclick="myFunction()" style="display:none"></div>    
                                         <form action="API/API_profiling.php<?php echo $token?>" method="POST" enctype='multipart/form-data'>
-                                            <h3>Resident information</h3>
-                                            <div class = "column" >
+                                        <div class="row">
+                                            <div class = "column" style="display:none" id = "add_A">
+                                            <h3>Personal Information</h3>
                                                 <input  style = "margin-top:10px;  margin-bottom: 10px"  name="prof_Fname" class="form-control" id="prof_Fname" minlength="4" required <?php echo $Fname?>>             
                                                 <input  style = "margin-bottom: 10px" name="prof_Lname" class="form-control" id="prof_Lname" minlength="4" required <?php echo $Lname?>>            
                                                 <input  style = " margin-bottom: 10px" name="prof_Mname" class="form-control" id="prof_Mname" minlength="4" required <?php echo $Mname?>> 
@@ -131,34 +133,34 @@
                                                         </span>
                                                     </div>
                                                 <div style="margin-top: 10px;">
-                                                    <label for="Sex">Sex: </label>
-                                                    <select name="prof_Sex" id="prof_sex">
+                                                    <select name="prof_Sex" id="prof_sex" style="width: 100%;padding:10px;margin-bottom:10px">
                                                         <option name="prof_Female" value="Male">Male</option>
                                                         <option name="prof_Male" value="Female">Female</option>
                                                     </select>
                                                 </div>
                                                 <input style = " margin-bottom: 10px"  name="prof_Address" class="form-control" id="prof_Address" minlength="4" required <?php echo $Address?> >          
                                                 <div style="margin-top: 10px;">
-                                                    <label for="prof_Addressstatus">Address Status </label>
-                                                    <select name="prof_Addressstatus" id="prof_Addressstatus" >
+                                                    <select name="prof_Addressstatus" id="prof_Addressstatus" style="width: 100%;;padding:10px;margin-bottom:20px">
                                                         <option name="prof_Onwed" value="Onwed">Owned</option>
                                                         <option name="prof_Rent" value="Rent">Rent</option>
                                                     </select>
                                                 </div>
-                                            </div>
-                                            <div class = "column" >
+                                            </div><br>
+                                            <div class = "column" style="display:none" id = "add_B">
                                             <h3 >Family Composition</h3>
                                                 <input  style = "  margin-bottom: 10px" name="prof_Fathername" class="form-control" id="prof_Fathername" minlength="4" required <?php echo $Fathername?>>          
                                                 <input style = "  margin-bottom: 10px"  name="prof_Fatheroccu" class="form-control" id="desprof_Fatheroccucription" minlength="4" <?php echo $Fatheroccu?> >         
                                                 <input  style = "  margin-bottom: 10px" name="prof_Mothername" class="form-control" id="prof_Mothername" minlength="4" required <?php echo $Mothername?>>         
                                                 <input style = "  margin-bottom: 10px"  name="prof_Motheroccu" class="form-control" id="prof_Motheroccu" minlength="4" required <?php echo $Mothername?>>            
+                                                <div class="form-group" style="display:none" id = "add_C">
+                                            <button style = "width: 100%; margin-top:10px" type="submit" name ="add_btn"class="btn btn-primary">Add</button>
+                                            <button style = "width: 100%; margin-top:10px" type="submit" name ="update_btn" class="btn btn-primary">Save</button>
+                                            <button style = "width: 100%; margin-top:10px" type = "button" onclick = "window.location.href='barangay_List.php'" class="btn btn-primary">Clear</button>
+                                            </div>
                                             </div> 
-                                            <div class="form-group" >
-                                            <button style = "width: 50%; margin-top:10px" type="submit" name ="add_btn"class="btn btn-primary">Add</button>
-                                            <button style = "width: 50%; margin-top:10px" type="submit" name ="update_btn" class="btn btn-primary">Save</button>
-                                            <button style = "width: 50%; margin-top:10px" type = "button" onclick = "window.location.href='barangay_List.php'" class="btn btn-primary">Clear</button>
-                                        </div>
-                                </div>    
+                                            </div>   
+                                           
+                               
                         </div>
                 <div class="row my-5">
                     <h3 class="fs-4 mb-3">List of Residents.</h3>
@@ -241,4 +243,32 @@
     $(function() {
         $('#datepicker').datepicker();
     });
+</script>
+
+<script>
+    function myFunction() {
+  // Get the checkbox
+  var checkBox = document.getElementById("myCheck");
+  // Get the output text
+  var A = document.getElementById("add_A");
+  var B = document.getElementById("add_B");
+  var C = document.getElementById("add_C");
+  var D = document.getElementById("arrow_down");
+  var E = document.getElementById("arrow_up");
+
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true){
+    A.style.display = "block";
+    B.style.display = "block";
+    C.style.display = "block";
+    D.style.display = "none";
+    E.style.display = "block";
+  } else {
+    A.style.display = "none";
+    B.style.display = "none";
+    C.style.display = "none";
+    D.style.display = "block";
+    E.style.display = "none";
+  }
+}
 </script>

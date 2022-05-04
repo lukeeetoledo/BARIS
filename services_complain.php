@@ -1,5 +1,5 @@
 <?php
-session_start();
+include 'API/API_get_List.php';
 if (!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SESSION['barangay_ID'])) {
     header("location:index.php");
 }
@@ -60,50 +60,25 @@ if (!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_S
     <div w3-include-html="navbar.php"></div>
     <div class="collection">
         <div class="card" id="holder">
-            <label id="tab" for="#holder">Complain Form</label>
-            <form  method="POST">
+            <label id="tab" for="#holder">Complaint Form</label>
+            <form action="API/API_send_complaint.php" method="POST">
                 <label for="reason">Reason:<span>*</span></label>
                 <select id="reason" name="txt_Reason" required style="overflow: auto;">
-                    <option value="Punong Barangay">Punong Barangay</option>
-                    <option value="Kagawad[Sanguniang Barangay Member]">Kagawad[Sanguniang Barangay Member]</option>
-                    <option value="SK Chairperson">SK Chairperson</option>
-                    <option value="Barangay Secretary">Barangay Secretary</option>
-                    <option value="Punong Barangay">Punong Barangay</option>
-                    <option value="Kagawad[Sanguniang Barangay Member]">Kagawad[Sanguniang Barangay Member]</option>
-                    <option value="SK Chairperson">SK Chairperson</option>
-                    <option value="Barangay Secretary">Barangay Secretary</option>
-                    <option value="Punong Barangay">Punong Barangay</option>
-                    <option value="Kagawad[Sanguniang Barangay Member]">Kagawad[Sanguniang Barangay Member]</option>
-                    <option value="SK Chairperson">SK Chairperson</option>
-                    <option value="Barangay Secretary">Barangay Secretary</option>
-                    <option value="Punong Barangay">Punong Barangay</option>
-                    <option value="Kagawad[Sanguniang Barangay Member]">Kagawad[Sanguniang Barangay Member]</option>
-                    <option value="SK Chairperson">SK Chairperson</option>
-                    <option value="Barangay Secretary">Barangay Secretary</option>
+                    <option value="Punong Barangay">Threat</option>
+                    <option value="Kagawad[Sanguniang Barangay Member]">Physical Injury</option>
+                    <option value="SK Chairperson">Theft</option>
+                    <option value="Barangay Secretary">Alarms and Scandal</option>
+                    <option value="Punong Barangay">Trespassing</option>
+                    <option value="Kagawad[Sanguniang Barangay Member]">Swindling or Estafa</option>
+                    <option value="SK Chairperson">Vandalism </option>
+                    <option value="Barangay Secretary">Drinking session in Street</option>
+                    <option value="Punong Barangay">Curfew</option>
+                    <option value="Kagawad[Sanguniang Barangay Member]">Coercion</option>
                 </select>
                 <label for="current_select">Respondent/s:<span>*</span><small style="color: red;"> [You can select multiple person.]</small></label><br>
                 <input name="current_select_values" type="hidden" value="" id="current_select_values" required/>
 						<select name="current_select[]" multiple="multiple" id="current_select" required>
-							<option value="current1">Jaudian, Marvin Sean</option>
-							<option value="current2">Manzon, John Eduard G.</option>
-							<option value="current3">Perez, Crisjahn S.</option>
-							<option value="current4">Toledo, Luke</option>
-							<option value="current5">James, Lebron</option>
-                            <option value="Punong Barangay">Punong Barangay</option>
-                    <option value="Kagawad[Sanguniang Barangay Member]">Kagawad[Sanguniang Barangay Member]aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</option>
-                    <option value="SK Chairperson">SK Chairperson</option>
-                    <option value="Barangay Secretary">Barangay Secretary</option>
-                    <option value="current1">Jaudian, Marvin Sean</option>
-							<option value="current2">Manzon, John Eduard G.</option>
-							<option value="current3">Perez, Crisjahn S.</option>
-							<option value="current4">Toledo, Luke</option>
-							<option value="current5">James, Lebron</option>
-                            <option value="Punong Barangay">Punong Barangay</option>
-                    <option value="Kagawad[Sanguniang Barangay Member]">Kagawad[Sanguniang Barangay Member]aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</option>
-                    <option value="SK Chairperson">SK Chairperson</option>
-                    <option value="Barangay Secretary">Barangay Secretary</option>
-        
-        
+                            <?php echo $list; ?>
 						</select>
                 <div class="field_wrapper">
                 <label for="specific">Action/s done by the respondent/s:<span>*</span></label>

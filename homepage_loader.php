@@ -8,6 +8,7 @@
     <title>Loading...</title>
 </head>
 <body style="background-color:  #bd8565;">
+<label class="switch" for="loader">Resident</label>
 <div id="loader"></div>
 <script>
 const myTimeout = setTimeout(myFunction, 3000);

@@ -82,7 +82,7 @@ if(isset($_POST['submit'])){
             move_uploaded_file($_FILES["txt_PoB"]["tmp_name"],  "../".$address_Proof) &&  
             move_uploaded_file($_FILES["txt_Self_Portrait"]["tmp_name"],  "../".$requestor_Image)){
                 
-                 echo '<script>alert("Barangay Registration Submitted."); window.location.href="../userprofile.php";</script>';
+                 echo '<script>alert("Barangay Registration Submitted."); window.location.href="../user_profile.php";</script>';
             }
         }
     }

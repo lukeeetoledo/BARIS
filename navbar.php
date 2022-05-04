@@ -29,7 +29,7 @@
  <!-- NAVIGATION MENUS -->
  <div class="menu">
  <li><a href="homepage.php">Home</a></li>
- <li><a href="userprofile.php">Profile</a></li>
+ <li><a href="user_profile.php">Profile</a></li>
  <li class="head_dropdown">
  <a href="#">Documents</a>
  <!-- DROPDOWN MENU -->
@@ -43,8 +43,8 @@
  <li class="head_dropdown">
   <a href="#">Services</a>
   <ul class="dropdown">
- <li><a href="services_complain.php">Report a complain</a></li>
- <li><a href="services_support.php">Request for support</a></li>
+ <li><a href="services_complain.php">Report a Complaint</a></li>
+ <li><a href="services_support.php">Request for Support</a></li>
  </ul>
 </li>
  <li><a href="/">Contact</a></li>
