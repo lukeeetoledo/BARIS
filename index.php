@@ -46,10 +46,10 @@
           </li>
         </ul>
         <a href="loginAs.php">
-          <button class="btn btn-primary ms-lg-3">Login</button>
+          <button class="btn btn-primary ms-lg-2">Login</button>
         </a>
         <a href="signup.php">
-          <button class="btn btn-primary ms-lg-3">Register</button>
+          <button class="btn btn-primary ms-lg-2">Register</button>
         </a>
       </div>
     </div>
