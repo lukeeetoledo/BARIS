@@ -7,6 +7,7 @@
   $Fname = 'placeholder="First Name"';
   $Lname = 'placeholder="Last Name"';
   $Mname = 'placeholder="Middle Name"';
+  $Suffix = 'placeholder="Suffix"';
   $Birthdate = 'placeholder="Birth Date"';
   $Address = 'placeholder="Address"';
   $Fathername = 'placeholder="Father Name"';
@@ -21,6 +22,7 @@
   $Fname =  'value='.$row["prof_Fname"].'';
   $Lname = 'value='.$row["prof_Lname"].'';
   $Mname = 'value='.$row["prof_Mname"].'';
+  $Suffix = 'value='.$row["prof_Suffix"].'';
   $Birthdate = 'value='.$row["prof_Birthdate"].'';
   $sex = 'value='.$row["prof_Sex"].'';
   $Address = 'value='.$row["prof_Address"].'';
@@ -123,7 +125,14 @@
                                             <h3>Personal Information</h3>
                                                 <input  style = "margin-top:10px;  margin-bottom: 10px"  name="prof_Fname" class="form-control" id="prof_Fname" minlength="4" required <?php echo $Fname?>>             
                                                 <input  style = "margin-bottom: 10px" name="prof_Lname" class="form-control" id="prof_Lname" minlength="4" required <?php echo $Lname?>>            
-                                                <input  style = " margin-bottom: 10px" name="prof_Mname" class="form-control" id="prof_Mname" minlength="4" required <?php echo $Mname?>> 
+                                                <input  style = " margin-bottom: 10px" name="prof_Mname" class="form-control" id="prof_Mname" minlength="4" required <?php echo $Mname?>>
+                                                <div style="margin-top: 10px;">
+                                                    <select name="prof_Suffix" id="prof_sex" style="width: 100%;padding:10px;margin-bottom:10px">
+                                                        <option name="prof_None" value="Sr.">None</option>
+                                                        <option name="prof_Sr" value="Sr.">Sr.</option>
+                                                        <option name="prof_Jr" value="Jr.">Jr.</option>
+                                                    </select>
+                                                </div>
                                                     <div class="input-group date" id="datepicker">
                                                         <input type="text" name="prof_Birthdate" class="form-control" required <?php echo $Birthdate?>>
                                                         <span class="input-group-append">
@@ -174,6 +183,7 @@
                                             <th>First Name</th>
                                             <th>Last Name</th>
                                             <th>Middle Name</th>
+                                            <th>Suffix</th>
                                             <th>Birth Date</th>
                                             <th>Sex</th>
                                             <th>Address</th>

@@ -1,3 +1,4 @@
+
 <?php
    require_once('SYSTEM_config.php');
    session_start();
@@ -26,6 +27,7 @@ $last_id = $row['prof_Count'] - 1;
                <td>{$row["prof_Fname"]}</td>
                <td>{$row["prof_Lname"]}</td>
                <td>{$row["prof_Mname"]}</td>
+               <td>{$row["prof_Suffix"]}</td>
                <td>{$row["prof_Birthdate"]}</td>
                <td>{$row["prof_Sex"]}</td>
                <td>{$row["prof_Address"]}</td>
