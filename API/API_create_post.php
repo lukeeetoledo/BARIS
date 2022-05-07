@@ -53,7 +53,6 @@ if(isset($_POST['txt_Title']) && isset($_POST['txt_Text_Content'])
          if($conn->query($query_Insert_post) == TRUE){
            echo '<script>alert("Post Uploaded"); window.location.href="../barangay_dashboard.php";</script>';
         }else{
-            echo "error";
             echo $conn->error;
         }
 }

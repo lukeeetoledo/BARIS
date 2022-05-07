@@ -50,7 +50,7 @@
         </ul>
         <center>
         <a href="login.php">
-          <button class="btn btn-primary ms-lg-3">Login</button>
+          <button class="btn btn-primary ms-lg-3">Log In</button>
         </a>
         <a href="signup.php">
           <button class="btn btn-primary ms-lg-3">Register</button>

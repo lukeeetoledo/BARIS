@@ -64,16 +64,16 @@ if (!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_S
             <form action="API/API_send_complaint.php" method="POST">
                 <label for="reason">Reason:<span>*</span></label>
                 <select id="reason" name="txt_Reason" required style="overflow: auto;">
-                    <option value="Punong Barangay">Threat</option>
-                    <option value="Kagawad[Sanguniang Barangay Member]">Physical Injury</option>
-                    <option value="SK Chairperson">Theft</option>
-                    <option value="Barangay Secretary">Alarms and Scandal</option>
-                    <option value="Punong Barangay">Trespassing</option>
-                    <option value="Kagawad[Sanguniang Barangay Member]">Swindling or Estafa</option>
-                    <option value="SK Chairperson">Vandalism </option>
-                    <option value="Barangay Secretary">Drinking session in Street</option>
-                    <option value="Punong Barangay">Curfew</option>
-                    <option value="Kagawad[Sanguniang Barangay Member]">Coercion</option>
+                    <option value="Threat">Threat</option>
+                    <option value="Physical Injury">Physical Injury</option>
+                    <option value="Theft">Theft</option>
+                    <option value="Alarms and Scandal">Alarms and Scandal</option>
+                    <option value="Trespassing">Trespassing</option>
+                    <option value="Swindling or Estafa">Swindling or Estafa</option>
+                    <option value="Vandalism ">Vandalism</option>
+                    <option value="Drinking session in Street">Drinking session in Street</option>
+                    <option value="Curfew">Curfew</option>
+                    <option value="Coercion">Coercion</option>
                 </select>
                 <label for="current_select">Respondent/s:<span>*</span><small style="color: red;"> [You can select multiple person.]</small></label><br>
                 <input name="current_select_values" type="hidden" value="" id="current_select_values" required/>
@@ -81,13 +81,13 @@ if (!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_S
                             <?php echo $list; ?>
 						</select>
                 <div class="field_wrapper">
-                <label for="specific">Action/s done by the respondent/s:<span>*</span></label>
+                <label for="specific">Action/s done by the respondent/s:<span>*</span><small style="color: red;"> [Max: 10]</small></label>
                     <div id="specific">
                         <input type="text" name="field_name[]" value="" placeholder="Action/s done by the respondent/s" required/>
                         <a href="javascript:void(0);" class="add_button" title="Add field"><img src="img/add-icon.png" /></a>
                     </div>
                 </div>
-                <input class="btn btn-success" type="submit" name="submit" id="submit" value="Submit"/>
+                <input class="btn btn-success" type="submit" name="submit" id="submit" value="Submit" style="margin-top:200px; padding:10px"/>
             </form>
         </div>
     </div>

@@ -13,9 +13,11 @@ body{
     width: 100%;
     max-width: 720px;
     height: auto;
+    min-height: 80vh;
     background-color: #659DBD;
-    border: 1px solid red;
+    border: 3px outset #659DBD;
     padding: 20px;
+    border-radius: 10px;
 }
 #tab{
     font-size: 24px;
@@ -28,7 +30,7 @@ span{
 }
 input{
     width: 90%;
-    padding: 5px;
+    padding: 10px;
     margin-bottom: 10px;
 }
 label{
@@ -52,7 +54,7 @@ label{
     width: 100%;
 }
 #reason{
-    padding: 5px;
+    padding: 10px;
     margin-bottom: 10px;
     overflow: scroll;
     width: 100%;

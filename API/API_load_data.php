@@ -22,7 +22,7 @@
    $output .= "<tbody>";
    while ($row = $query->fetch_assoc()) {
          
-   $last_id = $row['post_Count'] - 1;
+   $last_id = $row['post_Count'];
    $output.="<tr>
                <td>{$row["post_ID"]}</td>
                <td>{$row["barangay_ID"]}</td>

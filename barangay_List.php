@@ -117,7 +117,6 @@
                     </div>
                 </div>
                         <div class="container" style="border:solid; margin-top:20px">
-                              
                                         <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1 style="display: inline-block;">Resident Profiling</h1><label for="myCheck" style="float:right;border:solid 3px"><img id="arrow_down" src="img/arrow-down.png" alt=""><img id="arrow_up" src="img/arrow-up.png" alt="" style="display: none;"></label><input type="checkbox" id="myCheck" onclick="myFunction()" style="display:none"></div>    
                                         <form action="API/API_profiling.php<?php echo $token?>" method="POST" enctype='multipart/form-data'>
                                         <div class="row">
@@ -169,12 +168,9 @@
                                             </div>
                                             </div> 
                                             </div>   
-                                           
-                               
                         </div>
-                <div class="row my-5">
-                
-                    <h3 class="fs-4 mb-3">List of Residents.</h3>
+                <div class="row my-5" id ="list_resident">
+                    <h3 class="fs-4 mb-3">List of Residents</h3>
                     <div class="container">
                     <a href = "API/API_barangay_list_excel.php" style = "margin-bottom: 5px" class = "btn btn-success">Export to Excel </a>
                     <div class="row">

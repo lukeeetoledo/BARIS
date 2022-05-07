@@ -62,8 +62,8 @@
                     </div>
                 </div>
 
-                <div class="row my-5">
-                    <h3 class="fs-4 mb-3">List of requests.</h3>
+                <div class="row my-5" id= "document_request">
+                    <h3 class="fs-4 mb-3">List of requests</h3>
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 col-sm-12" style="overflow-x:auto;">

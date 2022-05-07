@@ -41,6 +41,18 @@ if(mysqli_num_rows($result_Get_info) > 0 && mysqli_num_rows($result_Get_contact)
     $province = $rows_Get_info['user_Province'];
     $city_Mun = $rows_Get_info['user_Citymunicipality'];
     $barangay = $rows_Get_info['user_Barangay'];
+    $result_Region = mysqli_query($conn, "SELECT region_name FROM system_region_tbl WHERE region_code = '$region'");
+    $result_Province = mysqli_query($conn, "SELECT province_name FROM system_province_tbl WHERE province_code = '$province' AND region_code = '$region'");
+    $result_Citymun = mysqli_query($conn, "SELECT citymun_name FROM system_citymun_tbl WHERE citymun_code = '$city_Mun' AND province_code = '$province' AND region_code = '$region'");
+    $result_Barangay = mysqli_query($conn, "SELECT barangay_name FROM system_barangay_tbl WHERE barangay_code = '$barangay' AND citymun_code = '$city_Mun' AND province_code = '$province' AND region_code = '$region'");
+    $rR_Name = mysqli_fetch_assoc($result_Region)['region_name'];
+    $region = $rows_Get_info['user_Region']." | ".$rR_Name;
+    $rP_Name = mysqli_fetch_assoc($result_Province)['province_name'];
+    $province = $rows_Get_info['user_Province']." | ".$rP_Name;
+    $rCm_Name = mysqli_fetch_assoc($result_Citymun)['citymun_name'];
+    $city_Mun = $rows_Get_info['user_Citymunicipality']." | ".$rCm_Name;
+    $rB_Name = mysqli_fetch_assoc($result_Barangay)['barangay_name'];
+    $barangay = $rows_Get_info['user_Barangay']." | ".$rB_Name;
     $birthdate = $rows_Get_info['user_Birthdate'];
     $sex = $rows_Get_info['user_Gender'];
     $user_Name = $rows_Get_contact['account_Username'];
