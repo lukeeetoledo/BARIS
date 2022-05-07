@@ -165,6 +165,7 @@
                                             <button style = "width: 100%; margin-top:10px" type="submit" name ="add_btn"class="btn btn-primary">Add</button>
                                             <button style = "width: 100%; margin-top:10px" type="submit" name ="update_btn" class="btn btn-primary">Save</button>
                                             <button style = "width: 100%; margin-top:10px" type = "button" onclick = "window.location.href='barangay_List.php'" class="btn btn-primary">Clear</button>
+                                            </form>
                                             </div>
                                             </div> 
                                             </div>   
@@ -172,9 +173,11 @@
                                
                         </div>
                 <div class="row my-5">
+                
                     <h3 class="fs-4 mb-3">List of Residents.</h3>
                     <div class="container">
-                        <div class="row">
+                    <a href = "API/API_barangay_list_excel.php" style = "margin-bottom: 5px" class = "btn btn-success">Export to Excel </a>
+                    <div class="row">
                             <div class="col-md-12 col-sm-12" style="overflow-x:auto;">
                                 <table class="table table-striped" id="loadData">
                                     <thead>

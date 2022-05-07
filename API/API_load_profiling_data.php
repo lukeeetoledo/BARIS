@@ -2,8 +2,6 @@
 <?php
    require_once('SYSTEM_config.php');
    session_start();
-   
-
    $barangay_ID = $_SESSION['barangay_ID'];
    $limit = 5;
    $num_rows = 0;

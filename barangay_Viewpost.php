@@ -65,6 +65,7 @@
                 <div class="row my-5">
                     <h3 class="fs-4 mb-3">List of posts.</h3>
                     <div class="container">
+                    <a href = "API/API_barangay_post_excel.php" style = "margin-bottom: 5px" class = "btn btn-success">Export to Excel </a>
                         <div class="row">
                             <div class="col-md-12 col-sm-12" style="overflow-x:auto;">
                                 <table class="table table-striped" id="loadData">
