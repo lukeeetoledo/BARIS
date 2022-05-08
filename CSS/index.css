@@ -19,7 +19,10 @@ h1,h2,h3,h4,h5,h6,
   font-weight: 700;
 }
 .navbar .logo{
-  width: 80px;
+  width: 100px;
+  height: 100px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 a{
@@ -28,12 +31,15 @@ a{
 }
 .navbar{
   box-shadow: black;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .navbar .nav-link{
   font-size: 15px;
   font-weight: 700;
 }
+
 
 .hero{
   background-position: center;
@@ -229,6 +235,7 @@ ul{
   border-color: var(--primary);
 }
 
+<<<<<<< HEAD
 .navbar .nav-link:hover{
   display: inline-block;
   vertical-align: middle;
@@ -267,3 +274,5 @@ ul{
   -webkit-transform: scale(0);
   transform: scale(0);
 }
+=======
+>>>>>>> 34ce11926e48d6767af8372cfe4b5a5afc854e25
