@@ -1,6 +1,4 @@
-<?php
-include 'API_region.php';
-?>
+<?php include 'API/API_region.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,8 +21,8 @@ include 'API_region.php';
 
 <body>
     <div class="container">
-        <form action="API_signup.php" method="POST">
-            <div class="form-content">
+        <form action="API/API_signup.php" method="POST">
+            <div class="form-content" style = "padding: 125px">
                 <a href="index.php">Back</a>
                 <div class="title"> Account Registration</div>
                 <div class="user-details">
@@ -88,7 +86,6 @@ include 'API_region.php';
                         });
                     </script>
                     <div class="input-box">
-                    
                         <span class="details">Address<span style="color:red">*</span></span>
                         <!-- REGION -->
                         <?php echo $region_combo_box; ?>
@@ -132,7 +129,7 @@ include 'API_region.php';
                 </div>
             </div>
             <div>
-                <p class="text-center">Already have an account? <a href="login.php">Login</a></p>
+                <p class="text-center">Already have an account? <a href="login.php">Log In</a></p>
             </div>
     </div>
 

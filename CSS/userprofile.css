@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 body{
-    background: #eaeaea;
+    background: #e4e6eb;
     margin-top:20px;
 }
+
 .profile-info-list {
     padding: 0;
     margin: 0;
@@ -155,6 +157,8 @@ body .fc-widget-header a {
 }
 .profile-container {
     padding: 1.5625rem;
+    margin: auto;
+    background-color: #659DBD;
 }
 @media (max-width: 967px) {
     .profile-header-img {
@@ -193,6 +197,8 @@ body .fc-widget-header a {
     }
     .profile-container {
         padding: 0.9375rem 0.9375rem 3.6875rem;
+        margin: auto;
+        background-color: #659DBD;
     }
     .friend-list > li {
         float: none;

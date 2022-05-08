@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-US">
 
 <head>
   <!-- Required meta tags -->
@@ -15,12 +15,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="img/Logo_192.png">
+  <title>BaRIS</title>
 </head>
 
-<body>
+<body style="background-color:#e4e6eb">
  
  <!--navbar-->
-  <nav class="navbar navbar-expand-lg py-3 sticky-top navbar-light bg-white">
+  <nav class="navbar navbar-expand-lg py-3 sticky-top navbar-light " style="background-color:#bd8565">
     <div class="container">
       <a class="navbar-brand" href="#">
         <img class="logo" src="img/asdw.png">
@@ -32,27 +33,29 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="#" style="color: white;">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#services">Features</a>
+            <a class="nav-link" href="#services" style="color: white;">Features</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#News">How To's</a>
+            <a class="nav-link" href="#News" style="color: white;">How To's</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#team">About Us</a>
+            <a class="nav-link" href="#team" style="color: white;">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#documentation">Documentation</a>
+            <a class="nav-link" href="#documentation" style="color: white;">Documentation</a>
           </li>
         </ul>
+        <center>
         <a href="login.php">
-          <button class="btn btn-primary ms-lg-3">Login</button>
+          <button class="btn btn-primary ms-lg-3">Log In</button>
         </a>
         <a href="signup.php">
           <button class="btn btn-primary ms-lg-3">Register</button>
         </a>
+        </center>
       </div>
     </div>
   </nav>
@@ -158,89 +161,6 @@
 <div class="col-lg-6 col-imgg"></div>
 </section>
 
-<!--How to-->
-
-<!--<section id="Projects">
-  <div class="container-fluid">
-    <div class="row mb-5">
-      <div class="col-md-8 mx-auto text-center">
-        <h2 class="text-primary">Projects</h2>
-        <p class="text-black">The Barangay Development Projects are socioeconomic development projects geared towards the provision of farm-to-market roads, health centers, electrification, water and sanitation facilities, schools, and livelihood projects</p>
-</div>
-      </div>
-      <div class="row g-3">
-        <div class="col-lg-4 col-sm-6">
-          <div class="project">
-            <img src="img/proj1.jpeg" alt="">
-            <div class="overlay">
-              <div>
-                <h4 class="text-white">Labor Jobs</h4>
-              <h6 class="text-white">Sept 3,2021</h6>
-              </div>
-            </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6">
-        <div class="project">
-          <img src="img/proj2.jpeg" alt="">
-          <div class="overlay">
-            <div>
-              <h4 class="text-white">Free Dental Check-Up</h4>
-            <h6 class="text-white">March 3,2021</h6>
-            </div>
-          </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-sm-6">
-      <div class="project">
-        <img src="img/proj3.jpeg" alt="">
-        <div class="overlay">
-          <div>
-            <h4 class="text-white">Infant Vaccinnation</h4>
-          <h6 class="text-white">October 22,2021</h6>
-          </div>
-        </div>
-    </div>
-  </div>
-  <div class="col-lg-4 col-sm-6">
-    <div class="project">
-      <img src="img/proj4.jpeg" alt="">
-      <div class="overlay">
-        <div>
-          <h4 class="text-white">Water Pump</h4>
-        <h6 class="text-white">April 28,2021</h6>
-        </div>
-      </div>
-  </div>
-</div>
-<div class="col-lg-4 col-sm-6">
-  <div class="project">
-    <img src="img/proj5.jpeg" alt="">
-    <div class="overlay">
-      <div>
-        <h4 class="text-white">Court Rehabilitation</h4>
-      <h6 class="text-white">December 20,2021</h6>
-      </div>
-    </div>
-</div>
-</div>
-<div class="col-lg-4 col-sm-6">
-  <div class="project">
-    <img src="img/proj6.jpeg" alt="">
-    <div class="overlay">
-      <div>
-        <h4 class="text-white">Monitoring Facility for COVID</h4>
-      <h6 class="text-white">May 10,2020</h6>
-      </div>
-    </div>
-</div>
-</div>
-    </div>
-  </div>
-</section>  -->
-
-
-<!-- TEAM -->
 <section id="team">
   <div class="container">
       <div class="row mb-5">

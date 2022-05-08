@@ -8,7 +8,7 @@
 	<meta name="description" content="Simple Forgot Password Page Using HTML and CSS">
 	<meta name="keywords" content="forgot password page, basic html and css">
 	<link rel="stylesheet" href="CSS/forgotpass.css">
-	<title>Forgot Password Page - HTML + CSS</title>
+	<title>Send Request</title>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
 		<h1>Forgot Password</h1>
 		<h6 class="information-text">Enter your registered email to reset your password.</h6>
 		<div class="form-group">
-			<form action="API_request_forgot_password.php" method="POST">
+			<form action="API/API_request_forgot_password.php" method="POST">
 			<input type="text" name="txt_email_cnumber" id="user_email"/>
 			<p><label for="user_email">Email/Contact Number</label></p>
 			<input type="submit" value="Send Reset Request"/>
