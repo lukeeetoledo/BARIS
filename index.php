@@ -226,8 +226,8 @@
           </div>
       </div>
   </div>
-</section><!-- TEAM -->
-
+</section>
+<!-- TEAM -->
 
   <footer class="footer" id="documentation">
    <div class="containerr">
