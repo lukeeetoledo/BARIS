@@ -1,4 +1,4 @@
-
+<?php include 'API/API_region.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -129,7 +129,7 @@
                 </div>
             </div>
             <div>
-                <p class="text-center">Already have an account? <a href="login.php">Login</a></p>
+                <p class="text-center">Already have an account? <a href="login.php">Log In</a></p>
             </div>
     </div>
 

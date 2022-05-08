@@ -2,7 +2,7 @@
    include 'SYSTEM_config.php';
     session_start();
     if(!isset($_SESSION['barangay_ID']) && !isset($_SESSION['user_ID'])){
-        header("location:./index.php");
+        header("location:../index.php");
     }
     $posts_Data = "";
     $barangay_ID = $_SESSION['barangay_ID'];
