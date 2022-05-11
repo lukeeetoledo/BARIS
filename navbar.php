@@ -20,7 +20,7 @@
  <body>
  <nav class="navbar">
  <!-- LOGO -->
- <div class="logo"> <img class="logo" src="img/asdw.png" alt="BaRIS_Logo"></div>
+ <div class="logo"> <img class="logo" src="img/BaRIS_Logo.png" alt="BaRIS_Logo"></div>
  <!-- NAVIGATION MENU -->
  <ul class="nav-links">
  <!-- USING CHECKBOX HACK -->

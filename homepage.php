@@ -1,5 +1,5 @@
-<?php 
-      session_start();
+<?php
+session_start(); 
       if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SESSION['barangay_ID'])){
       header("location:index.php");
   }

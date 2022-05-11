@@ -78,7 +78,7 @@ if(isset($_POST['txt_Fname']) && isset($_POST['txt_Lname'])
             $_POST["txt_Citymunicipality"] = "";
             $_POST["txt_Barangay"] = "";
             $_POST["txt_Block"] = "";
-            echo "<script>alert(Account created!); window.location.href='../index.php';</script>";
+            echo "<script>alert('Account created!'); window.location.href='../index.php';</script>";
         }else{
             echo $conn->error; 
           }
