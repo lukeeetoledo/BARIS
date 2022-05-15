@@ -43,7 +43,7 @@
         <!-- Sidebar -->
         <center>
             <div id="sidebar-wrapper" style="background-color: #bd8565;">
-                <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold border-bottom" style="color: #659DBD;"><img src="img/FINAL.png" alt="" width="60" height="60"><span style="text-shadow: 1px 1px 2px rgba(0, 0,0, 1)">BaRIS</span> </div>
+                <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold border-bottom" style="color: #659DBD;"><img src="img/Logo_192.png" alt="BaRIS_Logo" width="60" height="60"><span style="text-shadow: 1px 1px 2px rgba(0, 0,0, 1)">BaRIS</span> </div>
                 <div class="list-group list-group-flush my-3">
                     <button class="btn btn-success" onclick="window.location.href='homepage_loader.php';" style="margin-left: 10px; margin-right: 10px;">Switch to Resident</button><br>
                     <button class="btn btn-dark" onclick="window.location.href='API/API_logout.php';" style="margin-left: 10px; margin-right: 10px;">Log Out</button>
@@ -69,22 +69,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle second-text fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-user me-2"></i>Barangay Official
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Settings</a></li>
-                            <li><a class="dropdown-item" href="index.php">Logout</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            </nav>
+  
             <div class="row" id="services">
                 <div id="service_column"><button class="btn" id="service_choice" name="blotter_create" onclick="showBlotter_Create();">Create Blotter</button></div>
                 <div id="service_column"><button class="btn" id="service_choice" name="blotter_list" onclick="showBlotter_List();">Blotter List</button></div>
@@ -124,7 +109,7 @@
                 </div>
             </div>
             <div class="row" id="service_blotter_list">
-            <h3 class="fs-4 mb-3" id="head_filter">List of Blotter</h3>
+            <h3 class="fs-4 mb-3" id="head_filter_blotter">List of Blotter</h3>
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 col-sm-12" style="overflow-x:auto;">
@@ -149,7 +134,7 @@
             </div>
             <!-- COMPLAINT -->
             <div class="row" id="service_complaint">
-                <h3 class="fs-4 mb-3" id="head_filter">List of Complaints</h3>
+                <h3 class="fs-4 mb-3" id="head_filter_complaints">List of Pending Complaints</h3>
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 col-sm-12" style="overflow-x:auto;">
@@ -187,7 +172,7 @@
 
             <!-- SERVICES -->
             <div class="row" id="service_support">
-            <h3 class="fs-4 mb-3" id="head_filter">List of Request</h3>
+            <h3 class="fs-4 mb-3" ><span id="head_filter_request">List of Request</span></h3>
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 col-sm-12" style="overflow-x:auto;">
@@ -334,7 +319,7 @@ function checkDelete(){
         var x = document.getElementById('loadData0');
         var y = document.getElementById('loadData1');
         var z = document.getElementById('btn_filter');
-        var a = document.getElementById('head_filter');
+        var a = document.getElementById('head_filter_complaints');
 
         if(y.style.display == "none"){
             x.style.display = "none";

@@ -1,267 +1,246 @@
+<?php 
+    if(isset($_COOKIE['BaRIS_UNEM']) && isset($_COOKIE['BaRIS_PSH'])){
+        header("location:API/API_login.php");
+      }
+?>
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#16cbd1">
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-  <link rel="stylesheet" href="CSS/index.css">
-  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="img/Logo_192.png">
-  <title>BaRIS</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#16cbd1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" href="img/Logo_192.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="CSS/landing.css">
+    <link rel="manifest" href="manifest.json">
+    <title>BaRIS</title>
 </head>
 
-
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img class="logo" src="img/asdw.png">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#" style="color: white;">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#services" style="color: white;">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#News" style="color: white;">How To's</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#team" style="color: white;">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#documentation" style="color: white;">Documentation</a>
-          </li>
+<body>
+    <a href="#" id="go_UP"><img src="img/up-arrow.png" alt="go_UP"></a>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <img src="img/BaRIS_Logo.png" class="logo" alt="BaRIS_Logo">
+        <ul>
+            <li><a class="active" href="#landing">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#how_to-s">How To's</a></li>
+            <li><a href="#dev_team">About Us</a></li>
+            <li><a href="#documentation">Documentation</a></li>
+            <li><a href="login.php" id="login">Log In</a></li>
+            <li><a href="signup.php" id="register">Register</a></li>
         </ul>
+    </nav>
+    <!-- MAIN -->
+    <div class="main">
+        <!-- LANDING -->
+        <section id="landing">
+            <div>
+                <h1>Barangay and Resident's Information System</h1><br>
+                <p>Keeping Barangay records is a one way to easily track residentU+2019s information. BARIS is capable in recording this bulk information and can be stored in a long period of time. This system can meet strategic objectives for reducing paper consumption and reducing time consuming file retrieval from bulky documents. BARIS can also track residents record such as personal to family information, complaints to amicable settlement information and can create daily reports for the Barangay. It is a conntrol system that manages the process industrial workspace. It reduces human error and processign time, thus it cann boost productivity and result into high quality of prduct produce</p>
+            </div>
+        </section>
 
-        </a>
-        <a href="signup.php">
-          <button class="btn btn-primary ms-lg-2">Register</button>
-        </a>
+        <section id="services">
+            <div id="srvcs_head">
+                <h1>Services</h1><br>
+                <p>In the extent of implementation of the basic services and facilities in the barangay
+                    as mandated in Section 17 of the Local Government Code of 1991, the indicators
+                    were as follows: Agricultural Support Services, Health and Social Welfare
+                    Services, Services and Facilities Related to General Hygiene and Sanitation,
+                    Beautification and Solid Waste Collection, Maintenance of the Katarungang
+                    Pambarangay, Maintenance of the Barangay Roads and Bridges and Water Supply
+                    System, Infrastructure Facilities, Information and Reading Center, and Satellite or
+                    Public Market.</p>
+            </div>
+            <div class="flip-card" id="card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="img/lock.png" alt="Security">
+                        <h1>SECURITY</h1>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>BARIS helps Barangay Information to be secured with the use of auto-backup database and system user level security preventing unauthorized personnel to access the information</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card" id="card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="img/process.png" alt="Security">
+                        <h1>ONLINE PROCESS</h1>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Online processing of documents is also the main features of the system. You can get a documents such as barangay clearance, business permit or cedula by providing a corresponding requirements</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card" id="card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="img/inventory.png" alt="Security">
+                        <h1>AUTOMATED INVENTORY</h1>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>The System facilitates automated property inventory of the Barangay that can track location, cost, acquisition date and condition of the property. The system can speedily generate inventory with accuracy</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card" id="card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="img/monitor.png" alt="Security">
+                        <h1>MONITORING</h1>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>The ability of BARIS to monitor Residents Information and Business information status is an essential
+                            feature that may help Barangay Officials in decision making to formulate solutions, corresponding recommendations and appropriate positive actions</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card" id="card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="img/administrative.png" alt="Security">
+                        <h1>ADMININSTRATIVE CONVINIENCE</h1>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>The system facilitates the speedy processing of data which help employees increase their productivity and allows other important tasks to be devoted to rather than spending their time in manual manipulations of record that is time consuming</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card" id="card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="img/communication.png" alt="Security">
+                        <h1>COMMUNICATION</h1>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>The system helps its users to have a convinient way of communication where user can easily share announcements, events and pictures so that every user will always be updated.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="how_to-s">
+            <div id="srvcs_head">
+                <h1>How To's</h1><br>
+                <p>Providing step by step procedure for some features of the system which can help the user to adapt faster so they can maximize the benefits of using the website. Below are the videos that which you can watch to help you understand and follow [Barangay Registration, Installing Progressive Web Application on devices, etc.].</p>
+            </div><br>
+            <center>
+                <div class="vid_HTs" id="PWA">
+                    <video controls>
+                        <source src="saved_files/vid000001.mp4" type="video/mp4">
+                        Our website does not support this type of file.
+                        Try [mp4,mkv].
+                    </video><br>
+                    <label for="PWA">VID_001: Installing to device from browser.</label>
+                </div>
+                <div class="vid_HTs" id="PWA">
+                    <video controls>
+                        <source src="saved_files/vid000001.mp4" type="video/mp4">
+                        Our website does not support this type of file.
+                        Try [mp4,mkv].
+                    </video><br>
+                    <label for="PWA">VID_002: Barangay Registration.</label>
+                </div>
+            </center>
+        </section>
+        <section id="dev_team">
+            <div id="srvcs_head">
+                <h1>Development Team</h1><br>
+                <p>Students at Technological University of the Philippines - Manila S.Y. 2021-2022 taking Bachelor of Science in Information Technology. THe development of this website is one of the final requirement for them to be qualified to gradute.</p>
+            </div><br>
+            <center>
+            <div id="team_card">
+                <div class="team-member card-effect">
+                    <img src="img/marvin.jpg" alt="">
+                    <h5 class="mb-0 mt-4">Jaudian, Marvin</h5>
+                    <p>Front-End Developer</p>
+                    <i class='bx bxl-gmail'>
+                        <p>jaudianmarvin01@gmail.com</p>
+                    </i>
+
+                    <div class="social-icons">
+                        <a href="https://web.facebook.com/JaudianMarvin/"><i class='bx bxl-facebook'></i></a>
+                        <a href="https://www.linkedin.com/in/marvin-jaudian-246329203/"><i class='bx bxl-linkedin'></i></a>
+                        <a href="https://github.com/jaudianmarvin?fbclid=IwAR1AzSTOB0XwaaZ2wB3XiwuL1cR1zns9DAKSyfKIY0gPlq4AwCxZDZHRexA"><i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+            </div>
+            <div id="team_card">
+                <div class="team-member card-effect">
+                    <img src="img/jawo.png" alt="">
+                    <h5 class="mb-0 mt-4">Manzon, Eduard</h5>
+                    <p>Front-End Developer</p>
+                    <i class='bx bxl-gmail'>
+                        <p>manzonjohneduard@gmail.com</p>
+                    </i>
+                    <div class="social-icons">
+                        <a href="https://web.facebook.com/jawo.jawo.jawo/"><i class='bx bxl-facebook'></i></a>
+                        <a href="https://www.linkedin.com/in/johnmanzon/"><i class='bx bxl-linkedin'></i></a>
+                        <a href="https://github.com/jawo406"><i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+            </div>
+            <div id="team_card">
+                <div class="team-member card-effect">
+                    <img src="img/crisjahn.jpg" alt="">
+                    <h5 class="mb-0 mt-4">Perez, Crisjahn</h5>
+                    <p>Back-End Developer</p>
+                    <i class='bx bxl-gmail'>
+                        <p>crisjahn.perez09@gmail.com</p>
+                    </i>
+                    <div class="social-icons">
+                        <a href="https://web.facebook.com/crisjahn.perezzzz?_rdc=1&_rdr"><i class='bx bxl-facebook'></i></a>
+                        <a href="https://www.linkedin.com/in/crisjahnperez?fbclid=IwAR2x1vGVNjq-zY4GZdU6fwLj1s0YY_Id7AyfBSgDbPn1n38Y0kou0sNWmck"><i class='bx bxl-linkedin'></i></a>
+                        <a href="https://github.com/rajyon?fbclid=IwAR3IsH38Td9h97OC36C9aIUtsb7FOeFibOIULaUiKCKxeJO2TjA_5mjbfc0"><i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+            </div>
+            <div id="team_card">
+                <div class="team-member card-effect">
+                    <img src="img/luke.jpg" alt="">
+                    <h5 class="mb-0 mt-4">Toledo, Luke</h5>
+                    <p>Back-End Developer</p>
+                    <i class='bx bxl-gmail'>
+                        <p>luketoledo61@gmail.com</p>
+                    </i>
+                    <div class="social-icons">
+                        <a href="https://web.facebook.com/lukeeetoledo?_rdc=1&_rdr"><i class='bx bxl-facebook'></i></a>
+                        <a href="https://www.linkedin.com/in/luke-toledo/?fbclid=IwAR1b4o25BEof62LV6b4Ymht1rAboyQkW247lHSHcB44RUmmRWHXDTrFx-3w"><i class='bx bxl-linkedin'></i></a>
+                        <a href="https://github.com/lukeeetoledo?fbclid=IwAR0uTHrxYU_zcbeFPL89H2cY-q1McqoA4ttL0JB9PYwnhrQB6vITN0yYJI4"><i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+            </div>
+            </center>
+        </section>
+        <section id="documentation">
+        <div id="srvcs_head">
+                <h1>Documentation</h1><br>
+                <p></p>
+            </div><br>
+            <div id="docu_card">
+                <a href="Documents/Chapter 1.pdf" >Chapter 1</a>
+                <a href="Documents/Chapter 2.pdf" >Chapter 2</a>
+                <a href="Documents/Chapter 3.pdf" >Chapter 3</a>
+                <a href="#" >Chapter 4</a>
+                <a href="#" >Chapter 5</a>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <center>
+        <p>©2022 Technological University of the Philippines - Manila</p>
+        <p>BSIT - 4D represent</p>
         </center>
-      </div>
-    </div>
-  </nav>
-  <!--navbar-->
-
-  <!--home-->
-  <div class="hero vh-100 d-flex align-items-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-g-7 mx-auto text-center">
-          <h1 class="display-4">Barangay and Resident's Information System</h1>
-
-          <p class="text-white">Keeping Barangay records is a one way to easily track resident’s information. BARIS is capable in recording this bulk information and can be stored in a long period of time. This system can meet strategic objectives for reducing paper consumption and reducing time consuming file retrieval from bulky documents. BARIS can also track residents record such as personal to family information, complaints to amicable settlement information and can create daily reports for the Barangay. It is a conntrol system that manages the process industrial workspace. It reduces human error and processign time, thus it cann boost productivity and result into high quality of prduct produce</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--home-->
-
-  <!--services-->
-  <section id="services">
-    <div class="container">
-      <div class="row mb-5">
-        <div class="col-md-8 mx-auto text-center">
-          <h1>FEATURES</h1>
-          <p>In the extent of implementation of the basic services and facilities in the barangay
-            as mandated in Section 17 of the Local Government Code of 1991, the indicators
-            were as follows: Agricultural Support Services, Health and Social Welfare
-            Services, Services and Facilities Related to General Hygiene and Sanitation,
-            Beautification and Solid Waste Collection, Maintenance of the Katarungang
-            Pambarangay, Maintenance of the Barangay Roads and Bridges and Water Supply
-            System, Infrastructure Facilities, Information and Reading Center, and Satellite or
-            Public Market.</p>
-        </div>
-      </div>
-      <div class="row g-4">
-        <div class="col-lg-4 col-sm-6">
-          <div class="service card-effect bounceInUp">
-            <div class="iconbox">
-              <i class='bx bxs-lock'></i>
-            </div>
-            <h5 class="mt-4 mb-2">Security</h5>
-            <p>BARIS helps Barangay Information to be secured with the use of auto-backup database and system user level security preventing unauthorized personnel to access the information</p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="service card-effect">
-            <div class="iconbox">
-              <i class='bx bx-task'></i>
-            </div>
-            <h5 class="mt-4 mb-2">Online Process</h5>
-            <p>Online processing of documents is also the main features of the system. You can get a documents such as barangay clearance, business permit or cedula by providing a corresponding requirements </p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="service card-effect">
-            <div class="iconbox">
-              <i class='bx bxs-data'></i>
-            </div>
-            <h5 class="mt-4 mb-2">Automated Inventory</h5>
-            <p>The System facilitates automated property inventory of the Barangay that can track location, cost, acquisition date and condition of the property. The system can speedily generate inventory with accuracy. </p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="service card-effect">
-            <div class="iconbox">
-              <i class='bx bx-desktop'></i>
-            </div>
-            <h5 class="mt-4 mb-2">Monitoring</h5>
-            <p>The ability of BARIS to monitor Residents Information and Business information status is an essential
-              feature that may help Barangay Officials in decision making to formulate solutions, corresponding recommendations and appropriate positive actions. </p>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="service card-effect">
-            <div class="iconbox">
-              <i class='bx bxs-building-house'></i>
-            </div>
-            <h5 class="mt-4 mb-2">Administrative Convinience</h5>
-            <p>The system facilitates the speedy processing of data which help employees increase their productivity and allows other important tasks to be devoted to rather than spending their time in manual manipulations of record that is time consuming. </p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-sm-6">
-          <div class="service card-effect">
-            <div class="iconbox">
-              <i class='bx bxs-doughnut-chart'></i>
-            </div>
-            <h5 class="mt-4 mb-2">Service</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil perspiciatis illo asperiores
-              perferendis </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--Services-->
-
-  <!--How to-->
-  <section class="row w-100% py-0" id="News">
-    <h1 class="text-center">How To's</h1>
-    <img src="img/Slide1.PNG" class="img-fluid" alt="...">
-    <img src="img/Slide1.PNG" class="img-fluid" alt="...">
-  </section>
-
-
-      <div class="row mb-5">
-        <div class="col-md-8 mx-auto text-center">
-          <h1> DEVELOPMENT TEAM</h1>
-        </div>
-      </div>
-      <div class="row text-center g-4">
-        <div class="col-lg-3 col-sm-6">
-          <div class="team-member card-effect">
-            <img src="img/marvin.jpg" alt="">
-            <h5 class="mb-0 mt-4">Jaudian, Marvin</h5>
-            <p>Front-End Developer</p>
-            <i class='bx bxl-gmail'>
-              <p>jaudianmarvin01@gmail.com</p>
-            </i>
-
-            <div class="social-icons">
-              <a href="https://web.facebook.com/JaudianMarvin/"><i class='bx bxl-facebook'></i></a>
-              <a href="https://www.linkedin.com/in/marvin-jaudian-246329203/"><i class='bx bxl-linkedin'></i></a>
-              <a href="https://github.com/jaudianmarvin?fbclid=IwAR1AzSTOB0XwaaZ2wB3XiwuL1cR1zns9DAKSyfKIY0gPlq4AwCxZDZHRexA"><i class='bx bxl-github'></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-sm-6">
-          <div class="team-member card-effect">
-            <img src="img/jawo.png" alt="">
-            <h5 class="mb-0 mt-4">Manzon, Eduard</h5>
-            <p>Front-End Developer</p>
-            <i class='bx bxl-gmail'>
-              <p>manzonjohneduard@gmail.com</p>
-            </i>
-            <div class="social-icons">
-              <a href="https://web.facebook.com/jawo.jawo.jawo/"><i class='bx bxl-facebook'></i></a>
-              <a href="https://www.linkedin.com/in/johnmanzon/"><i class='bx bxl-linkedin'></i></a>
-              <a href="https://github.com/jawo406"><i class='bx bxl-github'></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-sm-6">
-          <div class="team-member card-effect">
-            <img src="img/crisjahn.jpg" alt="">
-            <h5 class="mb-0 mt-4">Perez, Crisjahn</h5>
-            <p>Back-End Developer</p>
-            <i class='bx bxl-gmail'>
-              <p>crisjahn.perez09@gmail.com</p>
-            </i>
-
-
-            <div class="social-icons">
-              <a href="https://web.facebook.com/crisjahn.perezzzz?_rdc=1&_rdr"><i class='bx bxl-facebook'></i></a>
-              <a href="https://www.linkedin.com/in/crisjahnperez?fbclid=IwAR2x1vGVNjq-zY4GZdU6fwLj1s0YY_Id7AyfBSgDbPn1n38Y0kou0sNWmck"><i class='bx bxl-linkedin'></i></a>
-              <a href="https://github.com/rajyon?fbclid=IwAR3IsH38Td9h97OC36C9aIUtsb7FOeFibOIULaUiKCKxeJO2TjA_5mjbfc0"><i class='bx bxl-github'></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-sm-6">
-          <div class="team-member card-effect">
-            <img src="img/luke.jpg" alt="">
-            <h5 class="mb-0 mt-4">Toledo, Luke</h5>
-            <p>Back-End Developer</p>
-            <i class='bx bxl-gmail'>
-              <p>luketoledo61@gmail.com</p>
-            </i>
-            <div class="social-icons">
-              <a href="https://web.facebook.com/lukeeetoledo?_rdc=1&_rdr"><i class='bx bxl-facebook'></i></a>
-              <a href="https://www.linkedin.com/in/luke-toledo/?fbclid=IwAR1b4o25BEof62LV6b4Ymht1rAboyQkW247lHSHcB44RUmmRWHXDTrFx-3w"><i class='bx bxl-linkedin'></i></a>
-              <a href="https://github.com/lukeeetoledo?fbclid=IwAR0uTHrxYU_zcbeFPL89H2cY-q1McqoA4ttL0JB9PYwnhrQB6vITN0yYJI4"><i class='bx bxl-github'></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-<<<<<<< HEAD
-  </div>
-</section>
-<!-- TEAM -->
-=======
-    </div>
-  </section><!-- TEAM -->
-
->>>>>>> 34ce11926e48d6767af8372cfe4b5a5afc854e25
-
-  <footer class="footer" id="documentation">
-    <div class="containerr">
-      <div class="roww">
-        <div class="footer-col">
-          <h4>Documentation</h4>
-
-          <ul>
-            <u><a href="Documents/Chapter 1.pdf">Chapter 1</a></u>
-            <h6>-The Problem and its Settings</h6>
-            <u><a href="Documents/Chapter 2.pdf">Chapter 2</a></u>
-            <h6>-Conceptual Framework</h6>
-            <u><a href="Documents/Chapter 3.pdf">Chapter 3</a></u>
-            <h6>-Methodology</h6>
-          </ul>
-
-        </div>
-
-      </div>
-    </div>
-    </div>
-  </footer>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  <script src="CSS/index.js"></script>
-
-
+    </footer>
+    <script src="src/index.js"></script>
 </body>
 
 </html>
