@@ -242,3 +242,38 @@ textarea{
   height: auto;
   border-radius: 10px;
 }
+#Barangay_Certificate{
+  margin-top: 20px;
+  padding: 20px;
+  background-color: white;
+  height: auto;
+  border-radius: 10px;
+}
+#Certificate_Indigency{
+  margin-top: 20px;
+  padding: 20px;
+  background-color: white;
+  height: auto;
+  border-radius: 10px;
+}
+#Barangay_Clearance{
+  margin-top: 20px;
+  padding: 20px;
+  background-color: white;
+  height: auto;
+  border-radius: 10px;
+}
+#Business_Permit{
+  margin-top: 20px;
+  padding: 20px;
+  background-color: white;
+  height: auto;
+  border-radius: 10px;
+}
+#Cedula{
+  margin-top: 20px;
+  padding: 20px;
+  background-color: white;
+  height: auto;
+  border-radius: 10px;
+}

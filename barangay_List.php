@@ -66,11 +66,12 @@
             <div class="list-group list-group-flush my-3" >
             <button class="btn btn-success" onclick="window.location.href='homepage_loader.php';" style="margin-left: 10px; margin-right: 10px;">Switch to Resident</button><br>
             <button class="btn btn-dark" onclick="window.location.href='API/API_logout.php';" style="margin-left: 10px; margin-right: 10px;">Log Out</button><hr>
-                <div id="dashboard"> <a href="barangay_Dashboard.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Dashboard</a></div>
+            <div id="dashboard"> <a href="barangay_Dashboard.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Dashboard</a></div>
                 <div id="dashboard"> <a href="barangay_Viewpost.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center"></i>Viewpost</a></div>
-                <div id="dashboard"> <a href="barangay_Permit_request.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Document Requests</a></div>
                 <div id="dashboard"> <a href="barangay_List.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Resident List</a></div>
-                <div id="dashboard"> <a href="barangay_Services.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Services</a></div><hr>
+                <div id="dashboard"> <a href="barangay_Services.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Services</a></div>
+                <div id="dashboard"> <a href="barangay_Permit.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Documents</a></div>
+                <div id="dashboard"> <a href="barangay_Permit_request.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Document Requests</a></div>
             </div>
         </div>
         </center>
@@ -117,7 +118,7 @@
                     </div>
                 </div>
                         <div class="container" style="border:solid; margin-top:20px">
-                                        <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1 style="display: inline-block;">Resident Profiling</h1><label for="myCheck" style="float:right;border:solid 3px"><img id="arrow_down" src="img/arrow-down.png" alt=""><img id="arrow_up" src="img/arrow-up.png" alt="" style="display: none;"></label><input type="checkbox" id="myCheck" onclick="myFunction()" style="display:none"></div>    
+                        <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1 style="display: inline-block;">Resident Profiling</h1><label for="myCheck" style="float:right;border:solid 3px"><img id="arrow_down" src="img/arrow-down.png" alt=""><img id="arrow_up" src="img/arrow-up.png" alt="" style="display: none;"></label><input type="checkbox" id="myCheck" onclick="myFunction()" style="display:none"></div>                 
                                         <form action="API/API_profiling.php<?php echo $token?>" method="POST" enctype='multipart/form-data'>
                                         <div class="row">
                                             <div class = "column" style="display:none" id = "add_A">
