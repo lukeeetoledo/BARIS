@@ -34,10 +34,11 @@
  <a href="#">Documents</a>
  <!-- DROPDOWN MENU -->
  <ul class="dropdown">
- <li><a href="/">Barangay Clearance </a></li>
- <li><a href="/">Certificate of Indigency</a></li>
- <li><a href="/">Business Permit</a></li>
- <li><a href="/">Cedula </a></li>
+ <li><a href="user_barangaycertificate.php">Barangay Certificate</a></li>
+ <li><a href="user_barangayclearance.php">Barangay Clearance</a></li>
+ <li><a href="user_certificateindingency.php">Certificate of Indigency</a></li>
+ <li><a href="user_businesspermit.php">Business Permit</a></li>
+ <li><a href="user_cedula.php">Cedula</a></li>
  </ul>
  </li>
  <li class="head_dropdown">
