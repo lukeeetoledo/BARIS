@@ -37,12 +37,13 @@ function includeHTML() {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barangay Certificate</title>
+    <title>Documents</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/services_complain.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="CSS/documentpage.css">
     
 </head>
 <body style = "background-color:#e4e6eb;">
@@ -52,8 +53,18 @@ includeHTML();
 </script>
     <div class="container" style="padding-top: 108px; align-items:center">
             <div class="profile-header">
-                <div class="profile-container" style = "margin-top:20px;width:100%; margin-right:45px">
-                    <img src="./img/documents.JPG" alt="" style = "border:solid;width:100%; ">
+                <div class="profile-container" style = "margin-top:10px;width:100%;">
+                    <img src="./img/documents.JPG" alt="" style = "border:solid;width:100%; "> <br><hr>
+                   
+                    <select name="format" style = "text-align-last:center; width: 100%; font-size:large" onchange="javascript:handleSelect(this)">
+                      <option disabled selected class = "lt">Choose Document</option><hr style="background-color: black">
+                      <option class = "lt" value="user_barangaycertificate"><a href="user_barangaycertificate.php">Barangay Certificate</a></option>
+                      <option class = "lt"value="user_barangayclearance"><a href="user_barangayclearance.php">Barangay Clearance</a></option>
+                      <option class = "lt"value="user_certificateindingency"><a href="user_certificateindingency.php">Certificate of Indigency</a></option>
+                      <option class = "lt"value="user_businesspermit"><a href="user_businesspermit.php">Business Permit</a></option>
+                      <option class = "lt"value="user_cedula"><a href="user_cedula.php">Cedula</a></option>
+                    </select>
+                    
                 </div>
         </div>     
     </div>
@@ -65,3 +76,9 @@ includeHTML();
         $('#datepicker').datepicker();
     });
 </script> 
+<script type="text/javascript">
+  function handleSelect(elm)
+  {
+     window.location = elm.value+".php";
+  }
+</script>

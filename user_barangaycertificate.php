@@ -1,5 +1,6 @@
 <?php 
 include 'API/API_user_profile.php';
+include 'API/API_getQRpayment.php';
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +40,7 @@ function includeHTML() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barangay Certificate</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="CSS/services_complain.css">
+    <link rel="stylesheet" href="CSS/barangay_documents.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
@@ -107,11 +108,22 @@ includeHTML();
                             </select>
                             <label for="doc_Cedulacpy">Tax certificate or Cedula copy<span>*</span></label>
                             <input style= "width: 100%; border: 1px solid #ccc;"type="file" id="doc_Cedulacpy" name="doc_Cedulacpy" required />
+                            </div><hr>
+                            <div>
+                                <h3  style = "font-weight: bold;">Convenience Fee Payment Method (20 PESOS ONLY)</h3>
                             </div>
+                            <div id = "qrPicture">
+                                <?php echo $paymentPic ?>
+                            </div>
+                            <div style = "text-align:left; margin-top:40px">
+                            <label for="doc_Cedulacpy">Proof of Payment<span>*</span></label>
+                            <input style= "width: 100%; border: 1px solid #ccc;"type="file" id="doc_Payment" name="doc_Payment" required />
+                            </div>
+                            <div style="font-style:italic; margin-top:100px;"><h4>*By clicking Submit, I certify that the information provided is true, correct and complete to the best of my belief.*</h4></div>
                             <input class="btn btn-success" type="submit" name="submit_brg_cert" id="submit_brg_cert" value="Submit" style="margin-top:100px; padding:10px"/>
                             </form>    
                         </div>
-                    </div
+                    </div>
                 </div>
             </div>
         </div>     
