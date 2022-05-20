@@ -32,7 +32,7 @@
         <!-- Sidebar -->
         <center>
         <div id="sidebar-wrapper" style="background-color: #bd8565;">
-            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold border-bottom" style="color: #659DBD;"><img src="img/FINAL.png" alt="" width="60" height="60"><span style="text-shadow: 1px 1px 2px rgba(0, 0,0, 1)">BaRIS</span> </div>
+            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold border-bottom" style="color: #659DBD;"><img src="img/Logo_192.png" alt="" width="60" height="60"><span style="text-shadow: 1px 1px 2px rgba(0, 0,0, 1)">BaRIS</span> </div>
             <div class="list-group list-group-flush my-3" >
             <button class="btn btn-success" onclick="window.location.href='homepage_loader.php';" style="margin-left: 10px; margin-right: 10px;">Switch to Resident</button><br>
             <button class="btn btn-dark" onclick="window.location.href='API/API_logout.php';" style="margin-left: 10px; margin-right: 10px;">Log Out</button><hr>
@@ -42,6 +42,7 @@
                 <div id="dashboard"> <a href="barangay_Services.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Services</a></div>
                 <div id="dashboard"> <a href="barangay_Permit.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Documents</a></div>
                 <div id="dashboard"> <a href="barangay_Permit_request.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Document Requests</a></div>
+                <div id="dashboard"> <a href="barangay_settings.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Settings</a></div>
             </div>
         </div>
         </center>
@@ -88,8 +89,9 @@
                     </div>
                 </div>
             <div class="container" id="Barangay_Certificate" style="border:solid; margin-top:20px">
-                <div class="row">
-                <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1 style="display: inline-block;">Barangay Certificate</h1></div> 
+            <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1 style="display: inline-block;">Barangay Certificate</h1></div>     
+            <div class="row">
+                
                     <div class = "column">
                     <form action="API/API_barangay_document_brgy.php>" method="POST" enctype='multipart/form-data'>
                     <input  style = "  margin-bottom: 10px" name="doc_Fname" class="form-control" id="doc_Fname" minlength="4" required placeholder="First Name">
@@ -149,8 +151,9 @@
         <div class="container" id="Barangay_Clearance" style="border:solid; display:none; margin-top:20px">
                    
                 <form action="API/API_barangay_document_brgy.php?php echo $token?>" method="POST" enctype='multipart/form-data'>
-                <div class="row">
                 <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1 style="display: inline-block;">Barangay Clearance</h1></div> 
+                <div class="row">
+                
                     <div class = "column">
                     <input  style = "  margin-bottom: 10px" name="doc_Fname" class="form-control" id="doc_Fname" minlength="4" required placeholder="First Name">
                     <input  style = "  margin-bottom: 10px" name="doc_Lname" class="form-control" id="doc_Lname" minlength="4" required placeholder="Last Name" >  
@@ -252,10 +255,10 @@
                 </div>
         </div>
         <div class="container" id="Certificate_Indigency" style="border:solid; display:none; margin-top:20px">
-                   
+        <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1 style="display: inline-block;">Certificate of Indigency</h1></div> 
                 <form action="API/API_barangay_document_brgy.php" method="POST" enctype='multipart/form-data'>
                 <div class="row">
-                <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1 style="display: inline-block;">Certificate of Indigency</h1></div> 
+                
                     <div class = "column">
                     <input  style = "  margin-bottom: 10px" name="doc_Fname" class="form-control" id="doc_Fname" minlength="4" required placeholder="First Name">
                     <input  style = "  margin-bottom: 10px" name="doc_Lname" class="form-control" id="doc_Lname" minlength="4" required placeholder="Last Name" >  
@@ -327,10 +330,10 @@
                 </div>
         </div>
         <div class="container" id="Business_Permit"style="border:solid; display:none; margin-top:20px">
-                    
+        <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1 style="display: inline-block;">Business Permit</h1></div>
                 <form action="API/API_barangay_document_brgy.php" method="POST" enctype='multipart/form-data'>
                 <div class="row">
-                <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1 style="display: inline-block;">Business Permit</h1></div>
+                
                     <div class = "column">
                     <input  style = "  margin-bottom: 10px" name="doc_Fname" class="form-control" id="doc_Fname" minlength="4" required placeholder="First Name">
                     <input  style = "  margin-bottom: 10px" name="doc_Lname" class="form-control" id="doc_Lname" minlength="4" required placeholder="Last Name" >  
@@ -405,10 +408,10 @@
                 </div>
         </div>
         <div class="container" id="Cedula" style="border:solid; display:none; margin-top:20px">
-                    
+        <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1 style="display: inline-block;">Cedula</h1></div>
                 <form action="API/API_barangay_document_brgy.php" method="POST" enctype='multipart/form-data'>
                 <div class="row">
-                <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1 style="display: inline-block;">Cedula</h1></div>
+                
                     <div class = "column">
                         
                     <input  style = "  margin-bottom: 10px" name="doc_Fname" class="form-control" id="doc_Fname" minlength="4" required placeholder="First Name">

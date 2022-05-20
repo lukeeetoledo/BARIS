@@ -30,6 +30,7 @@ $docu_type1 = "Barangay_Ceritificate";
     $doc_Purpose =mysqli_real_escape_string($conn, $_POST['doc_Purpose']);
 
     $doc_Cedulacpy = $target_dir . basename($_FILES["doc_Cedulacpy"]["name"]);
+    $doc_Payment = $target_dir . basename($_FILES["doc_Payment"]["name"]);
     $check = getimagesize($_FILES["doc_Cedulacpy"]["tmp_name"]);
     
     if ($check !== false) {
@@ -41,11 +42,12 @@ $docu_type1 = "Barangay_Ceritificate";
     if($uploadOk == 0){
         echo '<script>alert("Error Uploading File/s."); window.location.href="../user_barangaycertificate.php";</script>';
     }
-        $query_Insert_post = "INSERT INTO barangay_documents_tbl (barangay_ID, user_ID,  doc_Type, doc_ID, doc_Fname, doc_Lname, doc_Mname, doc_Suffix, doc_Address, doc_Purpose, doc_Date, doc_Cedulacpy) 
-        VALUES ('$barangay_ID','$user_ID', '$doc_Type', '$doc_ID', '$doc_Fname', '$doc_Lname', '$doc_Mname','$doc_Suffix', '$doc_Address', '$doc_Purpose','$doc_Date','$doc_Cedulacpy')";
+        $query_Insert_post = "INSERT INTO barangay_documents_tbl (barangay_ID, user_ID,  doc_Type, doc_ID, doc_Fname, doc_Lname, doc_Mname, doc_Suffix, doc_Address, doc_Purpose, doc_Date, doc_Cedulacpy,doc_Payment) 
+        VALUES ('$barangay_ID','$user_ID', '$doc_Type', '$doc_ID', '$doc_Fname', '$doc_Lname', '$doc_Mname','$doc_Suffix', '$doc_Address', '$doc_Purpose','$doc_Date','$doc_Cedulacpy','$doc_Payment')";
 
          if($conn->query($query_Insert_post) == TRUE){
             move_uploaded_file($_FILES['doc_Cedulacpy']['tmp_name'], '../' .$doc_Cedulacpy);
+            move_uploaded_file($_FILES['doc_Payment']['tmp_name'], '../' .$doc_Payment);
             echo '<script>alert("Request sent"); window.location.href="../user_barangaycertificate.php"</script>';
         }else{
             echo $conn->error;
@@ -80,6 +82,7 @@ if(isset($_POST['submit_brg_clear'])){
     $doc_Contact =mysqli_real_escape_string($conn, $_POST['doc_Contact']);
     $doc_UploadedID = $target_dir . basename($_FILES["doc_UploadedID"]["name"]);
     $doc_Cedulacpy = $target_dir . basename($_FILES["doc_Cedulacpy"]["name"]);
+    $doc_Payment = $target_dir . basename($_FILES["doc_Payment"]["name"]);
     
     $check = getimagesize($_FILES["doc_UploadedID"]["tmp_name"]);
     $check = getimagesize($_FILES["doc_Cedulacpy"]["tmp_name"]);
@@ -93,13 +96,14 @@ if(isset($_POST['submit_brg_clear'])){
         echo '<script>alert("Error Uploading File/s."); window.location.href="../user_barangayclearance.php";</script>';
     }
         $query_Insert_post = "INSERT INTO barangay_documents_tbl (barangay_ID, user_ID,  doc_Type, doc_ID, doc_Fname, doc_Lname, doc_Mname, doc_Suffix, doc_Address, doc_Birthdate,doc_Sex, doc_Age, doc_Civilstatus, doc_Citizenship,doc_Purpose, doc_Date, doc_Cedulacpy,
-        doc_IDpres, doc_UploadedID, doc_Email, doc_Contact) 
+        doc_IDpres, doc_UploadedID, doc_Email, doc_Contact, doc_Payment) 
         VALUES ('$barangay_ID','$user_ID', '$doc_Type', '$doc_ID', '$doc_Fname', '$doc_Lname', '$doc_Mname', '$doc_Suffix', '$doc_Address','$doc_Birthdate','$doc_Sex','$doc_Age','$doc_Civilstatus','$doc_Citizenship','$doc_Purpose','$doc_Date','$doc_Cedulacpy',
-       '$doc_IDpres','$doc_UploadedID','$doc_Email','$doc_Contact')";
+       '$doc_IDpres','$doc_UploadedID','$doc_Email','$doc_Contact','$doc_Payment')";
 
          if($conn->query($query_Insert_post) == TRUE){
             move_uploaded_file($_FILES['doc_Cedulacpy']['tmp_name'], '../' .$doc_Cedulacpy);
             move_uploaded_file($_FILES['doc_UploadedID']['tmp_name'], '../' .$doc_UploadedID);
+            move_uploaded_file($_FILES['doc_Payment']['tmp_name'], '../' .$doc_Payment);
            echo '<script>alert("Request sent"); window.location.href="../user_barangayclearance.php"</script>';
         }else{
             echo $conn->error;
@@ -126,11 +130,13 @@ if(isset($_POST['submit_cert_indi'])){
     $doc_Purpose =mysqli_real_escape_string($conn, $_POST['doc_Purpose']);
     $doc_Email = mysqli_real_escape_string($conn, $_POST['doc_Email']);
     $doc_Contact =mysqli_real_escape_string($conn, $_POST['doc_Contact']);
+    $doc_Payment = $target_dir . basename($_FILES["doc_Payment"]["name"]);
   
-        $query_Insert_post = "INSERT INTO barangay_documents_tbl (barangay_ID, user_ID,  doc_Type, doc_ID, doc_Fname, doc_Lname, doc_Mname, doc_Suffix,  doc_Birthdate, doc_Sex, doc_Purpose, doc_Date, doc_Email, doc_Contact) 
-        VALUES ('$barangay_ID','$user_ID', '$doc_Type', '$doc_ID', '$doc_Fname', '$doc_Lname', '$doc_Mname','$doc_Suffix','$doc_Birthdate','$doc_Sex','$doc_Purpose','$doc_Date','$doc_Email','$doc_Contact')";
+        $query_Insert_post = "INSERT INTO barangay_documents_tbl (barangay_ID, user_ID,  doc_Type, doc_ID, doc_Fname, doc_Lname, doc_Mname, doc_Suffix,  doc_Birthdate, doc_Sex, doc_Purpose, doc_Date, doc_Email, doc_Contact, doc_Payment) 
+        VALUES ('$barangay_ID','$user_ID', '$doc_Type', '$doc_ID', '$doc_Fname', '$doc_Lname', '$doc_Mname','$doc_Suffix','$doc_Birthdate','$doc_Sex','$doc_Purpose','$doc_Date','$doc_Email','$doc_Contact','$doc_Payment')";
 
          if($conn->query($query_Insert_post) == TRUE){
+            move_uploaded_file($_FILES['doc_Payment']['tmp_name'], '../' .$doc_Payment);
             echo '<script>alert("Request sent"); window.location.href="../user_certificateindingency.php"</script>';
         }else{
             echo $conn->error;
@@ -157,12 +163,14 @@ if(isset($_POST['submit_Bus_permit'])){
     $doc_Contact =mysqli_real_escape_string($conn, $_POST['doc_Contact']);
     $doc_IDpres =mysqli_real_escape_string($conn, $_POST['doc_IDpres']);
     $doc_UploadedID = $target_dir . basename($_FILES["doc_UploadedID"]["name"]);
+    $doc_Payment = $target_dir . basename($_FILES["doc_Payment"]["name"]);
   
-        $query_Insert_post = "INSERT INTO barangay_documents_tbl (barangay_ID, user_ID,  doc_Type, doc_ID, doc_Fname, doc_Lname, doc_Mname, doc_Suffix, doc_Businessname, doc_Businessloc, doc_Date, doc_IDpres, doc_UploadedID, doc_Email, doc_Contact) 
-        VALUES ('$barangay_ID','$user_ID', '$doc_Type', '$doc_ID', '$doc_Fname', '$doc_Lname', '$doc_Mname','$doc_Suffix','$doc_Businessname','$doc_Businessloc','$doc_Date','$doc_IDpres','$doc_UploadedID','$doc_Email','$doc_Contact')";
+        $query_Insert_post = "INSERT INTO barangay_documents_tbl (barangay_ID, user_ID,  doc_Type, doc_ID, doc_Fname, doc_Lname, doc_Mname, doc_Suffix, doc_Businessname, doc_Businessloc, doc_Date, doc_IDpres, doc_UploadedID, doc_Email, doc_Contact, doc_Payment) 
+        VALUES ('$barangay_ID','$user_ID', '$doc_Type', '$doc_ID', '$doc_Fname', '$doc_Lname', '$doc_Mname','$doc_Suffix','$doc_Businessname','$doc_Businessloc','$doc_Date','$doc_IDpres','$doc_UploadedID','$doc_Email','$doc_Contact','$doc_Payment')";
 
          if($conn->query($query_Insert_post) == TRUE){
             move_uploaded_file($_FILES['doc_UploadedID']['tmp_name'], '../' .$doc_UploadedID);
+            move_uploaded_file($_FILES['doc_Payment']['tmp_name'], '../' .$doc_Payment);
            echo '<script>alert("Request sent"); window.location.href="../user_businesspermit.php"</script>';
         }else{
             echo $conn->error;
@@ -200,14 +208,16 @@ if(isset($_POST['submit_Cedula'])){
     $doc_Date = mysqli_real_escape_string($conn, date("m-d-Y "));
     $doc_Email = mysqli_real_escape_string($conn, $_POST['doc_Email']);
     $doc_Contact =mysqli_real_escape_string($conn, $_POST['doc_Contact']);
+    $doc_Payment = $target_dir . basename($_FILES["doc_Payment"]["name"]);
    
   
         $query_Insert_post = "INSERT INTO barangay_documents_tbl (barangay_ID, user_ID,  doc_Type, doc_ID, doc_Fname, doc_Lname, doc_Mname, doc_Suffix, doc_Address, doc_Civilstatus, doc_Citizenship, doc_Birthdate, doc_Birthplace, doc_Sex, doc_Age, doc_Height, doc_Weight, doc_Occupation, 
-        doc_Purpose, doc_Earningfromsal, doc_Grossrecfrombus, doc_Totalincom, doc_Taxindentification, doc_Date, doc_Email, doc_Contact) 
+        doc_Purpose, doc_Earningfromsal, doc_Grossrecfrombus, doc_Totalincom, doc_Taxindentification, doc_Date, doc_Email, doc_Contact, doc_Payment) 
         VALUES ('$barangay_ID','$user_ID', '$doc_Type', '$doc_ID', '$doc_Fname', '$doc_Lname', '$doc_Mname','$doc_Suffix','$doc_Address', '$doc_Civilstatus', '$doc_Citizenship','$doc_Birthdate','$doc_Birthplace','$doc_Sex','$doc_Age','$doc_Height','$doc_Weight','$doc_Occupation',
-        '$doc_Purpose','$doc_Earningfromsal','$doc_Grossrecfrombus','$doc_Totalincom','$doc_Taxindentification','$doc_Date','$doc_Email','$doc_Contact')";
+        '$doc_Purpose','$doc_Earningfromsal','$doc_Grossrecfrombus','$doc_Totalincom','$doc_Taxindentification','$doc_Date','$doc_Email','$doc_Contact','$doc_Payment')";
 
          if($conn->query($query_Insert_post) == TRUE){
+            move_uploaded_file($_FILES['doc_Payment']['tmp_name'], '../' .$doc_Payment);
            echo '<script>alert("Request sent"); window.location.href="../user_cedula.php"</script>';
         }else{
             echo $conn->error;

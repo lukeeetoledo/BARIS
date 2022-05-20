@@ -277,3 +277,10 @@ textarea{
   height: auto;
   border-radius: 10px;
 }
+#barangay_post{
+  margin-top: 20px;
+  padding: 20px;
+  background-color: white;
+  height: auto;
+  border-radius: 10px;
+}
