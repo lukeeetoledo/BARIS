@@ -54,6 +54,7 @@
                 <div id="dashboard"> <a href="barangay_Services.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Services</a></div>
                 <div id="dashboard"> <a href="barangay_Permit.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Documents</a></div>
                 <div id="dashboard"> <a href="barangay_Permit_request.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Document Requests</a></div>
+                <div id="dashboard"> <a href="barangay_settings.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Settings</a></div>
                     <hr>
                 </div>
             </div>
@@ -111,6 +112,7 @@
             <div class="row" id="service_blotter_list">
             <h3 class="fs-4 mb-3" id="head_filter_blotter">List of Blotter</h3>
                     <div class="container">
+                    <a href = "API/API_barangay_blotter_excel.php" style = "margin-bottom: 5px" class = "btn btn-success">Export to Excel </a>
                         <div class="row">
                             <div class="col-md-12 col-sm-12" style="overflow-x:auto;">
                                 <table class="table table-striped" id="loadData_blotter">
@@ -174,6 +176,7 @@
             <div class="row" id="service_support">
             <h3 class="fs-4 mb-3" ><span id="head_filter_request">List of Request</span></h3>
                     <div class="container">
+                    <a href = "API/API_barangay_support_excel.php" style = "margin-bottom: 5px" class = "btn btn-success">Export to Excel </a>
                         <div class="row">
                             <div class="col-md-12 col-sm-12" style="overflow-x:auto;">
                                 <table class="table table-striped" id="loadData_support">
