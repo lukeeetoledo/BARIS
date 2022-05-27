@@ -1,12 +1,16 @@
 <?php 
       session_start();
       $style = "";
+      $pointer = "";
       if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SESSION['barangay_ID'])){
       header("location:index.php");
   }
   if($_SESSION['user_Type']!="3"){
     $style = "style = 'display:none'";
-}
+  }
+  if($_SESSION['user_Type'] == "0" || $_SESSION['user_Type'] == "1" || $_SESSION['user_Type'] == "4"){
+    $pointer = "style = 'display:none'";
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +34,7 @@
  <div class="menu">
  <li><a href="homepage.php">Home</a></li>
  <li><a href="user_profile.php">Profile</a></li>
- <li class="head_dropdown">
+ <li class="head_dropdown" <?php echo $pointer; ?>>
  <a href="#">Documents</a>
  <!-- DROPDOWN MENU -->
  <ul class="dropdown">
@@ -41,14 +45,14 @@
  <li><a href="user_cedula.php">Cedula</a></li>
  </ul>
  </li>
- <li class="head_dropdown">
-  <a href="#">Services</a>
+ <li class="head_dropdown" <?php echo $pointer; ?>>
+  <a href="#" >Services</a>
   <ul class="dropdown">
  <li><a href="services_complain.php">Report a Complaint</a></li>
  <li><a href="services_support.php">Request for Support</a></li>
  </ul>
 </li>
- <li><a href="/">History</a></li>
+ <li><a href="user_history.php">History</a></li>
  <li <?php echo $style; ?>><button class="btn btn-success" onclick="window.location.href='barangay_loader.php';">Switch to Barangay</button></li>
  <li><button class="btn btn-info" onclick="window.location.href='API/API_logout.php';">Log Out</button></li>
  </div>

@@ -2,7 +2,24 @@
 *{
     font-family: 'Poppins',sans-serif;
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #bd8565; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #976a51; 
+}
 input[type=text], select, input[type=file] {
   width: 100%;
   padding: 12px 20px;

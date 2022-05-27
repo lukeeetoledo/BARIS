@@ -1,6 +1,6 @@
 <?php 
       session_start();
-      if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SESSION['barangay_ID'])){
+      if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SESSION['barangay_ID']) || $_SESSION['user_Type'] == "3" || $_SESSION['user_Type'] == "2"){
       header("location:index.php");
   }
 ?>
@@ -44,11 +44,11 @@
             <label for="PoB">Proof of Billing<span>*</span></label>
             <input type="file" id="PoB" name="txt_PoB" required />
 
-            <label for="Self_Portrait">Self Portrait<span>*</span></label>
+            <label for="Self_Portrait">Self Portrait<span>* <small>[Preferably 1x1 picture] [Will be use as profile picture.]</small></span></label>
             <input type="file" id="Self_Portrait" name="txt_Self_Portrait" required />
 
             <input type="submit" name="submit" value="Submit">
-            <button class="btn btn-warning" onclick="window.location.href='userprofile.php'" style="width: 100%;">Cancel</button>
+            <button class="btn btn-warning" onclick="window.location.href='user_profile.php'" style="width: 100%;">Cancel</button>
         </form>
     </div>
     <p>© 2022 Barangay and Residents' Information System</p>

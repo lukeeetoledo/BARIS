@@ -3,9 +3,10 @@ session_start();
 include 'SYSTEM_config.php';
 date_default_timezone_set('Asia/Manila');
 
-if(isset($_GET['token']) && isset($_GET['prcs'])){
+if(isset($_GET['token']) && isset($_GET['prcs'])  && isset($_GET['img'])){
     $creator_ID = $_GET['token'];
     $registration_ID = $_GET['prcs'];
+    $creator_Image = $_GET['img'];
     $date_Created = date(DATE_RFC822);
     // GETTING BARANGAY ID
     $query_Get_brgy = "SELECT * FROM barangay_users_tbl WHERE user_ID = '$creator_ID'";
@@ -26,7 +27,8 @@ if(isset($_GET['token']) && isset($_GET['prcs'])){
             $result_Update_status_B = mysqli_query($conn, $query_Update_status_B);
             if($result_Update_status_A){
                 if($result_Update_status_B){
-                    echo '<script>alert("Barangay Registration Accepted!"); window.location.href="dashboard.php"</script>';
+                    $result_Update_img = mysqli_query($conn, "UPDATE barangay_users_tbl SET user_Image = '$creator_Image' WHERE user_ID = '$creator_ID'");
+                    echo '<script>alert("Barangay Registration Accepted!"); window.location.href="index.php"</script>';
                 }else{
                     echo $conn->error;
                 }

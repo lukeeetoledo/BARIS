@@ -7,7 +7,24 @@
     font-size: 16px;
     transition: all 500ms ease;
    }
+   ::-webkit-scrollbar {
+    width: 10px;
+  }
   
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #bd8565; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #976a51; 
+  }
   body {
     background-color: #659DBD;
     -webkit-font-smoothing: antialiased;

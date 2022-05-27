@@ -14,6 +14,7 @@ if(isset($_POST['txt_Fname']) && isset($_POST['txt_Lname'])
         // USER
     $user_ID = mysqli_real_escape_string($conn,uniqid('BaRIS_'));
     $user_Fname = mysqli_real_escape_string($conn,$_POST['txt_Fname']);
+    $user_Fname = ucwords($user_Fname);
     if(isset($_POST['txt_Mname'])){
         $user_Mname = mysqli_real_escape_string($conn,$_POST['txt_Mname']);
     }

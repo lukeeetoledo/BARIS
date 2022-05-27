@@ -17,7 +17,7 @@ if(isset($_GET['token']) && isset($_GET['prcs'])){
             $query_Update_status = "UPDATE system_brgy_registration_tbl SET request_Status = '2' WHERE process_ID = '$registration_ID' ;";
             $result_Update_status = mysqli_query($conn, $query_Update_status);
             if($result_Update_status){
-                echo '<script>alert("Barangay Registration Rejected!"); window.location.href="dashboard.php"</script>';
+                echo '<script>alert("Barangay Registration Rejected!"); window.location.href="index.php"</script>';
             }else{
                 echo $conn->error;
             }
