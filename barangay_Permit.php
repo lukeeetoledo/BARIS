@@ -93,18 +93,31 @@
             <div class="row">
                 
                     <div class = "column">
-                    <form action="API/API_barangay_document_brgy.php>" method="POST" enctype='multipart/form-data'>
+                    <form action="API/API_barangay_document_brgy.php" method="POST" enctype='multipart/form-data'>
                     <input  style = "  margin-bottom: 10px" name="doc_Fname" class="form-control" id="doc_Fname" minlength="4" required placeholder="First Name">
                     <input  style = "  margin-bottom: 10px" name="doc_Lname" class="form-control" id="doc_Lname" minlength="4" required placeholder="Last Name" >  
                     <input  style = "  margin-bottom: 10px" name="doc_Mname" class="form-control" id="doc_Mname" minlength="4" required placeholder="Middle Name">  
                     <div style="margin-top: 10px;">
-                        <select name="doc_Suffix" id="prof_sex" style="width: 100%;padding:10px;margin-bottom:10px">
+                        <select name="doc_Suffix" id="doc_Suffix" style="width: 100%;padding:10px;margin-bottom:10px">
                             <option name="doc_None" value="Sr.">None</option>
                             <option name="doc_Sr" value="Sr.">Sr.</option>
                             <option name="doc_Jr" value="Jr.">Jr.</option>
                         </select>
                     </div>
-                    <input  style = "  margin-bottom: 10px" name="doc_Address" class="form-control" id="doc_Address" minlength="4" required placeholder="Full Address"> 
+                    <div style="margin-top: 10px;">
+                        <select name="doc_Sex" id="doc_Sex" style="width: 100%;padding:10px;margin-bottom:10px">
+                            <option name="doc_Sr" value="Male">Male</option>
+                            <option name="doc_Jr" value="Female">Female</option>
+                        </select>
+                    </div>
+                    <input  style = "  margin-bottom: 10px" name="doc_Address" class="form-control" id="doc_Address" minlength="4" required placeholder="Full Address">
+                    <div style="margin-top: 10px;">
+                        <select name="doc_Civilstatus" id="doc_Civilstatus" style="width: 100%;padding:10px;margin-bottom:10px">
+                            <option name="doc_Sr" value="Single">Single</option>
+                            <option name="doc_Jr" value="Married">Married</option>
+                        </select>
+                    </div>
+                    <input  style = "  margin-bottom: 10px" name="doc_Citizenship" class="form-control" id="doc_Citizenship" minlength="4" required placeholder="Enter Citizenship" > 
                     <label for="reason">Purpose of Application:</label>
                             <select style="width: 100%;padding:10px;margin-bottom:10px" id="reason" name="doc_Purpose" required style="overflow: auto;">
                                 <option value="Bailbond">Bailbond</option>
@@ -140,7 +153,7 @@
                     </div><br>
                     <div class = "column">
                     <label for="doc_Cedulacpy">Tax certificate or Cedula copy<span>*</span></label>
-                    <input style= "width: 100%; border: 1px solid #ccc;"type="file" id="doc_Cedulacpy" name="doc_Cedulacpy" required />           
+                    <input style= "width: 100%; border: 1px solid #ccc;"type="file" id="doc_Cedulacpy" name="doc_Cedulacpy" required />       
                     <div class="form-group"></div>
                     <button style = "width: 100%; margin-top:10px" type="submit" name ="submit_brg_cert"class="btn btn-primary">Add</button>
                     <button style = "width: 100%; margin-top:10px" type = "button" onclick = "window.location.href='barangay_Permit.php'" class="btn btn-primary">Clear</button>
@@ -246,7 +259,7 @@
                             <label for="doc_UploadedID"></label>
                             <input style= "width: 100%; margin-bottom: 10px; border: 1px solid #ccc;"type="file" id="doc_UploadedID" name="doc_UploadedID" required />
                             <input  style = "  margin-bottom: 10px" name="doc_Email" class="form-control" id="doc_Email" minlength="4" required placeholder="Email Address" >
-                            <input  style = "  margin-bottom: 10px" name="doc_Contact" class="form-control" id="doc_Contact" minlength="4" required placeholder="Contact Number">           
+                            <input  style = "  margin-bottom: 10px" name="doc_Contact" class="form-control" id="doc_Contact" minlength="4" required placeholder="Contact Number">         
                     <div class="form-group"></div>
                     <button style = "width: 100%; margin-top:10px" type="submit" name ="submit_brg_clear"class="btn btn-primary">Add</button>
                     <button style = "width: 100%; margin-top:10px" type = "button" onclick = "window.location.href='barangay_Permit.php'" class="btn btn-primary">Clear</button>
@@ -286,6 +299,13 @@
                             </span>
                         </span>
                     </div>        
+                    <div style="margin-top: 10px;">
+                        <select name="doc_Civilstatus" id="doc_Civilstatus" style="width: 100%;padding:10px;margin-bottom:10px">
+                            <option name="doc_Sr" value="Single">Single</option>
+                            <option name="doc_Jr" value="Married">Married</option>
+                        </select>
+                    </div>
+                    <input  style = "  margin-bottom: 10px" name="doc_Citizenship" class="form-control" id="doc_Citizenship" minlength="4" required placeholder="Enter Citizenship" > 
                     <label for="reason">Purpose of Application:</label>
                             <select style="width: 100%;padding:10px;margin-bottom:10px" id="reason" name="doc_Purpose" required style="overflow: auto;">
                                 <option value="Bailbond">Bailbond</option>
@@ -321,7 +341,7 @@
                     </div><br>
                     <div class = "column">
                             <input  style = "  margin-bottom: 10px" name="doc_Email" class="form-control" id="doc_Email" minlength="4" required placeholder="Email Address" >
-                            <input  style = "  margin-bottom: 10px" name="doc_Contact" class="form-control" id="doc_Contact" minlength="4" required placeholder="Contact Number">           
+                            <input  style = "  margin-bottom: 10px" name="doc_Contact" class="form-control" id="doc_Contact" minlength="4" required placeholder="Contact Number">         
                     <div class="form-group"></div>
                     <button style = "width: 100%; margin-top:10px" type="submit" name ="submit_cert_indi"class="btn btn-primary">Add</button>
                     <button style = "width: 100%; margin-top:10px" type = "button" onclick = "window.location.href='barangay_Permit.php'" class="btn btn-primary">Clear</button>
@@ -399,7 +419,7 @@
                     <label for="doc_UploadedID"></label>
                     <input style= "width: 100%; margin-bottom: 10px; border: 1px solid #ccc;"type="file" id="doc_UploadedID" name="doc_UploadedID" required />
                     <input  style = "  margin-bottom: 10px" name="doc_Email" class="form-control" id="doc_Email" minlength="4" required placeholder="Email Address" >
-                    <input  style = "  margin-bottom: 10px" name="doc_Contact" class="form-control" id="doc_Contact" minlength="4" required placeholder="Contact Number">           
+                    <input  style = "  margin-bottom: 10px" name="doc_Contact" class="form-control" id="doc_Contact" minlength="4" required placeholder="Contact Number">        
                     <div class="form-group"></div>
                     <button style = "width: 100%; margin-top:10px" type="submit" name ="submit_Bus_permit"class="btn btn-primary">Add</button>
                     <button style = "width: 100%; margin-top:10px" type = "button" onclick = "window.location.href='barangay_Permit.php'" class="btn btn-primary">Clear</button>
@@ -441,6 +461,7 @@
                             </span>
                         </span>
                     </div>
+                    <input type = "number" style = "  margin-bottom: 10px" name="doc_Age" class="form-control" id="doc_Age" minlength="2" min="18" required placeholder="Age"> 
                     <input  style = "  margin-bottom: 10px" name="doc_Birthplace" class="form-control" id="doc_Birthplace" minlength="4" required placeholder="Birth Place">   
                     <label for="reason">Civil Status</label>
                             <select name="doc_Civilstatus" class="civilstatus">
@@ -451,8 +472,8 @@
                                 <option value="Widowed">Widowed</option>
                             </select><br>
                     <input  style = "  margin-bottom: 10px" name="doc_Citizenship" class="form-control" id="doc_Citizenship" minlength="4" required placeholder="Citizenship" >
-                    <input  type = "number" style = "  margin-bottom: 10px" name="doc_Height" class="form-control" id="doc_Height" minlength="3" min = "137 cm" required placeholder="Height in cm"> 
-                    <input type = "number" style = "  margin-bottom: 10px" name="doc_Weight" class="form-control" id="doc_Weight" minlength="2" min="28 kg" required placeholder="Weight in kg"> 
+                    <input  type = "number" style = "  margin-bottom: 10px" name="doc_Height" class="form-control" id="doc_Height" minlength="3" min = "137 cm" required placeholder="Height in cm">
+                    <input  type = "number" style = "  margin-bottom: 10px" name="doc_Weight" class="form-control" id="doc_Weight" minlength="3" min = "28 kg" required placeholder="Weight in kg">  
                     <input  style = "  margin-bottom: 10px" name="doc_Occupation" class="form-control" id="doc_Occupation" minlength="4" required placeholder="Occupation">        
                     <label for="reason">Purpose of Application:</label>
                             <select style="width: 100%;padding:10px;margin-bottom:10px" id="reason" name="doc_Purpose" required style="overflow: auto;">
@@ -493,7 +514,7 @@
                     <input type = "number"  style = "  margin-bottom: 10px" name="doc_Totalincom" class="form-control" id="doc_Totalincom" minlength="4" placeholder="Total Income From Party" >
                     <input  style = "  margin-bottom: 10px" name="doc_Taxindentification" class="form-control" id="doc_Taxindentification" minlength="4" placeholder="Tax Indentification Number" >
                     <input  style = "  margin-bottom: 10px" name="doc_Email" class="form-control" id="doc_Email" minlength="4" required placeholder="Email Address" >
-                    <input  style = "  margin-bottom: 10px" name="doc_Contact" class="form-control" id="doc_Contact" minlength="4" required placeholder="Contact Number">           
+                    <input  style = "  margin-bottom: 10px" name="doc_Contact" class="form-control" id="doc_Contact" minlength="4" required placeholder="Contact Number">         
                     <div class="form-group"></div>
                     <button style = "width: 100%; margin-top:10px" type="submit" name ="submit_Cedula"class="btn btn-primary">Add</button>
                     <button style = "width: 100%; margin-top:10px" type = "button" onclick = "window.location.href='barangay_Permit.php'" class="btn btn-primary">Clear</button>

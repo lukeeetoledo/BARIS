@@ -1,6 +1,6 @@
 <?php 
 include 'API/API_user_profile.php';
-include 'API/API_getQRpayment.php';
+include 'API/API_getQRpayment3.php';
 ?>
 
 <!DOCTYPE html>
@@ -72,6 +72,8 @@ includeHTML();
                         <form action = "API/API_barangay_document.php" method="POST" enctype='multipart/form-data'>    
                         <div class="tab-pane active show" id="profile-about" style="text-align: left">
                         <div style="font-style:italic;"><h5>*Some important information are gathered from the personal information of the user*</h5></div>
+                        <label for="reason">Citizenship<span>*</span></label>
+                            <input  style = "  margin-bottom: 10px" name="doc_Citizenship" class="form-control" id="doc_Citizenship" minlength="4" required placeholder="Enter Citizenship" > 
                             <label for="reason">Purpose of Application:<span>*</span></label>
                             <select style = " border-radius: 5px;" id="reason" name="doc_Purpose" required style="overflow: auto;">
                                 <option value="Bailbond">Bailbond</option>
@@ -110,7 +112,7 @@ includeHTML();
                             <input  style = "  margin-bottom: 10px" name="doc_Contact" class="form-control" id="doc_Contact" minlength="4" required placeholder="Enter Contact Number">
                             </div><hr>
                             <div>
-                                <h3  style = "font-weight: bold;">Convenience Fee Payment Method (20 PESOS ONLY)</h3>
+                            <h3  style = "font-weight: bold;">Convenience Fee Payment Method (<span style="color:white">₱<?php echo $price ?> PESOS ONLY</span>)</h3>
                             </div>
                             <div id = "qrPicture">
                                 <?php echo $paymentPic ?>
@@ -118,6 +120,13 @@ includeHTML();
                             <div style = "text-align:left; margin-top:40px">
                             <label for="doc_Cedulacpy">Proof of Payment<span>*</span></label>
                             <input style= "width: 100%; border: 1px solid #ccc;"type="file" id="doc_Payment" name="doc_Payment" required />
+                            </div>
+                            <div style = "text-align:left;">
+                            <label for="reason" >Issue of paper will be send through:<span>*</span></label>
+                            <select style = " border-radius: 5px;" id="reason" name="doc_DeliverType" required style="overflow: auto;">
+                                <option value="Home">To Home Address</option>
+                                <option value="Email">Registered Email Address</option>
+                            </select>
                             </div>
                             <div style="font-style:italic; margin-top:100px;"><h4>*By clicking Submit, I certify that the information provided is true, correct and complete to the best of my belief.*</h4></div>
                             <input class="btn btn-success" type="submit" name="submit_cert_indi" id="submit_cert_indi" value="Submit" style="margin-top:100px; padding:10px"/>

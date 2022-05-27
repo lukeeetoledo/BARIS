@@ -60,10 +60,11 @@ label{
     width: 100%;
 }
 #qrPayment{
-    width: 33%;
+    width: 30%;
     background-color: white;
     display: inline-block;
-    padding: 25px;
+    padding: 15px;
+    margin: 5px;
 }
 #qrPayment img{  
     width: 100%;
@@ -73,9 +74,7 @@ label{
     min-height: 10px;
     min-height: 10px;
 }
-#qrPicture{
-    display: inline-block;
-}
+
 
 @media (max-width: 952px){
     #qrPayment{

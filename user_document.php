@@ -64,7 +64,6 @@ includeHTML();
                       <option class = "lt"value="user_businesspermit"><a href="user_businesspermit.php">Business Permit</a></option>
                       <option class = "lt"value="user_cedula"><a href="user_cedula.php">Cedula</a></option>
                     </select>
-                    
                 </div>
         </div>     
     </div>
