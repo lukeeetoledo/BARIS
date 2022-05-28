@@ -6,14 +6,9 @@
   }
 
    $barangay_ID = $_SESSION['barangay_ID'];
-   $limit = 2;
+  
    $num_rows = 0;
-   if (isset($_POST['page_no_blotter'])) {
-      $page = $_POST['page_no_blotter'];
-   }else{
-      $page = 0;
-   }
-   $sql = "SELECT * FROM barangay_blotter_tbl WHERE barangay_ID = '$barangay_ID' LIMIT $page, $limit";
+   $sql = "SELECT * FROM barangay_blotter_tbl WHERE barangay_ID = '$barangay_ID' ORDER BY date_Resolved DESC";
    
    $query = $conn->query($sql);
    if ($query->num_rows > 0) {
@@ -37,12 +32,6 @@
              </tr>";
    }
    $output .= "<tbody>";
-         
-   $output .= "<tbody id='pagination_blotter' style='text-align:left'>
-                 <tr>
-                <td colspan='9'><button class='btn btn-success loadbtn_blotter' data-id='{$last_id}'>Load More</button></td>
-             </tr>
-              </tbody>";
    $output.=$num_rows;
    echo $output;     
    }

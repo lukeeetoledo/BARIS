@@ -6,16 +6,9 @@
   }
 
    $barangay_ID = $_SESSION['barangay_ID'];
-   $limit = 5;
-   $num_rows = 0;
-   if (isset($_POST['page_no'])) {
-      $page = $_POST['page_no'];
-   }else{
-      $page = 0;
-   }
-   $sql = "SELECT * FROM barangay_post_tbl WHERE barangay_ID = '$barangay_ID' LIMIT $page, $limit";
-   
+   $sql = "SELECT * FROM barangay_post_tbl WHERE barangay_ID = '$barangay_ID' ORDER BY post_Date DESC";
    $query = $conn->query($sql);
+
    if ($query->num_rows > 0) {
    $num_rows = mysqli_num_rows($query);
    $output = "";
@@ -36,12 +29,6 @@
              </tr>";
    }
    $output .= "<tbody>";
-         
-   $output .= "<tbody id='pagination' style='text-align:left'>
-                 <tr>
-                <td colspan='9'><button class='btn btn-success loadbtn' data-id='{$last_id}'>Load More</button></td>
-             </tr>
-              </tbody>";
    $output.=$num_rows;
    echo $output;     
    }

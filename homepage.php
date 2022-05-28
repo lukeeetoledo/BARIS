@@ -70,24 +70,24 @@ includeHTML();
         $.ajax({
           url : "API/API_get_posts.php",
           type: "POST",
-          cache:false,
-          data:{page_no:page},
+          cache:true,
+          // data:{page_no:page},
           success:function(data){
             if (data) {
-              $("#pagination").remove();
               $("#loadData").append(data);
-            }else{
-              $(".loadbtn").prop("disabled", true);
-              $(".loadbtn").html('That is All');
             }
+            // else{
+            //   $(".loadbtn").prop("disabled", true);
+            //   $(".loadbtn").html('That is All');
+            // }
           }
         });
       }
       
-      $(document).on('click', '.loadbtn', function(){
-        $(".loadbtn").html('Loading...');
-        var pId = $(this).data("id");
-        loadMoreData(pId);
-      });
+      // $(document).on('click', '.loadbtn', function(){
+      //   $(".loadbtn").html('Loading...');
+      //   var pId = $(this).data("id");
+      //   loadMoreData(pId);
+      // });
   });
 </script>

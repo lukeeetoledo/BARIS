@@ -6,19 +6,13 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
 }
 
 $barangay_ID = $_SESSION['barangay_ID'];
-$limit = 10; 
 $data = "";
 $query_Get_posts1 = "SELECT * FROM barangay_post_tbl WHERE barangay_ID = '$barangay_ID' ";
 $result_Get_posts1 = mysqli_query($conn,$query_Get_posts1);
 
 
 if(mysqli_num_rows($result_Get_posts1) > 0){
-    if (isset ($_POST['page_no']) ) {  
-        $page = $_POST['page_no']; 
-    } else {  
-        $page = 0;
-    }    
-    $query_Get_posts2 = "SELECT * FROM barangay_post_tbl WHERE barangay_ID = '$barangay_ID' ORDER BY post_Date DESC LIMIT $page, $limit ";
+    $query_Get_posts2 = "SELECT * FROM barangay_post_tbl WHERE barangay_ID = '$barangay_ID' ORDER BY post_Date DESC";
     $result_Get_posts2 = mysqli_query($conn,$query_Get_posts2);
     if($result_Get_posts2){
         while ($row = mysqli_fetch_assoc($result_Get_posts2)) {
@@ -107,10 +101,6 @@ if(mysqli_num_rows($result_Get_posts1) > 0){
             </div>';
             
         }
-        
-        if(isset($last_Post)){
-            $data .= "<div id='pagination'><button class='btn btn-success loadbtn' data-id='{$last_Post}' style='width:100%; background-color: #bd8565 !important; border:solid 1px #659DBD !important'>View More</button></div>";
-        }   
         echo $data;
     }
 }else{

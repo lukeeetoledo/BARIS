@@ -3,14 +3,9 @@
    require_once('SYSTEM_config.php');
    session_start();
    $barangay_ID = $_SESSION['barangay_ID'];
-   $limit = 5;
    $num_rows = 0;
-   if (isset($_POST['page_no'])) {
-      $page = $_POST['page_no'];
-   }else{
-      $page = 0;
-   }
-   $sql = "SELECT * FROM barangay_profiling_tbl WHERE barangay_ID = '$barangay_ID' LIMIT $page, $limit";
+
+   $sql = "SELECT * FROM barangay_profiling_tbl WHERE barangay_ID = '$barangay_ID' ORDER BY prof_Lname DESC";
    
    $query = $conn->query($sql);
    if ($query->num_rows > 0) {
@@ -38,12 +33,6 @@ $last_id = $row['prof_Count'] - 1;
              </tr>";
    }
    $output .= "<tbody>";
-               
-   $output .= "<tbody id='pagination' style='text-align:left'>
-            <tr>
-             <td colspan='13'><button class='btn btn-success loadbtn' data-id='{$last_id}'>Load More</button></td>
-            </tr>
-            </tbody>";
 $output.=$num_rows;
    echo $output;     
    }

@@ -54,7 +54,7 @@ includeHTML();
     <div class="container" style="padding-top: 108px; align-items:center">
             <div class="profile-header">
                 <div class="profile-container" style = "margin-top:10px;width:100%;">
-                    <img src="./img/documents.JPG" alt="" style = "border:solid;width:100%; "> <br><hr>
+                    <img src="./img/documents.JPG" alt="" style = "border:solid;width:100%;max-width:720px"> <br><hr>
                    
                     <select name="format" style = "text-align-last:center; width: 100%; font-size:large" onchange="javascript:handleSelect(this)">
                       <option disabled selected class = "lt">Choose Document</option><hr style="background-color: black">

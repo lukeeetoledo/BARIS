@@ -6,14 +6,9 @@
   }
 
    $barangay_ID = $_SESSION['barangay_ID'];
-   $limit = 2;
+  
    $num_rows = 0;
-   if (isset($_POST['page_no_support'])) {
-      $page = $_POST['page_no_support'];
-   }else{
-      $page = 0;
-   }
-   $sql = "SELECT * FROM barangay_support_tbl WHERE barangay_ID = '$barangay_ID' LIMIT $page, $limit";
+   $sql = "SELECT * FROM barangay_support_tbl WHERE barangay_ID = '$barangay_ID' ORDER BY date_Requested DESC";
    
    $query = $conn->query($sql);
    if ($query->num_rows > 0) {
@@ -35,12 +30,7 @@
              </tr>";
    }
    $output .= "<tbody>";
-         
-   $output .= "<tbody id='pagination_support' style='text-align:left'>
-                 <tr>
-                <td colspan='9'><button class='btn btn-success loadbtn_support' data-id='{$last_id}'>Load More</button></td>
-             </tr>
-              </tbody>";
+
    $output.=$num_rows;
    echo $output;     
    }

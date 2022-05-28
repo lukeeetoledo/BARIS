@@ -6,7 +6,7 @@
   }
 
    $barangay_ID = $_SESSION['barangay_ID'];
-   $limit = 2;
+   
    $num_rows = 0;
    if (isset($_POST['page_no'])) {
       $page = $_POST['page_no'];
