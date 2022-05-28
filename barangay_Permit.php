@@ -32,7 +32,7 @@
         <!-- Sidebar -->
         <center>
         <div id="sidebar-wrapper" style="background-color: #bd8565;">
-            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold border-bottom" style="color: #659DBD;"><img src="img/FINAL.png" alt="" width="60" height="60"><span style="text-shadow: 1px 1px 2px rgba(0, 0,0, 1)">BaRIS</span> </div>
+            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold border-bottom" style="color: #659DBD;"><img src="img/Logo_192.png" alt="" width="60" height="60"><span style="text-shadow: 1px 1px 2px rgba(0, 0,0, 1)">BaRIS</span> </div>
             <div class="list-group list-group-flush my-3" >
             <button class="btn btn-success" onclick="window.location.href='homepage_loader.php';" style="margin-left: 10px; margin-right: 10px;">Switch to Resident</button><br>
             <button class="btn btn-dark" onclick="window.location.href='API/API_logout.php';" style="margin-left: 10px; margin-right: 10px;">Log Out</button><hr>
@@ -46,7 +46,7 @@
                     <div id="dashboard"> <a href="barangay_Permit_request.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Document Requests</a></div>
                     <div id="dashboard"> <a href="barangay_Reports.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Reports</a></div>
                     <div id="dashboard"> <a href="barangay_History.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">History</a></div>
-            </div>
+                    <div id="dashboard"> <a href="barangay_settings.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Settings</a></div>
         </div>
         </center>
         <!-- /#sidebar-wrapper -->
@@ -92,21 +92,35 @@
                     </div>
                 </div>
             <div class="container" id="Barangay_Certificate" style="border:solid; margin-top:20px">
-                <div class="row">
-                <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1 style="display: inline-block;">Barangay Certificate</h1></div> 
+            <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1 style="display: inline-block;">Barangay Certificate</h1></div>     
+            <div class="row">
+                
                     <div class = "column">
-                    <form action="API/API_barangay_document_brgy.php>" method="POST" enctype='multipart/form-data'>
+                    <form action="API/API_barangay_document_brgy.php" method="POST" enctype='multipart/form-data'>
                     <input  style = "  margin-bottom: 10px" name="doc_Fname" class="form-control" id="doc_Fname" minlength="4" required placeholder="First Name">
                     <input  style = "  margin-bottom: 10px" name="doc_Lname" class="form-control" id="doc_Lname" minlength="4" required placeholder="Last Name" >  
                     <input  style = "  margin-bottom: 10px" name="doc_Mname" class="form-control" id="doc_Mname" minlength="4" required placeholder="Middle Name">  
                     <div style="margin-top: 10px;">
-                        <select name="doc_Suffix" id="prof_sex" style="width: 100%;padding:10px;margin-bottom:10px">
+                        <select name="doc_Suffix" id="doc_Suffix" style="width: 100%;padding:10px;margin-bottom:10px">
                             <option name="doc_None" value="Sr.">None</option>
                             <option name="doc_Sr" value="Sr.">Sr.</option>
                             <option name="doc_Jr" value="Jr.">Jr.</option>
                         </select>
                     </div>
-                    <input  style = "  margin-bottom: 10px" name="doc_Address" class="form-control" id="doc_Address" minlength="4" required placeholder="Full Address"> 
+                    <div style="margin-top: 10px;">
+                        <select name="doc_Sex" id="doc_Sex" style="width: 100%;padding:10px;margin-bottom:10px">
+                            <option name="doc_Sr" value="Male">Male</option>
+                            <option name="doc_Jr" value="Female">Female</option>
+                        </select>
+                    </div>
+                    <input  style = "  margin-bottom: 10px" name="doc_Address" class="form-control" id="doc_Address" minlength="4" required placeholder="Full Address">
+                    <div style="margin-top: 10px;">
+                        <select name="doc_Civilstatus" id="doc_Civilstatus" style="width: 100%;padding:10px;margin-bottom:10px">
+                            <option name="doc_Sr" value="Single">Single</option>
+                            <option name="doc_Jr" value="Married">Married</option>
+                        </select>
+                    </div>
+                    <input  style = "  margin-bottom: 10px" name="doc_Citizenship" class="form-control" id="doc_Citizenship" minlength="4" required placeholder="Enter Citizenship" > 
                     <label for="reason">Purpose of Application:</label>
                             <select style="width: 100%;padding:10px;margin-bottom:10px" id="reason" name="doc_Purpose" required style="overflow: auto;">
                                 <option value="Bailbond">Bailbond</option>
@@ -142,7 +156,7 @@
                     </div><br>
                     <div class = "column">
                     <label for="doc_Cedulacpy">Tax certificate or Cedula copy<span>*</span></label>
-                    <input style= "width: 100%; border: 1px solid #ccc;"type="file" id="doc_Cedulacpy" name="doc_Cedulacpy" required />           
+                    <input style= "width: 100%; border: 1px solid #ccc;"type="file" id="doc_Cedulacpy" name="doc_Cedulacpy" required />       
                     <div class="form-group"></div>
                     <button style = "width: 100%; margin-top:10px" type="submit" name ="submit_brg_cert"class="btn btn-primary">Add</button>
                     <button style = "width: 100%; margin-top:10px" type = "button" onclick = "window.location.href='barangay_Permit.php'" class="btn btn-primary">Clear</button>
@@ -153,8 +167,9 @@
         <div class="container" id="Barangay_Clearance" style="border:solid; display:none; margin-top:20px">
                    
                 <form action="API/API_barangay_document_brgy.php?php echo $token?>" method="POST" enctype='multipart/form-data'>
-                <div class="row">
                 <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1 style="display: inline-block;">Barangay Clearance</h1></div> 
+                <div class="row">
+                
                     <div class = "column">
                     <input  style = "  margin-bottom: 10px" name="doc_Fname" class="form-control" id="doc_Fname" minlength="4" required placeholder="First Name">
                     <input  style = "  margin-bottom: 10px" name="doc_Lname" class="form-control" id="doc_Lname" minlength="4" required placeholder="Last Name" >  
@@ -247,7 +262,7 @@
                             <label for="doc_UploadedID"></label>
                             <input style= "width: 100%; margin-bottom: 10px; border: 1px solid #ccc;"type="file" id="doc_UploadedID" name="doc_UploadedID" required />
                             <input  style = "  margin-bottom: 10px" name="doc_Email" class="form-control" id="doc_Email" minlength="4" required placeholder="Email Address" >
-                            <input  style = "  margin-bottom: 10px" name="doc_Contact" class="form-control" id="doc_Contact" minlength="4" required placeholder="Contact Number">           
+                            <input  style = "  margin-bottom: 10px" name="doc_Contact" class="form-control" id="doc_Contact" minlength="4" required placeholder="Contact Number">         
                     <div class="form-group"></div>
                     <button style = "width: 100%; margin-top:10px" type="submit" name ="submit_brg_clear"class="btn btn-primary">Add</button>
                     <button style = "width: 100%; margin-top:10px" type = "button" onclick = "window.location.href='barangay_Permit.php'" class="btn btn-primary">Clear</button>
@@ -256,10 +271,10 @@
                 </div>
         </div>
         <div class="container" id="Certificate_Indigency" style="border:solid; display:none; margin-top:20px">
-                   
+        <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1 style="display: inline-block;">Certificate of Indigency</h1></div> 
                 <form action="API/API_barangay_document_brgy.php" method="POST" enctype='multipart/form-data'>
                 <div class="row">
-                <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1 style="display: inline-block;">Certificate of Indigency</h1></div> 
+                
                     <div class = "column">
                     <input  style = "  margin-bottom: 10px" name="doc_Fname" class="form-control" id="doc_Fname" minlength="4" required placeholder="First Name">
                     <input  style = "  margin-bottom: 10px" name="doc_Lname" class="form-control" id="doc_Lname" minlength="4" required placeholder="Last Name" >  
@@ -287,6 +302,13 @@
                             </span>
                         </span>
                     </div>        
+                    <div style="margin-top: 10px;">
+                        <select name="doc_Civilstatus" id="doc_Civilstatus" style="width: 100%;padding:10px;margin-bottom:10px">
+                            <option name="doc_Sr" value="Single">Single</option>
+                            <option name="doc_Jr" value="Married">Married</option>
+                        </select>
+                    </div>
+                    <input  style = "  margin-bottom: 10px" name="doc_Citizenship" class="form-control" id="doc_Citizenship" minlength="4" required placeholder="Enter Citizenship" > 
                     <label for="reason">Purpose of Application:</label>
                             <select style="width: 100%;padding:10px;margin-bottom:10px" id="reason" name="doc_Purpose" required style="overflow: auto;">
                                 <option value="Bailbond">Bailbond</option>
@@ -322,7 +344,7 @@
                     </div><br>
                     <div class = "column">
                             <input  style = "  margin-bottom: 10px" name="doc_Email" class="form-control" id="doc_Email" minlength="4" required placeholder="Email Address" >
-                            <input  style = "  margin-bottom: 10px" name="doc_Contact" class="form-control" id="doc_Contact" minlength="4" required placeholder="Contact Number">           
+                            <input  style = "  margin-bottom: 10px" name="doc_Contact" class="form-control" id="doc_Contact" minlength="4" required placeholder="Contact Number">         
                     <div class="form-group"></div>
                     <button style = "width: 100%; margin-top:10px" type="submit" name ="submit_cert_indi"class="btn btn-primary">Add</button>
                     <button style = "width: 100%; margin-top:10px" type = "button" onclick = "window.location.href='barangay_Permit.php'" class="btn btn-primary">Clear</button>
@@ -331,10 +353,10 @@
                 </div>
         </div>
         <div class="container" id="Business_Permit"style="border:solid; display:none; margin-top:20px">
-                    
+        <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1 style="display: inline-block;">Business Permit</h1></div>
                 <form action="API/API_barangay_document_brgy.php" method="POST" enctype='multipart/form-data'>
                 <div class="row">
-                <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1 style="display: inline-block;">Business Permit</h1></div>
+                
                     <div class = "column">
                     <input  style = "  margin-bottom: 10px" name="doc_Fname" class="form-control" id="doc_Fname" minlength="4" required placeholder="First Name">
                     <input  style = "  margin-bottom: 10px" name="doc_Lname" class="form-control" id="doc_Lname" minlength="4" required placeholder="Last Name" >  
@@ -400,7 +422,7 @@
                     <label for="doc_UploadedID"></label>
                     <input style= "width: 100%; margin-bottom: 10px; border: 1px solid #ccc;"type="file" id="doc_UploadedID" name="doc_UploadedID" required />
                     <input  style = "  margin-bottom: 10px" name="doc_Email" class="form-control" id="doc_Email" minlength="4" required placeholder="Email Address" >
-                    <input  style = "  margin-bottom: 10px" name="doc_Contact" class="form-control" id="doc_Contact" minlength="4" required placeholder="Contact Number">           
+                    <input  style = "  margin-bottom: 10px" name="doc_Contact" class="form-control" id="doc_Contact" minlength="4" required placeholder="Contact Number">        
                     <div class="form-group"></div>
                     <button style = "width: 100%; margin-top:10px" type="submit" name ="submit_Bus_permit"class="btn btn-primary">Add</button>
                     <button style = "width: 100%; margin-top:10px" type = "button" onclick = "window.location.href='barangay_Permit.php'" class="btn btn-primary">Clear</button>
@@ -409,10 +431,10 @@
                 </div>
         </div>
         <div class="container" id="Cedula" style="border:solid; display:none; margin-top:20px">
-                    
+        <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1 style="display: inline-block;">Cedula</h1></div>
                 <form action="API/API_barangay_document_brgy.php" method="POST" enctype='multipart/form-data'>
                 <div class="row">
-                <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1 style="display: inline-block;">Cedula</h1></div>
+                
                     <div class = "column">
                         
                     <input  style = "  margin-bottom: 10px" name="doc_Fname" class="form-control" id="doc_Fname" minlength="4" required placeholder="First Name">
@@ -442,6 +464,7 @@
                             </span>
                         </span>
                     </div>
+                    <input type = "number" style = "  margin-bottom: 10px" name="doc_Age" class="form-control" id="doc_Age" minlength="2" min="18" required placeholder="Age"> 
                     <input  style = "  margin-bottom: 10px" name="doc_Birthplace" class="form-control" id="doc_Birthplace" minlength="4" required placeholder="Birth Place">   
                     <label for="reason">Civil Status</label>
                             <select name="doc_Civilstatus" class="civilstatus">
@@ -452,8 +475,8 @@
                                 <option value="Widowed">Widowed</option>
                             </select><br>
                     <input  style = "  margin-bottom: 10px" name="doc_Citizenship" class="form-control" id="doc_Citizenship" minlength="4" required placeholder="Citizenship" >
-                    <input  type = "number" style = "  margin-bottom: 10px" name="doc_Height" class="form-control" id="doc_Height" minlength="3" min = "137 cm" required placeholder="Height in cm"> 
-                    <input type = "number" style = "  margin-bottom: 10px" name="doc_Weight" class="form-control" id="doc_Weight" minlength="2" min="28 kg" required placeholder="Weight in kg"> 
+                    <input  type = "number" style = "  margin-bottom: 10px" name="doc_Height" class="form-control" id="doc_Height" minlength="3" min = "137 cm" required placeholder="Height in cm">
+                    <input  type = "number" style = "  margin-bottom: 10px" name="doc_Weight" class="form-control" id="doc_Weight" minlength="3" min = "28 kg" required placeholder="Weight in kg">  
                     <input  style = "  margin-bottom: 10px" name="doc_Occupation" class="form-control" id="doc_Occupation" minlength="4" required placeholder="Occupation">        
                     <label for="reason">Purpose of Application:</label>
                             <select style="width: 100%;padding:10px;margin-bottom:10px" id="reason" name="doc_Purpose" required style="overflow: auto;">
@@ -494,7 +517,7 @@
                     <input type = "number"  style = "  margin-bottom: 10px" name="doc_Totalincom" class="form-control" id="doc_Totalincom" minlength="4" placeholder="Total Income From Party" >
                     <input  style = "  margin-bottom: 10px" name="doc_Taxindentification" class="form-control" id="doc_Taxindentification" minlength="4" placeholder="Tax Indentification Number" >
                     <input  style = "  margin-bottom: 10px" name="doc_Email" class="form-control" id="doc_Email" minlength="4" required placeholder="Email Address" >
-                    <input  style = "  margin-bottom: 10px" name="doc_Contact" class="form-control" id="doc_Contact" minlength="4" required placeholder="Contact Number">           
+                    <input  style = "  margin-bottom: 10px" name="doc_Contact" class="form-control" id="doc_Contact" minlength="4" required placeholder="Contact Number">         
                     <div class="form-group"></div>
                     <button style = "width: 100%; margin-top:10px" type="submit" name ="submit_Cedula"class="btn btn-primary">Add</button>
                     <button style = "width: 100%; margin-top:10px" type = "button" onclick = "window.location.href='barangay_Permit.php'" class="btn btn-primary">Clear</button>

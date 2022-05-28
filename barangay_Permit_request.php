@@ -40,7 +40,7 @@
                     <div id="dashboard"> <a href="barangay_Permit_request.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Document Requests</a></div>
                     <div id="dashboard"> <a href="barangay_Reports.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Reports</a></div>
                     <div id="dashboard"> <a href="barangay_History.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">History</a></div>
-            </div>
+                <div id="dashboard"> <a href="barangay_settings.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Settings</a></div>
         </div>
         </center>
         <!-- /#sidebar-wrapper -->
@@ -53,7 +53,6 @@
                     <h2 class="fs-2 m-0">Document Requests</h2>
                 </div>
             </nav>
-
             <div class="container-fluid px-4">
                 <div class="row g-3 my-2">
                     <div class="col-md-3">
@@ -66,23 +65,50 @@
                         </div>
                     </div>
                 </div>
+                <div class="row" id="services">
+                <div id="service_column"><button class="btn" id="service_choice" name="blotter_list" onclick="showBarangay_Request1();">Online</button></div>
+                <div id="service_column"><button class="btn" id="service_choice" name="blotter_create" onclick="showBarangay_Request2();">Walk-In</button></div>
+              
+            </div>
 
-                <div class="row my-5" id= "document_request">
+                <div class="row my-5" id= "document_request1">
                     <h3 class="fs-4 mb-3">List of requests</h3>
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 col-sm-12" style="overflow-x:auto;">
-                                <table class="table table-striped" id="loadData">
+                                <table class="table table-striped" id="loadData1">
                                     <thead>
                                         <tr style="background-color: #bd8565;">
-                                            <th>Process_ID</th>
-                                            <th>Requestor_ID</th>
-                                            <th>Requestor_Position</th>
-                                            <th>Residential_Status</th>
-                                            <th>ID#1</th>
-                                            <th>ID#2</th>
-                                            <th>Billing</th>
-                                            <th>Selfie</th>
+                                            <th>Document_ID</th>
+                                            <th>User_ID</th>
+                                            <th>Document_Type</th>
+                                            <th>Requestor Full Name</th>
+                                            <th>Email</th>
+                                            <th>Contact_Number</th>
+                                            <th>Request_Mode</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style = "display:none" class="row my-5" id= "document_request2">
+                    <h3 class="fs-4 mb-3">List of requests</h3>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12" style="overflow-x:auto;">
+                                <table class="table table-striped" id="loadData2">
+                                    <thead>
+                                        <tr style="background-color: #bd8565;">
+                                            <th>Document_ID</th>
+                                            <th>Document_Type</th>
+                                            <th>Requestor Full Name</th>
+                                            <th>Email</th>
+                                            <th>Contact_Number</th>
+                                            <th>Request_Mode</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -115,7 +141,7 @@
       loadMoreData();
       function loadMoreData(page){
         $.ajax({
-          url : "load_data.php",
+          url : "API/API_request_load_data.php",
           type: "POST",
           cache:false,
           data:{page_no:page},
@@ -123,7 +149,7 @@
             if (data) {
               $("#pagination").remove();
               document.getElementById("count").innerHTML = data.slice(-1); 
-              $("#loadData").append(data);
+              $("#loadData1").append(data);
             }else{
               $(".loadbtn").prop("disabled", true);
               $(".loadbtn").html('That is All');
@@ -138,4 +164,56 @@
         loadMoreData(pId);
       });
   });
+</script>
+<script type="text/javascript">
+  $(document).ready(function(){
+      loadMoreData();
+      function loadMoreData(page){
+        $.ajax({
+          url : "API/API_request_load_data2.php",
+          type: "POST",
+          cache:false,
+          data:{page_no:page},
+          success:function(data){
+            if (data) {
+              $("#pagination").remove();
+              document.getElementById("count").innerHTML = data.slice(-1); 
+              $("#loadData2").append(data);
+            }else{
+              $(".loadbtn").prop("disabled", true);
+              $(".loadbtn").html('That is All');
+            }
+          }
+        });
+      }
+      
+      $(document).on('click', '.loadbtn', function(){
+        $(".loadbtn").html('Loading...');
+        var pId = $(this).data("id");
+        loadMoreData(pId);
+      });
+  });
+</script>
+<script>
+function showBarangay_Request1() {
+
+var A = document.getElementById("document_request1");
+var B = document.getElementById("document_request2");
+
+
+// If the checkbox is checked, display the output text
+   A.style.display = "block";
+   B.style.display = "none";
+ 
+}
+function showBarangay_Request2() {
+
+var A = document.getElementById("document_request1");
+var B = document.getElementById("document_request2");
+
+
+// If the checkbox is checked, display the output text
+ A.style.display = "none";
+ B.style.display = "block";
+}
 </script>

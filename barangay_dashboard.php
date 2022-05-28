@@ -40,7 +40,8 @@
                 <div id="dashboard"> <a href="barangay_Permit_request.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Document Requests</a></div>
                 <div id="dashboard"> <a href="barangay_Reports.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Reports</a></div>
                 <div id="dashboard"> <a href="barangay_History.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">History</a></div>
-            </div>
+                <div id="dashboard"> <a href="barangay_settings.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Settings</a></div>
+
         </div>
         </center>
         <!-- /#sidebar-wrapper -->
@@ -57,9 +58,9 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             
-            <div class="container" style="border:solid;">
-                <div class="row">
-                <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1>Create Post</h1>
+            <div class="container" id = "barangay_post" style="border:solid;">
+            <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;"><h1>Create Post</h1> </div>   
+            <div class="row">
                     </div>    
                         <form action="API/API_create_post.php" method="POST" enctype='multipart/form-data'>
                             <div class="form-group">
@@ -72,7 +73,6 @@
                             <textarea rows = 1; name="txt_Title" type="text" class="form-control" id="title" minlength="4" maxlength="36" required placeholder="Title"></textarea>
                             <div id="text_area1_remain">36 Characters Remaining</div>    
                             </div>
-                            
                             <div class="form-group">
                                 <textarea  rows="5" class="form-control" name="txt_Text_Content" id="description" minlength="4" maxlength="325" required placeholder="Description"></textarea>
                                 <div id="text_area2_remain">325 Characters Remaining</div>
