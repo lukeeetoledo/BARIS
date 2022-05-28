@@ -9,7 +9,7 @@
 <body>
     
     <script>
-        location.replace("home.php")
+        location.replace("API/API_check_user.php")
     </script>
       
 </body>

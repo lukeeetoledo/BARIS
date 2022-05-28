@@ -13,7 +13,7 @@
 <script>
 const myTimeout = setTimeout(myFunction, 3000);
 function myFunction() {
-  location.replace("barangay_CreatePost.php")
+  location.replace("barangay_Dashboard.php")
 }
 </script>
 
