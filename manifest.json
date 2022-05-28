@@ -1,10 +1,10 @@
 {
     "name": "Barangay and Residents' Information System",
     "short_name": "BaRIS",
-    "id": "/BARIS/index.php",
-    "start_url": ".",
-    "background_color": "#FFFFFF",
-    "theme_color": "#16cbd1",
+    "id":"/BARIS/",
+    "start_url": "./home.php",
+    "background_color": "#121212",
+    "theme_color": "#121212",
     "display": "standalone",
     "icons": [
         {
