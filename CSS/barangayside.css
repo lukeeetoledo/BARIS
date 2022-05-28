@@ -157,7 +157,8 @@ textarea{
 }
 
 .column{
-  width: 50%;
+  width: 45%;
+  margin-left: 24px;
 }
 #service_choice{
    width: 100%;
@@ -196,11 +197,17 @@ textarea{
   color: red;
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 720px) {
   .column {
     width: 100%;
   }
   #service_column{
+    width: 100%;
+  }
+  #add_A{
+    width: 100%;
+  }
+  input{
     width: 100%;
   }
 }

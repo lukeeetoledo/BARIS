@@ -68,17 +68,17 @@ if (isset($_GET['token'])) {
                     <button class="btn btn-dark" onclick="window.location.href='API/API_logout.php';" style="margin-left: 10px; margin-right: 10px;">Log Out</button>
                     <hr>
                     <div id="dashboard"> <a href="barangay_Dashboard.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Dashboard</a></div>
-                <div id="dashboard"> <a href="barangay_CreatePost.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Create Post</a></div>
-                <div id="dashboard"> <a href="barangay_Viewpost.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center"></i>Viewpost</a></div>
-                <div id="dashboard"> <a href="barangay_List.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Resident List</a></div>
-                <div id="dashboard"> <a href="barangay_Account_list.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Account List</a></div>
-                <div id="dashboard"> <a href="barangay_Services.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Services</a></div>
-                <div id="dashboard"> <a href="barangay_Permit.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Documents</a></div>
-                <div id="dashboard"> <a href="barangay_Permit_request.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Document Requests</a></div>
-                <div id="dashboard"> <a href="barangay_Reports.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Reports</a></div>
-                <div id="dashboard"> <a href="barangay_History.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">History</a></div>
-                <div id="dashboard"> <a href="barangay_settings.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Settings</a></div>
-          </div>
+                    <div id="dashboard"> <a href="barangay_CreatePost.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Create Post</a></div>
+                    <div id="dashboard"> <a href="barangay_Viewpost.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center"></i>Viewpost</a></div>
+                    <div id="dashboard"> <a href="barangay_List.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Resident List</a></div>
+                    <div id="dashboard"> <a href="barangay_Account_list.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Account List</a></div>
+                    <div id="dashboard"> <a href="barangay_Services.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Services</a></div>
+                    <div id="dashboard"> <a href="barangay_Permit.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Documents</a></div>
+                    <div id="dashboard"> <a href="barangay_Permit_request.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Document Requests</a></div>
+                    <div id="dashboard"> <a href="barangay_Reports.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Reports</a></div>
+                    <div id="dashboard"> <a href="barangay_History.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">History</a></div>
+                    <div id="dashboard"> <a href="barangay_settings.php" class="list-group-item list-group-item-action bg-transparent second-text active" style="display:flex; color:white; justify-content:center">Settings</a></div>
+                </div>
         </center>
         <!-- /#sidebar-wrapper -->
 
@@ -103,11 +103,12 @@ if (isset($_GET['token'])) {
                         </div>
                     </div>
                 </div>
-                <div class="container" style="border:solid; margin-top:20px">
+                <div class="container" style="border:solid; margin-top:20px;text-align:center">
                     <div style="margin-bottom: 15px; padding: 10px;background-color:#bd8565;font-weight: bold;">
-                        <h1 style="display: inline-block;">Resident Profiling</h1><label for="myCheck" style="float:right;border:solid 3px"><img id="arrow_down" src="img/arrow-down.png" style="display: none;" alt=""><img id="arrow_up" src="img/arrow-up.png" alt="" ></label><input type="checkbox" id="myCheck" onclick="myFunction()" style="display:none">
-                    </div>
+                        <h1 style="display: inline-block;">Resident Profiling</h1><label for="myCheck" style="float:right;border:solid 3px"><img id="arrow_down" src="img/arrow-down.png" style="display: none;" alt=""><img id="arrow_up" src="img/arrow-up.png" alt=""></label><input type="checkbox" id="myCheck" onclick="myFunction()" style="display:none">
+                    </div><br>
                     <form action="API/API_profiling.php<?php echo $token ?>" method="POST" enctype='multipart/form-data'>
+                    <center>
                         <div class="row">
                             <div class="column" id="add_A">
                                 <h3>Personal Information</h3>
@@ -143,7 +144,7 @@ if (isset($_GET['token'])) {
                                     </select>
                                 </div>
                             </div><br>
-                            <div class="column"  id="add_B">
+                            <div class="column" id="add_B">
                                 <h3>Family Composition</h3>
                                 <input style="  margin-bottom: 10px" name="prof_Fathername" class="form-control" id="prof_Fathername" minlength="4" required <?php echo $Fathername ?>>
                                 <input style="  margin-bottom: 10px" name="prof_Fatheroccu" class="form-control" id="desprof_Fatheroccucription" minlength="4" <?php echo $Fatheroccu ?>>
@@ -153,45 +154,43 @@ if (isset($_GET['token'])) {
                                     <button style="width: 100%; margin-top:10px" type="submit" name="add_btn" class="btn btn-primary">Add</button>
                                     <button style="width: 100%; margin-top:10px" type="submit" name="update_btn" class="btn btn-primary">Save</button>
                                     <button style="width: 100%; margin-top:10px" type="button" onclick="window.location.href='barangay_List.php'" class="btn btn-primary">Clear</button>
+                                </div>
+                            </div>
+                            </center>
                     </form>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="row my-5" id="list_resident">
-        <h3 class="fs-4 mb-3">List of Residents</h3>
-        <div class="container">
-            <a href="API/API_barangay_list_excel.php" style="margin-bottom: 5px" class="btn btn-success">Export to Excel </a>
-            <div class="row">
-                <div class="col-md-12 col-sm-12" style="overflow-x:auto;">
-                    <table class="table table-striped" id="loadData">
-                        <thead>
-                            <tr style="background-color: #bd8565;">
-                                <th>Resident ID</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Middle Name</th>
-                                <th>Suffix</th>
-                                <th>Birth Date</th>
-                                <th>Sex</th>
-                                <th>Address</th>
-                                <th>Address Status</th>
-                                <th>Father's Name</th>
-                                <th>Father's Occupation</th>
-                                <th>Mother's Name</th>
-                                <th>Mothers's Occupation</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                    </table>
+            <div class="row my-5" id="list_resident">
+                <h3 class="fs-4 mb-3">List of Residents</h3>
+                <div class="container">
+                    <a href="API/API_barangay_list_excel.php" style="margin-bottom: 5px" class="btn btn-success">Export to Excel </a>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12" style="overflow-x:auto;">
+                            <table class="table table-striped" id="loadData">
+                                <thead>
+                                    <tr style="background-color: #bd8565;">
+                                        <th>Resident ID</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Middle Name</th>
+                                        <th>Suffix</th>
+                                        <th>Birth Date</th>
+                                        <th>Sex</th>
+                                        <th>Address</th>
+                                        <th>Address Status</th>
+                                        <th>Father's Name</th>
+                                        <th>Father's Occupation</th>
+                                        <th>Mother's Name</th>
+                                        <th>Mothers's Occupation</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    </div>
-
-    </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
