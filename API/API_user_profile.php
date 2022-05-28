@@ -25,6 +25,7 @@ $barangay = "";
 $birthdate = "";
 $sex = "";
 $user_Name = "";
+$image = "";
 
 $query_Get_info = "SELECT * FROM barangay_users_tbl WHERE user_ID = '$user_ID'";
 $query_Get_contact = "SELECT * FROM system_accounts_tbl WHERE user_ID = '$user_ID'";
@@ -39,6 +40,7 @@ if(mysqli_num_rows($result_Get_info) > 0 && mysqli_num_rows($result_Get_contact)
     $l_Name = $rows_Get_info['user_Lname'];
     $suffix = $rows_Get_info['user_Suffix'];
     $full_Name = $f_Name.' '.$m_Name.' '.$l_Name.' '.$suffix.'';
+    $image = $rows_Get_info['user_Image'];
     $c_number = $rows_Get_contact['account_Contactnumber'];
     $email = $rows_Get_contact['account_Email'];
     $region = $rows_Get_info['user_Region'];

@@ -18,7 +18,7 @@
 
 <body>
     <center>
-        <div><img src="img/FINAL_LANDSCAPE.png" alt="BaRIS_Logo"></div>
+        <div style="margin-top: 50px;margin-bottom: 50px;"><img src="img/BaRIS_Logo.png" alt="BaRIS_Logo"></div>
         <label style="color: white;">LOG IN AS:</label>
         <div style="margin:auto">
             <button class="btn-1" onclick="window.location.href='homepage_loader.php';">Resident</button>

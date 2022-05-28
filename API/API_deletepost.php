@@ -7,9 +7,7 @@ if(isset($_GET['token'])){
          DELETE FROM barangay_post_media WHERE post_ID ='$ID';";
   $result = mysqli_multi_query($conn, $sql);
   if($result){
-    echo '<script>alert("Post Deleted!"); window.location.href="../barangay_Viewpost.php";</script>';
-   
-    
+      echo '<script>alert("Post Deleted!"); window.location.href="../barangay_Viewpost.php";</script>';
   }else{
       echo $conn->error;//getting the error
   }

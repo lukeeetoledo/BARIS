@@ -18,7 +18,7 @@ if(isset($_POST['submit'])){
     if(mysqli_num_rows($result_Get_info) > 0){
         $rows_Get_info = mysqli_fetch_assoc($result_Get_info);
         // DATA
-        $process_ID = uniqid('Baris-prcs-');
+        $process_ID = 'BaRIS-prcs_'.time();
         $requestor_ID = $user_ID;
         $requestor_Position = $_POST['txt_Brgy_pos'];
         $requestor_Res_status = $_POST['txt_Res_stats'];

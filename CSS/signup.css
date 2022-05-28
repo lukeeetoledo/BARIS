@@ -5,7 +5,24 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #bd8565; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #976a51; 
+  }
 
 body{
     min-height: 100vh;
@@ -20,14 +37,11 @@ body{
     background: #fff;
     padding: 40px, 30px;
     border-radius: 10px;
-
     max-width: 820px;
-    margin: 0px auto;
-    margin-top: 50px;
 }
 
 .container .title{
-    font-size: 5vh;
+    font-size: 4vh;
     font-weight: 500;
     position: relative;
 }
@@ -73,7 +87,6 @@ form .user-details .input-box{
     
     
 }
-
 .form-wrapper .civilstatus {
     display: flex;
     flex-wrap: wrap;
@@ -82,13 +95,14 @@ form .user-details .input-box{
     transition: all 0.3 ease; 
     border: #ccc;
     border-style: solid;
-    border-width: 2px;    
+    border-width: 2px;   
+    width: 100%; 
 }
 
 
 .input-box .form-wrapper{
     height: 3px;
-    width: 3px;
+    width: 100%;
     align-items: center;
     padding-bottom: 15px;
 }
@@ -185,4 +199,8 @@ form .gender-details .category{
 }
 .user-details::-webkit-scrollbar{
     width: 0;
-}}
+}
+input{
+    width: 100%;
+}
+}

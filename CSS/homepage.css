@@ -1,9 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@700&display=swap');
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #bd8565; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #976a51; 
+}
 body{
   background-color: #e4e6eb;
   font-family: 'Poppins',sans-serif;
 }
-
 .collection{
     width: 600px;
     max-width:100%;
