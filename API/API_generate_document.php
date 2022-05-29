@@ -1,4 +1,9 @@
 <?php 
+  use PHPMailer\PHPMailer\PHPMailer;
+  use PHPMailer\PHPMailer\Exception;
+  require 'PHPMailer-master/src/Exception.php';
+  require 'PHPMailer-master/src/PHPMailer.php';
+  require 'PHPMailer-master/src/SMTP.php';
     session_start();
     include 'SYSTEM_config.php';
 
@@ -8,10 +13,13 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
 
   $barangay_ID = $_SESSION['barangay_ID'];
 
-  if(isset($_GET['tokenDT']) && isset($_GET['tokenDID']) && isset($_GET['tokenMode'])){
+  if(isset($_GET['tokenDT']) && isset($_GET['tokenDID']) && isset($_GET['tokenMode']) && isset($_GET['tokenAct'])){
     $doc_Type = $_GET['tokenDT'];
     $doc_ID= $_GET['tokenDID'];
     $doc_Requestmode= $_GET['tokenMode'];
+    $doc_Action= $_GET['tokenAct'];
+    $EMAIL = "";
+    $NAME = "";
     $doc_fileName = "BaRIS-doc_".time();
     $doc_PHP = $doc_fileName.".php";
     $doc_Body = "";
@@ -25,7 +33,6 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
     $trimimage4 = substr($picturerow['captain_signature'] , 29);
     $trimimage5 = substr($picturerow['secretary_signature'] , 29);
 
-
     if($doc_Type == "Barangay_Clearance"){
         $query_Get_Info = "SELECT * FROM barangay_documents_tbl WHERE doc_ID = '$doc_ID' AND doc_Requestmode = '$doc_Requestmode'";
         $result_Get_Info = mysqli_query($conn, $query_Get_Info);
@@ -33,6 +40,8 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
         if(mysqli_num_rows($result_Get_Info) > 0){
             $row = mysqli_fetch_assoc($result_Get_Info);
             $req_FullName = $row['doc_Lname'] ." " . $row['doc_Suffix'] .", " . ucwords($row['doc_Fname']) ." " . $row['doc_Mname']; 
+            $EMAIL = $row['doc_Email'];
+            $NAME = $req_FullName;
             $doc_Body .= '<!DOCTYPE html>
             <html lang="en">
             <head>
@@ -61,7 +70,7 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
                     <span align="left" class="line"></span>
                     <img src="../barangaysettings/'.$trimimage4.'" width="150px" height ="120px" style="position:absolute;margin-left:364px"  alt="">
                     <h4 style = "text-indent: 10%;" align="right"><b>'.$picturerow['barangay_captain'].'</b><br>Barangay Captain<h4>
-                    <h4 style = "text-indent: 10%;" align="left">[QR CODE?]<h4><br><br>
+                    <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=https://baris.com.ph/view_document_stats.php?token1='.$doc_ID.'&token2=Barangay_Clearance" title="Link to Google.com" />
             
                   </div>    
                 </div>
@@ -79,6 +88,8 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
         if(mysqli_num_rows($result_Get_Info) > 0){
             $row = mysqli_fetch_assoc($result_Get_Info);
             $req_FullName = $row['doc_Lname'] ." " . $row['doc_Suffix'] .", " . ucwords($row['doc_Fname']) ." " . $row['doc_Mname']; 
+            $EMAIL = $row['doc_Email'];
+            $NAME = $req_FullName;
             $doc_Body .= '<!DOCTYPE html>
             <html lang="en">
             <head>
@@ -107,7 +118,7 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
                     <h4 style = "text-indent: 10%;" align="left">Issued this  <b>'.$row['doc_Date'].'</b><h4><br><br>
                     <img src="../barangaysettings/'.$trimimage4.'" width="150px" height ="120px" style="position:absolute;bottom:235px; margin-left:564px"  alt="">
                     <h4 style = "text-indent: 10%;" align="right"><b>'.$picturerow['barangay_captain'].'</b><br>Barangay Captain<h4>
-                    <h4 style = "text-indent: 10%;" align="left">[QR CODE?]<h4><br><br>
+                    <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=https://baris.com.ph/view_document_stats.php?token1='.$doc_ID.'&token2=Barangay_Ceritificate" title="Link to Google.com" />
             
                   </div>    
                 </div>
@@ -124,6 +135,8 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
         if(mysqli_num_rows($result_Get_Info) > 0){
             $row = mysqli_fetch_assoc($result_Get_Info);
             $req_FullName = $row['doc_Lname'] ." " . $row['doc_Suffix'] .", " . ucwords($row['doc_Fname']) ." " . $row['doc_Mname']; 
+            $EMAIL = $row['doc_Email'];
+            $NAME = $req_FullName;
             $doc_Body .= '<!DOCTYPE html>
             <html lang="en">
             <head>
@@ -151,7 +164,7 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
                     <span align="left" class="line"></span>
                     <img src="../barangaysettings/'.$trimimage4.'" width="150px" height ="120px" style="position:absolute;margin-left:364px"  alt="">
                     <h4 style = "text-indent: 10%;" align="right"><b>'.$picturerow['barangay_captain'].'</b><br>Barangay Captain<h4>
-                    <h4 style = "text-indent: 10%;" align="left">[QR CODE?]<h4><br><br>
+                    <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=https://baris.com.ph/view_document_stats.php?token1='.$doc_ID.'&token2=Ceritificate%20of%20Indigency" title="Link to Google.com" />
             
                   </div>    
                 </div>
@@ -168,6 +181,8 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
         if(mysqli_num_rows($result_Get_Info) > 0){
             $row = mysqli_fetch_assoc($result_Get_Info);
             $req_FullName = $row['doc_Lname'] ." " . $row['doc_Suffix'] .", " . ucwords($row['doc_Fname']) ." " . $row['doc_Mname']; 
+            $EMAIL = $row['doc_Email'];
+            $NAME = $req_FullName;
             $doc_Body .= '<!DOCTYPE html>
             <html lang="en">
             <head>
@@ -201,7 +216,7 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
                     <img src="../barangaysettings/signature.png" width="150px" height ="120px" style="position:absolute;  bottom:80px;"  alt="">
                     <img src="../barangaysettings/'.$trimimage4.'" width="150px" height ="120px" style="position:absolute;  bottom:-10px; margin-left:585px"  alt="">
                     <h4 style = "text-indent: 10%;" align="right"><b>'.$picturerow['barangay_captain'].'</b><br>Barangay Captain<h4>
-                    <h4 style = "text-indent: 10%;" align="left">[QR CODE?]<h4><br><br>
+                    <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=https://baris.com.ph/view_document_stats.php?token1='.$doc_ID.'&token2=Business%20Permit" title="Link to Google.com" />
                   </div>    
                 </div>
               </body>
@@ -217,6 +232,8 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
         if(mysqli_num_rows($result_Get_Info) > 0){
             $row = mysqli_fetch_assoc($result_Get_Info);
             $req_FullName = $row['doc_Lname'] ." " . $row['doc_Suffix'] .", " . ucwords($row['doc_Fname']) ." " . $row['doc_Mname']; 
+            $EMAIL = $row['doc_Email'];
+            $NAME = $req_FullName;
             $doc_Body .= '<!DOCTYPE html>
             <html lang="en">
             <head>
@@ -245,7 +262,7 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
                     <span align="left" class="line"></span>
                     <img src="../barangaysettings/'.$trimimage4.'" width="150px" height ="120px" style="position:absolute;margin-left:364px"  alt="">
                     <h4 style = "text-indent: 10%;" align="right"><b>'.$picturerow['barangay_captain'].'</b><br>Barangay Captain<h4>
-                    <h4 style = "text-indent: 10%;" align="left">[QR CODE?]<h4><br><br>
+                    <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=https://baris.com.ph/view_document_stats.php?token1='.$doc_ID.'&token2=Cedula" title="Link to Google.com" />
             
                   </div>    
                 </div>
@@ -260,6 +277,42 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
     $toPHP = fopen($PHPPath, 'w');
     fwrite($toPHP, $doc_Body);
     fclose($toPHP);
+    if($doc_Action == "PDF"){
+      header("location:".$PHPPath);
+    }else{
+      // EMAIL
+      $mail = new PHPMailer();
+                $mail->IsSMTP();
+                $mail->Mailer = "smtp";
+                $mail->SMTPDebug  = 1;
+                $mail->SMTPAuth   = TRUE;
+                $mail->SMTPSecure = "tls";
+                $mail->Port       = 587;
+                $mail->Host       = "smtp.gmail.com";
+                $mail->Username   = "baris.tupm@gmail.com";
+                $mail->Password   = "6X1lf3MH6SwW4h3iz";
 
-    header("location:".$PHPPath);
+                $mail->IsHTML(true);
+                $mail->AddAddress($EMAIL, "recipient-name");
+                $mail->SetFrom($my_email, "BaRIS");
+                $mail->AddReplyTo($my_email, "reply-to-name");
+                $mail->AddCC($EMAIL, "cc-recipient-name");
+                $mail->Subject = "Document Request - BaRIS";
+                $mail->addAttachment($PHPPath);
+                $content = "<p><strong>Dear Mr./Ms. {$NAME},</strong></p>
+                 <p>You have requested the following document: {$doc_Type}</p>
+                 <p>Attached is the file of the document and the invoice of the transaction.</p>
+                 <p>If not on the primary inbox search the mail at the *Spam Collection*. </p>
+                 <p>Kindly report as not a spam. </p>";
+                 $mail->Body = $content;
+                if (!$mail->Send()) {
+                    echo $mail->ErrorInfo;
+                } else {
+                    echo "<script>
+                      alert('Document has been sent!);
+                      window.location.href='..//barangay_Permit_request.php';
+                      </script>";
+                }
+    }
+    
   }

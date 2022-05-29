@@ -7,6 +7,14 @@ if(isset($_GET['token']) && isset($_GET['prcs'])  && isset($_GET['img'])){
     $creator_ID = $_GET['token'];
     $registration_ID = $_GET['prcs'];
     $creator_Image = $_GET['img'];
+
+    $doc_Type[0] = "Barangay_Certificate";
+    $doc_Type[1] = "Barangay_Clearance";
+    $doc_Type[2] = "Certificate_Indigency";
+    $doc_Type[3] = "Business_Permit";
+    $doc_Type[4] = "Cedula";
+    $doc_Price = 0;
+
     $date_Created = date(DATE_RFC822);
     // GETTING BARANGAY ID
     $query_Get_brgy = "SELECT * FROM barangay_users_tbl WHERE user_ID = '$creator_ID'";
@@ -19,6 +27,12 @@ if(isset($_GET['token']) && isset($_GET['prcs'])  && isset($_GET['img'])){
         // INSERTING APPROVED REGISTRATION
         $query_Insert_registration = "INSERT INTO system_registered_bgy_tbl SET barangay_ID = '$brgy_ID', registration_ID = '$registration_ID', barangay_Creator = '$creator_ID',  barangay_Joined = '$date_Created'";
         $result_Insert_registration = mysqli_query($conn, $query_Insert_registration);
+
+        for ($i = 0; $i < 5; $i++){
+            $query_Insert_documents = "INSERT INTO barangay_document_types_tbl (barangay_ID, doc_Type, doc_Price) VALUES ('$brgy_ID', '$doc_Type[$i]','$doc_Price')";
+            $result_Insert_documents = mysqli_query($conn, $query_Insert_documents);
+        }
+
         if($result_Insert_registration){
             $query_Update_status_A = "UPDATE system_brgy_registration_tbl SET request_Status = '1' WHERE process_ID = '$registration_ID' ;";
             $result_Update_status_A = mysqli_query($conn, $query_Update_status_A);

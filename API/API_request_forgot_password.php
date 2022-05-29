@@ -38,7 +38,7 @@ if (isset($_POST['txt_email_cnumber'])) {
                 $mail->Port       = 587;
                 $mail->Host       = "smtp.gmail.com";
                 $mail->Username   = "baris.tupm@gmail.com";
-                $mail->Password   = "6X1lf3MH6SwW4h3i";
+                $mail->Password   = "6X1lf3MH6SwW4h3iz";
 
                 $mail->IsHTML(true);
                 $mail->AddAddress($email_cnumber, "recipient-name");
