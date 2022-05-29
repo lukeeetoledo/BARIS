@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 if (!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SESSION['barangay_ID'])) {
     header("location:index.php");
@@ -139,7 +138,7 @@ if (isset($_GET['token'])) {
                                 <input style=" margin-bottom: 10px" name="prof_Address" class="form-control" id="prof_Address" minlength="4" required <?php echo $Address ?>>
                                 <div style="margin-top: 10px;">
                                     <select name="prof_Addressstatus" id="prof_Addressstatus" style="width: 100%;;padding:10px;margin-bottom:20px">
-                                        <option name="prof_Onwed" value="Onwed">Owned</option>
+                                        <option name="prof_Owned" value="Onwed">Owned</option>
                                         <option name="prof_Rent" value="Rent">Rent</option>
                                     </select>
                                 </div>

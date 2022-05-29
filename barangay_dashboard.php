@@ -1,7 +1,8 @@
 <?php 
-      session_start();
+    include "API/API_generate_stats.php";
       if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SESSION['barangay_ID'])){
       header("location:index.php");
+
   }
 ?>
 <!DOCTYPE html>
@@ -20,6 +21,47 @@
     <link rel="stylesheet" href="CSS/dashboard.css" />
     <title>Dashboard</title>
 </head>
+
+<script>
+window.onload = function() {
+ 
+var Sex = new CanvasJS.Chart("Sex", {
+    exportEnabled: true,
+	theme: "light1",
+	animationEnabled: true,
+	title: {
+		text: "Male and Female in the Barangay"
+	},
+	data: [{
+		type: "doughnut",
+		indexLabel: "{symbol} - {y}",
+		yValueFormatString: "#,##0.0\"%\"",
+		showInLegend: true,
+		legendText: "{label} : {y}",
+		dataPoints: <?php echo json_encode(generateSex(), JSON_NUMERIC_CHECK); ?>
+	}]
+});
+
+var Residential = new CanvasJS.Chart("Resi_stats", {
+    exportEnabled: true,
+     theme: "light",
+     animationEnabled: true,
+     title: {
+         text: "Residential Status in the Barangay"
+     },
+     data: [{
+         type: "doughnut",
+         indexLabel: "{symbol} - {y}",
+         yValueFormatString: "#,##0.0\"%\"",
+         showInLegend: true,
+         legendText: "{label} : {y}",
+         dataPoints: <?php echo json_encode(generateResidential(), JSON_NUMERIC_CHECK); ?>
+     }]
+ });
+Sex.render();
+Residential.render();
+}
+</script>
 
 <body>
     <div class="d-flex" id="wrapper">
@@ -56,13 +98,13 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
-    
 
+            <div id="Sex" class="graph_holder"></div><br>
+            <div id="Resi_stats" class="graph_holder"></div>
         </div>
     </div>
     <!-- /#page-content-wrapper -->
-
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         var el = document.getElementById("wrapper");

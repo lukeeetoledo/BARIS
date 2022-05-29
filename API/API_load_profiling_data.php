@@ -5,7 +5,7 @@
    $barangay_ID = $_SESSION['barangay_ID'];
    $num_rows = 0;
 
-   $sql = "SELECT * FROM barangay_profiling_tbl WHERE barangay_ID = '$barangay_ID' ORDER BY prof_Lname DESC";
+$sql = "SELECT * FROM barangay_profiling_tbl WHERE barangay_ID = '$barangay_ID' ORDER BY prof_Lname DESC";
    
    $query = $conn->query($sql);
    if ($query->num_rows > 0) {
@@ -13,8 +13,6 @@
    $output = "";
    $output .= "<tbody>";
    while ($row = $query->fetch_assoc()) {
-         
-$last_id = $row['prof_Count'] - 1;
    $output.="<tr>
                <td>{$row["prof_ID"]}</td>
                <td>{$row["prof_Fname"]}</td>

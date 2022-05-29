@@ -128,3 +128,7 @@ background-color: #4C84A4;
 #span_req{
   color: red;
 }
+.graph_holder{
+  height: 370px; 
+  width: 100%;
+}
