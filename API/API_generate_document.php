@@ -255,9 +255,10 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
                     <h2 align="center">C E D U L A</h2>
                     <h4 align="left">TO WHOM IT MAY CONCERN:</h4>
                     <p style = "text-indent: 10%;" align="left">This is to certify that <b>'.$req_FullName.'</b> of legal age, <b>'.$row['doc_Sex'].'</b, <b>'.$row['doc_Civilstatus'].'</b, <b>'.$row['doc_Citizenship'].'</b>,
-                        is a bonafide resident of <b>'.$row['doc_Address'].'</b> [barangay name], and that he/she has no derogatory/
-                    criminal record filed in this Barangay<br></p>
-                    <p>This Ceritification is being issued upon the request of the above-named person upon his/her request for:<b>'.$row['doc_Purpose'].'</b></p>
+                       Have a record of the following for his/her ceddula<br></p>
+                    <p>Birthplace:<b>'.$row['doc_Birthplace'].'</b> <br>Height in cm: <b>'.$row['doc_Height'].'</b><br> Weight in kg: <b>'.$row['doc_Weight'].'</b><br>Occupation: <b>'.$row['doc_Occupation'].'</b><br>
+                    Total Earning From Salaries Profession: <b>'.$row['doc_Earningfromsal'].'</b><br>
+                    Total Gross Receipt From Business: <b>'.$row['doc_Grossrecfrombus'].'</b><br>Total Income From Party: <b>'.$row['doc_Totalincom'].'</b><br>Tax Identification Number: <b>'.$row['doc_Taxindentification'].'</b></p>
                     <h4 style = "text-indent: 10%;" align="left">Issued this date:  <b>'.$row['doc_Date'].'</b><h4><br><br>
                     <span align="left" class="line"></span>
                     <img src="../barangaysettings/'.$trimimage4.'" width="150px" height ="120px" style="position:absolute;margin-left:364px"  alt="">
