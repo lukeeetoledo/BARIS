@@ -28,6 +28,7 @@ $last_id = $row['doc_Count'] - 1;
    <td>{$row["doc_Fname"]} {$row["doc_Mname"]} {$row["doc_Lname"]}</td>
    <td>{$row["doc_Email"]}</td>
    <td>{$row["doc_Contact"]}</td>
+   <td>{$row["doc_DeliverType"]}</td>
    <td>{$row["doc_Requestmode"]}</td>
    <td><a class='btn btn-info' href='view_document_stats.php?token1={$row["doc_ID"]}&token2={$row["doc_Type"]}' target='blank'>View</a>
    <a class='btn btn-success' href='API/API_generate_document.php?tokenDT={$row['doc_Type']}&tokenDID={$row['doc_ID']}&tokenMode={$row["doc_Requestmode"]}&tokenAct=EMAIL' target='blank'>Send</a>

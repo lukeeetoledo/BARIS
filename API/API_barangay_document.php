@@ -119,7 +119,7 @@ if(isset($_POST['submit_brg_clear'])){
 }
 
 if(isset($_POST['submit_cert_indi'])){
-    $docu_type3 = "Ceritificate of Indigency";
+    $docu_type3 = "Certificate_Indigency";
  
     $query_getFullName = "SELECT * FROM barangay_users_tbl WHERE user_ID = '$user_ID'";
     $result_getFullName = mysqli_query($conn,$query_getFullName);
@@ -157,7 +157,7 @@ if(isset($_POST['submit_cert_indi'])){
         }
 }
 if(isset($_POST['submit_Bus_permit'])){
-    $docu_type4 = "Business Permit";
+    $docu_type4 = "Business_Permit";
  
     $query_getFullName = "SELECT * FROM barangay_users_tbl WHERE user_ID = '$user_ID'";
     $result_getFullName = mysqli_query($conn,$query_getFullName);

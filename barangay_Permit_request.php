@@ -85,6 +85,7 @@
                                             <th>Requestor Full Name</th>
                                             <th>Email</th>
                                             <th>Contact_Number</th>
+                                            <th>Mode of Deliver</th>
                                             <th>Request_Mode</th>
                                             <th>Action</th>
                                         </tr>

@@ -101,7 +101,7 @@ $docu_type1 = "Barangay_Ceritificate";
 }
 
 else if(isset($_POST['submit_cert_indi'])){
-    $docu_type3 = "Ceritificate of Indigency";
+    $docu_type3 = "Certificate_Indigency";
  
     $barangay_ID =  $barangayID;
     $doc_Type = $docu_type3;
@@ -130,7 +130,7 @@ else if(isset($_POST['submit_cert_indi'])){
         }
 }
 else if(isset($_POST['submit_Bus_permit'])){
-    $docu_type4 = "Business Permit";
+    $docu_type4 = "Business_Permit";
  
     $barangay_ID =  $barangayID;
     $doc_Type = $docu_type4;

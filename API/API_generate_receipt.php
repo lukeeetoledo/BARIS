@@ -40,7 +40,7 @@
                     <hr><br>
                     <label>Date: <span>'.$row['transac_Date'].'</span></label>
                     <hr><br>
-                    <label>Recepient: <span>'.$row['transac_Recepient'].'</span></label>
+                    <label>Recepient: <span>'.$row['transac_Recipient'].'</span></label>
                     <hr><br>
                     <label>Price: <span>'.$row['transac_Price'].'</span></label>
                     <hr><hr><br><br><br><br><br>

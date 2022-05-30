@@ -99,7 +99,7 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
                 <meta charset="UTF-8">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Barangay Certificate</title>
+                <title>'.$doc_fileName.'</title>
                 <link rel="stylesheet" href="../../CSS/barangay_doc_style.css"/>
             </head>
             <body>
@@ -132,7 +132,7 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
             return;
         }
 
-    }else if($doc_Type == "Ceritificate of Indigency"){
+    }else if($doc_Type == "Certificate_Indigency"){
         $query_Get_Info = "SELECT * FROM barangay_documents_tbl WHERE doc_ID = '$doc_ID' AND doc_Requestmode = '$doc_Requestmode'";
         $result_Get_Info = mysqli_query($conn, $query_Get_Info);
 
@@ -147,7 +147,7 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
                 <meta charset="UTF-8">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Barangay Ceritificate of Indigency</title>
+                <title>'.$doc_fileName.'</title>
                 <link rel="stylesheet" href="../../CSS/barangay_doc_style.css"/>
             </head>
             <body>
@@ -179,7 +179,7 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
             return;
         }
 
-    }else if($doc_Type == "Business Permit"){
+    }else if($doc_Type == "Business_Permit"){
         $query_Get_Info = "SELECT * FROM barangay_documents_tbl WHERE doc_ID = '$doc_ID' AND doc_Requestmode = '$doc_Requestmode'";
         $result_Get_Info = mysqli_query($conn, $query_Get_Info);
 
@@ -194,7 +194,7 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
                 <meta charset="UTF-8">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Business Permit</title>
+                <title>'.$doc_fileName.'</title>
                 <link rel="stylesheet" href="../../CSS/barangay_doc_style.css"/>
             </head>
             <body>
@@ -221,7 +221,7 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
                     <img src="../barangaysettings/signature.png" width="150px" height ="120px" style="position:absolute;  bottom:80px;"  alt="">
                     <img src="../barangaysettings/'.$trimimage4.'" width="150px" height ="120px" style="position:absolute;  bottom:-10px; margin-left:585px"  alt="">
                     <h4 style = "text-indent: 10%;" align="right"><b>'.$picturerow['barangay_captain'].'</b><br>Barangay Captain<h4>
-                    <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=https://baris.com.ph/view_document_stats.php?token1='.$doc_ID.'&token2=Business%20Permit" title="Link to Google.com" />
+                    <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=https://baris.com.ph/view_document_stats.php?token1='.$doc_ID.'&token2=Business%20Permit" title="Link to Google.com" style = "width: 190px"/>
                   </div>    
                 </div>
               </body>
@@ -269,7 +269,7 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
                     <span align="left" class="line"></span>
                     <img src="../barangaysettings/'.$trimimage4.'" width="150px" height ="120px" style="position:absolute;margin-left:364px"  alt="">
                     <h4 style = "text-indent: 10%;" align="right"><b>'.$picturerow['barangay_captain'].'</b><br>Barangay Captain<h4>
-                    <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=https://baris.com.ph/view_document_stats.php?token1='.$doc_ID.'&token2=Cedula" title="Link to Google.com" />
+                    <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=https://baris.com.ph/view_document_stats.php?token1='.$doc_ID.'&token2=Cedula" title="Link to Google.com"  style = "width: 215px"/>
             
                   </div>    
                 </div>
@@ -283,7 +283,7 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
     }
     // RECEIPT
     $transac_ID = "BaRIS-transac_".time();
-    $result_Doc_price = mysqli_query($conn, "SELECT * FROM barangay_documents_type_tbl WHERE barangay_ID = '$barangay_ID' AND doc_Type = '$doc_Type'");
+    $result_Doc_price = mysqli_query($conn, "SELECT * FROM barangay_document_types_tbl WHERE barangay_ID = '$barangay_ID' AND doc_Type = '$doc_Type'");
     $rowX = mysqli_fetch_assoc($result_Doc_price);
     $doc_Price = $rowX['doc_Price'];
     $query_Insert_receipt = "INSERT INTO barangay_docu_receipts_tbl SET transac_ID = '$transac_ID', docu_ID = '$doc_ID', transac_Docu = '$doc_Type', 
@@ -295,25 +295,25 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
     fwrite($toPHP, $doc_Body);
     fclose($toPHP);
     $PDF_receipt = generateReceipt($transac_ID);
-    $curl = curl_init();
-    $source = "https://baris.com.ph/" . $PHPLink;
-    curl_setopt_array($curl, array(
-        CURLOPT_URL => "https://api.pdfshift.io/v3/convert/pdf",
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_POST => true,
-        CURLOPT_POSTFIELDS => json_encode(array(
-            "source" => $source,
-            "landscape" => true,
-            "use_print" => false
-        )),
-        CURLOPT_HTTPHEADER => array('Content-Type:application/json'),
-        CURLOPT_USERPWD => 'api:3351793c0ba7403fa032b2656a70f30f'
-    ));
+    // $curl = curl_init();
+    // $source = "https://baris.com.ph/" . $PHPLink;
+    // curl_setopt_array($curl, array(
+    //     CURLOPT_URL => "https://api.pdfshift.io/v3/convert/pdf",
+    //     CURLOPT_RETURNTRANSFER => true,
+    //     CURLOPT_POST => true,
+    //     CURLOPT_POSTFIELDS => json_encode(array(
+    //         "source" => $source,
+    //         "landscape" => true,
+    //         "use_print" => false
+    //     )),
+    //     CURLOPT_HTTPHEADER => array('Content-Type:application/json'),
+    //     CURLOPT_USERPWD => 'api:3351793c0ba7403fa032b2656a70f30f'
+    // ));
 
-    $response = curl_exec($curl);
-    file_put_contents($PDFPath, $response);
-    //  DELETE PHP File
-    unlink($PHPPath);
+    // $response = curl_exec($curl);
+    // file_put_contents($PDFPath, $response);
+    // //  DELETE PHP File
+    // unlink($PHPPath);
     if($doc_Action == "PDF"){
       header("location:".$PHPPath);
     }else{
