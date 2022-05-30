@@ -381,16 +381,16 @@
              fwrite($toPHP, $PHPCode);
              fclose($toPHP);
 
-             // Show Download Button
-            
-            //  echo "
-            //  <label>Report PDF</label></br>
-            //  <a class = 'btn btn-success' href='{$PHPLink}' target='blank'>Download</a>
-            //  ";
+        // Show Download Button
+
+        //  echo "
+        //  <label>Report PDF</label></br>
+        //  <a class = 'btn btn-success' href='{$PHPLink}' target='blank'>Download</a>
+        //  ";
 
         // INSERT toPDF.txt here...
         $curl = curl_init();
-        $source = "https://baris.com.ph/".$PHPLink;
+        $source = "https://baris.com.ph/" . $PHPLink;
         curl_setopt_array($curl, array(
             CURLOPT_URL => "https://api.pdfshift.io/v3/convert/pdf",
             CURLOPT_RETURNTRANSFER => true,
@@ -410,7 +410,7 @@
   <label>Report PDF</label></br>
   <a class = 'btn btn-successs' href='{$PDFLink}' target='blank' style='background-color:#5cb85c;border-radius:12px'>Download</a>";
         //  DELETE PHP File
-         unlink($PHPFile);
+        unlink($PHPFile);
              
            }
        }

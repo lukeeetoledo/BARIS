@@ -4,6 +4,7 @@
   require 'PHPMailer-master/src/Exception.php';
   require 'PHPMailer-master/src/PHPMailer.php';
   require 'PHPMailer-master/src/SMTP.php';
+  require 'API_generate_receipt.php';
     session_start();
     include 'SYSTEM_config.php';
 
@@ -18,6 +19,7 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
     $doc_ID= $_GET['tokenDID'];
     $doc_Requestmode= $_GET['tokenMode'];
     $doc_Action= $_GET['tokenAct'];
+    $doc_Date = "";
     $EMAIL = "";
     $NAME = "";
     $doc_fileName = "BaRIS-doc_".time();
@@ -76,6 +78,7 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
                 </div>
               </body>
             </html>';
+            $doc_Date = $row['doc_Date'];
         }else{
             return;
         }
@@ -124,6 +127,7 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
                 </div>
               </body>
             </html>';
+            $doc_Date = $row['doc_Date'];
         }else{
             return;
         }
@@ -170,6 +174,7 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
                 </div>
               </body>
             </html>';
+            $doc_Date = $row['doc_Date'];
         }else{
             return;
         }
@@ -221,6 +226,7 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
                 </div>
               </body>
             </html>';
+            $doc_Date = $row['doc_Date'];
         }else{
             return;
         }
@@ -269,15 +275,45 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
                 </div>
               </body>
             </html>';
+            $doc_Date = $row['doc_Date'];
         }else{
             return;
         }
 
     }
+    // RECEIPT
+    $transac_ID = "BaRIS-transac_".time();
+    $result_Doc_price = mysqli_query($conn, "SELECT * FROM barangay_documents_type_tbl WHERE barangay_ID = '$barangay_ID' AND doc_Type = '$doc_Type'");
+    $rowX = mysqli_fetch_assoc($result_Doc_price);
+    $doc_Price = $rowX['doc_Price'];
+    $query_Insert_receipt = "INSERT INTO barangay_docu_receipts_tbl SET transac_ID = '$transac_ID', docu_ID = '$doc_ID', transac_Docu = '$doc_Type', 
+    transac_Date = '$doc_Date', transac_Recipient = '$NAME', transac_Price = '$doc_Price'";
+    $result_Insert_receipt = mysqli_query($conn,$query_Insert_receipt);
+
     $PHPPath = "../saved_files/req_document/" . $doc_PHP;
     $toPHP = fopen($PHPPath, 'w');
     fwrite($toPHP, $doc_Body);
     fclose($toPHP);
+    $PDF_receipt = generateReceipt($transac_ID);
+    $curl = curl_init();
+    $source = "https://baris.com.ph/" . $PHPLink;
+    curl_setopt_array($curl, array(
+        CURLOPT_URL => "https://api.pdfshift.io/v3/convert/pdf",
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_POST => true,
+        CURLOPT_POSTFIELDS => json_encode(array(
+            "source" => $source,
+            "landscape" => true,
+            "use_print" => false
+        )),
+        CURLOPT_HTTPHEADER => array('Content-Type:application/json'),
+        CURLOPT_USERPWD => 'api:3351793c0ba7403fa032b2656a70f30f'
+    ));
+
+    $response = curl_exec($curl);
+    file_put_contents($PDFPath, $response);
+    //  DELETE PHP File
+    unlink($PHPPath);
     if($doc_Action == "PDF"){
       header("location:".$PHPPath);
     }else{
@@ -300,6 +336,7 @@ if(!isset($_SESSION['user_ID']) && !isset($_SESSION['user_Type']) && !isset($_SE
                 $mail->AddCC($EMAIL, "cc-recipient-name");
                 $mail->Subject = "Document Request - BaRIS";
                 $mail->addAttachment($PHPPath);
+                $mail->addAttachment($PDF_receipt);
                 $content = "<p><strong>Dear Mr./Ms. {$NAME},</strong></p>
                  <p>You have requested the following document: {$doc_Type}</p>
                  <p>Attached is the file of the document and the invoice of the transaction.</p>
